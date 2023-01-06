@@ -61,7 +61,7 @@ function App() {
         <section id="top">
           <div className='content'>
             <div className='date_wrap'>
-              <input class="cal" type="date"></input>
+              <input class="cal" type="date">horizontal calendar javascript</input>
               <span className='now_date'> { now_date } </span>
               <h2> { title_name }</h2>
             </div>

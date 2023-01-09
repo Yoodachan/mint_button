@@ -139,11 +139,11 @@ function App() {
 
             <div className='post_btn_wrap'>
               <button className="back_btn" type="button">
-                뒤로가기
+                <span>뒤로가기</span>
                 <FontAwesomeIcon icon={ faPersonRunning } />
               </button>
               <button className="create_btn" type="button">
-                작성
+                <span>작성</span>
                 <FontAwesomeIcon icon={ faArrowUpFromBracket } />
                 </button>
             </div>

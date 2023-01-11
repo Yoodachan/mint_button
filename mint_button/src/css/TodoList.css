@@ -1,0 +1,233 @@
+.date_wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 60px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+  }
+  
+  .days {
+    width: 300px;
+    text-align: left;
+    appearance: none;
+    border: none;
+    background: #e7f7f5;
+    color: #434A49;
+    font-size: 18px;
+  }
+  
+  .todo_form_box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 60px;
+    border-radius: 10px;
+    margin: 0 auto;
+  }
+  
+  .todo_form_box:focus {
+    outline: none;
+    /* border: 2px solid #333; */
+    /* box-shadow: rgba(3, 186, 214, 0.3) 0px 0px 0px 3px; */
+    /* outline: 2px solid #333; */
+  }
+  
+  
+  .todo_create {
+    width: 90%;
+    height: 60px;
+    border: 1px solid #f2f2f2;
+    font-size: 18px;
+    color:#434A49;
+    border-radius: 10px;
+    padding: 0px 10px;
+    appearance: none;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+  }
+  
+  .todo_create:hover {
+    border: 1px solid #f2f2f2;
+  }
+  .todo_create:active {
+    border: 1px solid #ddd;
+  }
+  
+  .todo_create:focus {
+    outline: none;
+  }
+  
+  .todo_btn {
+    width: 8%;
+    height: 60px;
+    border: none;
+    background: #82D9D0;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+    border-radius: 10px;
+  }
+  
+  .todo_btn:hover {
+    background: #79C9C1;
+  }
+  
+  .todo_btn:active {
+    background: #5A9690;
+  }
+  
+  .todo_btn svg {
+    display: block;
+    margin: 0 auto;
+    width: 40%;
+    height: 40%;
+    color: #fff;
+    border-radius: 10px;
+  }
+  
+  .todo_box {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    width: 100%;
+    height: 120px;
+    margin: 30px 0px;
+    border-radius: 10px;
+    background: #fff;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+  }
+  
+  .todo_thunbnaill_wrap {
+    padding: 10px;
+    width: 100px;
+    height: 100px;
+    border-radius: 10px;
+    background: #fff;
+  }
+  
+  .thunbnaill_off {
+    display: none;
+  }
+  .thunbnaill_on {
+    display: block;
+  }
+  
+  .todo_thunbnaill {
+    display: block;
+    width: 80px;
+    height: 80px;
+    margin: 0 auto;
+    border-radius: 50%;
+    background: #f2f2f2;
+    padding: 30px;
+    position: relative;
+  }
+  .todo_thunbnaill:hover {
+    background: #eee;
+  }
+  
+  .todo_thunbnaill:active {
+    background: #ddd;
+  }
+  
+  
+  .todo_thunbnaill input {
+    width: 80px;
+    height: 80px;
+    border: 1px solid red;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    opacity: 0;
+    cursor: pointer;
+  }
+  
+  .todo_thunbnaill svg {
+    width: 20px;
+    height: 20px;
+    color: #434A49;
+  }
+  
+  .todo_content_wrap {
+    width: 100%;
+    height: 100%;
+  }
+  
+  .todo_text {
+    display: block;
+    padding: 10px 60px;
+    font-size: 16px;
+    color: #434A49;
+  }
+  
+  .text_schedule {
+    height: 70px;
+    line-height: 50px;
+  }
+  
+  .text_full {
+    height: 120px;
+    line-height: 100px;
+  }
+  
+  .todo_schedule {
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    height: 50px;
+    padding: 0px 30px;
+  }
+  
+  .todo_schedule .react-datepicker-wrapper {
+    margin-right: 10px;
+    width: 120px;
+    border: 1px solid #eee;
+    border-radius: 10px;
+    transition-duration: .3s;
+  }
+  
+  .todo_schedule .react-datepicker__input-container {
+    display: block;
+    height: 30px;
+    width: 120px;
+    border-radius: inherit;
+  }
+  
+  
+  .todo_schedule input {
+    display: block;
+    margin: 0 auto;
+    appearance: none;
+    outline: none;
+    border: none;
+    background: inherit;
+    color:#434A49;
+    width: 100px;
+    height: 30px;
+    font-size: 14px;
+    text-align: center;
+    border-radius: inherit;
+  }
+  
+  
+  .more_btn { 
+    width: 50px;
+    height: 50px;
+    margin: 25px;
+    border: none;
+    border-radius: 10px;
+    background: none;
+  }
+  
+  .more_btn:hover {
+    background: #f2f2f2;
+  }
+  .more_btn:active {
+    background: #ddd;
+  }
+  
+  .more_btn svg {
+    width: 20px;
+    height: 20px;
+    color: #434A49;
+  }

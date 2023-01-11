@@ -1,8 +1,7 @@
 import React from "react";
 import { useState } from 'react';
-const menu_user = document.getElementById('menu_user');
-let render_user = document.getElementById('render_user');
-const menu_list = document.getElementById('menu_list');
+
+import '../css/HeaderUser.css';
 
 function HeaderUser () {
     let [ a, b ] = useState('회원가입');

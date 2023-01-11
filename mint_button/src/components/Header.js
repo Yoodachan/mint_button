@@ -5,49 +5,53 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars,faUser } from "@fortawesome/free-solid-svg-icons";
 import HeaderUser from './HeaderUser';
 import '../css/Header.css';
-import '../css/Header_User_Menu.css';
+
+// 콜백함수
+
+// // 1. 세개 넣어놨으니 콘솔 세번 찍힘
+// [1,2,3].map(function(){
+//   console.log(1);
+// })
+
+// // 2. 펑션 파라미터 콘솔찍으면 대괄호 속 내용물 다 찍힘
+// [1,2,3].map(function(a){
+//   console.log(a);
+// })
+
+// // 3. 안에 든 내용물을 바꿔서 대괄호 속 갯수만큼 넣어둠
+// [1,2,3].map(function(){
+//   return '111'
+// })
+
 
 function Header () {
+  let [ UserMenu, setUserMenu ] = useState(false)
 
+  return (
+      <header>
 
-        // let user_menu = () => {
+        <nav>
+          <div className="nav_content">
+            <h1 id="logo">
+                <Link to="/">todoP</Link>
+            </h1>
+            <ul id="nav_list">
+              <li id='menu_user'> 
+                <button type="button" onClick={ () => { setUserMenu(!UserMenu) } } >
+                  <FontAwesomeIcon icon={ faUser }/> 
+                </button> 
+              </li>
+              <li id='menu_list'> <button type="button"><FontAwesomeIcon icon={ faBars }/> </button> </li>
+            </ul>
 
-        //   if (render_user.classList.contains('render_user_off')) {
-        //     render_user.classList.remove('render_user_off');
-        //     render_user.classList.add('render_user_on')
-        //   }
-        //   // else {
-        //   //   render_user.classList.remove('render_user_on');
-        //   //   render_user.classList.add('render_user_off');
-        //   // }
-
-          
-        // }
-        // let [ HeaderUser, SetHeaderUser ] = useState('회원가입');
-
-        return (
-            <header>
-
-              <nav>
-                <div className="nav_content">
-                  <h1 id="logo">
-                      <Link to="/">todoP</Link>
-                  </h1>
-                  <ul id="nav_list">
-                    <li id='menu_user'> 
-                      <button type="button">
-                        <FontAwesomeIcon icon={ faUser }/> 
-                      </button> 
-                    </li>
-                    <li id='menu_list'> <button type="button"><FontAwesomeIcon icon={ faBars }/> </button> </li>
-                  </ul>
-
-                </div>
-              </nav>
-              <HeaderUser />
-          </header>
-          
-        )
+          </div>
+        </nav>
+        {
+          UserMenu == true ? <HeaderUser />  : null
+        }
+    </header>
+    
+  )
 }
 
 export default Header;

@@ -7,6 +7,10 @@
 
 /* ---------------------------------------- */
 
+* {
+  box-sizing: border-box;
+}
+
 body,h1,h2,h3,h4,h5,p,div,ul,li,dl,dt,dd{
   margin: 0;
   padding: 0;
@@ -21,19 +25,16 @@ h1,h4,h5,dt,strong,body,i,em,p,div,ul,li,dl,dt,dd,input,button,textarea {
 h2,h3 {
     font-family: 'Hahmlet', serif;
 }
-ul,li{
+ul,li {
     list-style:none
 }
-a{  display: block;
-    text-decoration:none;
-    color: inherit;
+a {  
+  display: block;
+  text-decoration:none;
+  color: inherit;
 }
 address,em {
     font-style:normal
-}
-
-* {
-  box-sizing: border-box;
 }
 
 input,button {
@@ -46,8 +47,9 @@ ul {
 }
 
 button {
-    appearance: none;
-    cursor: pointer;
+  display: block;
+  appearance: none;
+  cursor: pointer;
 }
 
 table,tr,th,td {

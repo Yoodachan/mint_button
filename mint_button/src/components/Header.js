@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { useState } from 'react';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBars,faUser } from "@fortawesome/free-solid-svg-icons";
+import { faBars,faUser,faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 import HeaderUser from './HeaderUser';
 import '../css/Header.css';
 
@@ -33,22 +33,45 @@ function Header () {
         <nav>
           <div className="nav_content">
             <h1 id="logo">
-                <Link to="/">todoP</Link>
+                <Link to="/">LOGO</Link>
             </h1>
-            <ul id="nav_list">
-              <li id='menu_user'> 
-                <button type="button" onClick={ () => { setUserMenu(!UserMenu) } } >
+
+            <ul id="nav_menu">
+              <li className="menu_item active"> <Link to="/user_join"> 타이틀 </Link> </li>
+              <li className="menu_item"> <Link to="/community_home"> 커뮤니티 </Link> </li>
+              <li className="menu_item"> <Link to="/user_join"> 스토어 </Link> </li>
+              <li className="menu_item"> <Link to="/user_join"> 문의하기 </Link> </li>
+            </ul>
+
+
+            <ul id="nav_right">
+              <li id="seach_bar"> 
+                <label htmlFor="seach">
+                  <FontAwesomeIcon icon={faMagnifyingGlass} />
+                  <input type="text" name="seach" /> 
+                </label>
+              </li>
+
+              <li id='menu_user'>
+
+                <button className="user_btn" type="button" onClick={ () => { setUserMenu(!UserMenu) } } >
                   <FontAwesomeIcon icon={ faUser }/> 
                 </button> 
               </li>
-              <li id='menu_list'> <button type="button"><FontAwesomeIcon icon={ faBars }/> </button> </li>
+
+              <li id='hidden_menu'> 
+                <button className="hidden_btn" type="button">
+                  <FontAwesomeIcon icon={ faBars }/> 
+                </button> 
+              </li>
+
             </ul>
 
           </div>
-        </nav>
-        {
+          {
           UserMenu == true ? <HeaderUser />  : null
-        }
+          }
+        </nav>
     </header>
     
   )

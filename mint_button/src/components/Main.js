@@ -1,10 +1,29 @@
 
 import { Route,Routes,Link } from "react-router-dom"
-import TodoList from './TodoList';
-import PostCreate from './PostCreate';
-import PostUpdate from './PostUpdate';
+
+
+import Home from './Home';
+
+//main
+
+// user
 import UserLogin from './UserLogin';
 import UserJoin from './UserJoin';
+
+// community
+import CommunityHome from './CommunityHome';
+import CommunityList from './CommunityList';
+
+
+// title
+import TitleList from './TitleList';
+import TitleInfo from './TitleInfo';
+
+import TodoList from './TodoList';
+import PostList from './PostList';
+import PostCreate from './PostCreate';
+import PostUpdate from './PostUpdate';
+
 
 import '../css/Main.css';
 
@@ -56,9 +75,17 @@ function Main () {
     
     <main id="main">
       <Routes>
-        <Route path="/" element={ <TodoList/> } />
+        {/* 메인 */}
+        <Route path="/" element={ <Home/> } />
+        {/* 유저 */}
         <Route path="/user_login" element={ <UserLogin/> } />
         <Route path="/user_join" element={ <UserJoin/> } />
+                {/* 타이틀 */}
+        {/* 커뮤니티 */}
+        <Route path="/community_home" element={ <CommunityHome/> } />
+        <Route path="/community_list" element={ <CommunityList/> } />
+        <Route path="/todo_list" element={ <TodoList/> } />
+        <Route path="/post_list" element={ <PostList/> } />
         <Route path="/post_create" element={ <PostCreate/> } />
         <Route path="/post_update" element={ <PostUpdate/> } />
       </Routes>

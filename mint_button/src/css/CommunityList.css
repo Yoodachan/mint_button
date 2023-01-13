@@ -1,0 +1,49 @@
+/* 메인 #82d9d0
+
+밝음 #87E0D7
+
+어두움 #68ADA6
+
+칙칙함 #AFD2CF
+
+다크 민트 #434A49 */
+
+.community_content {
+    width: 800px;
+    margin: 100px auto;
+    border-radius: 10px;
+}
+
+.community_cate {
+    display: flex;
+    justify-content: left;
+    width: 100%;
+    padding: 0px 10px;
+    height: 30px;
+    border-radius: 10px;
+}
+
+.cate_item {
+    width: 60px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    margin-right: 10px;
+    background: #C9DFDD;
+    border-radius: 10px;
+    color: #fff;   
+}
+
+.active {
+    background: #82d9d0;
+}
+
+.login_alert_box {
+    width: 100%;
+    border-radius: 10px;
+    background: #fff;
+    margin: 30px auto;
+    padding: 30px;
+    color: #434A49;
+    box-shadow: rgba(33, 35, 38, 0.1) 0px 10px 10px -10px;
+}

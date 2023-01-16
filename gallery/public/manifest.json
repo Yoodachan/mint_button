@@ -1,0 +1,13 @@
+{
+    "name": "To-Do 리스트",
+    "shot_name": "To-Do 리스트",
+    "icons": [ {
+        "src": "./img/icons/android-chrome-192x192.png",
+        "sizes": "192x192"
+    } ],
+    "start_url": "./index.html",
+    "display": "standalone",
+    "orientation": "portrait",
+    "background_color": "#ffffff",
+    "theme_color" : "#ffffff"
+}

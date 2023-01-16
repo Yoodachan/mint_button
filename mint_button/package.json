@@ -47,5 +47,6 @@
   "main": "index.js",
   "devDependencies": {},
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "homepage": "http://codingapple.com/blog"
 }

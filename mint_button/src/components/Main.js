@@ -24,6 +24,8 @@ import PostList from './PostList';
 import PostCreate from './PostCreate';
 import PostUpdate from './PostUpdate';
 
+// store
+import StoreHome from './StoreHome';
 
 import '../css/Main.css';
 
@@ -80,7 +82,9 @@ function Main () {
         {/* 유저 */}
         <Route path="/user_login" element={ <UserLogin/> } />
         <Route path="/user_join" element={ <UserJoin/> } />
-                {/* 타이틀 */}
+        {/* 스토어 */}
+        <Route path="/store_home" element={ <StoreHome/> } />
+        {/* 타이틀 */}
         {/* 커뮤니티 */}
         <Route path="/community_home" element={ <CommunityHome/> } />
         <Route path="/community_list" element={ <CommunityList/> } />

@@ -30,7 +30,6 @@ nav {
   position: relative;
 }
 nav .nav_content {
-  padding: 0px 15px;
   width: 100%;
   line-height: 80px;
   display: flex;
@@ -104,10 +103,14 @@ nav .nav_content {
 }
 
 #seach_bar label {
-  width: 200px;
-  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 240px;
+  height: 50px;
   position: relative;
   transition-duration: .3s;
+  border-radius: 10px;
 }
 
 #seach_bar label svg {
@@ -115,8 +118,8 @@ nav .nav_content {
   position: absolute;
   width: 20px;
   height: 20px;
-  top: 10px;
-  left: 10px;
+  top: 15px;
+  left: 35px;
   color:#79C9C1;
   z-index: 2;
 }
@@ -125,27 +128,29 @@ nav .nav_content {
   appearance: none;
   width: 200px;
   outline: none;
-  border: none;
+  border: 2px solid #f2f2f2;
   border-radius: 10px;
-  height: 40px;
+  height: 30px;
   padding: 0px 10px;
-  position: absolute;
-  right: 0px;
   transition-duration: .3s;
   z-index: 1;
   background: #f2f2f2;
+  margin: 0 auto;
 }
 
 #seach_bar input:hover {
   background: #f2f2f2;
+  border: 2px solid #f2f2f2;
 }
 
 #seach_bar input:focus {
   background: #eee;
+  border: 2px solid #eee;
 }
 
 #seach_bar input:active {
   background: #ddd;
+  border: 2px solid #ddd;
 }
 
 #menu_user:hover,

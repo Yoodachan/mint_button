@@ -39,7 +39,7 @@ function Header () {
             <ul id="nav_menu">
               <li className="menu_item active"> <Link to="/user_join"> 타이틀 </Link> </li>
               <li className="menu_item"> <Link to="/community_home"> 커뮤니티 </Link> </li>
-              <li className="menu_item"> <Link to="/user_join"> 스토어 </Link> </li>
+              <li className="menu_item"> <Link to="/store_home"> 스토어 </Link> </li>
               <li className="menu_item"> <Link to="/user_join"> 문의하기 </Link> </li>
             </ul>
 

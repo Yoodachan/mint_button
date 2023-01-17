@@ -79,16 +79,17 @@
 .product_img {
     display: block;
     width: 100%;
-    height: 300px;
-    background-image: url(../../public/image/Animal-Crossing-New-Horizons.jpg);
-    background-position: center;
+    height: 270px;
+    padding: 20px;
+    /* background-image: url(../../public/image/Animal-Crossing-New-Horizons.jpg); */
+    /* background-position: center;
     background-size: 100%,100%;
-    background-repeat: no-repeat;
+    background-repeat: no-repeat; */
 }
 
 .product_info_wrap {
     width: 100%;
-    height: 110px;
+    height: 140px;
     padding: 10px;
     border-radius: 10px;
     box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
@@ -106,24 +107,44 @@
 .product_text_box {
     display: flex;
     justify-content: left;
+    align-items: center;
     flex-wrap: wrap;
     text-align: left;
     width: 100%;
     height: 65px;
-    padding: 10px 0px;
+}
+
+.product_score_wrap {
+    width: 40%;
+}
+.product_like_wrap,
+.product_review_wrap {
+    width: 30%;
 }
 
 .product_score_wrap,
-.product_like_wrap {
-    width: 50%;
+.product_like_wrap,
+.product_review_wrap {
     height: 20px;
     line-height: 20px;
     display: block;
     font-size: 14px;
 }
+
+.product_score_wrap {
+    color: #ff923a;
+}
+
+.product_like_wrap {
+    color: #f33;
+}
+
+.product_review_wrap {
+    color: #5A9690; 
+}
+
 .product_score,
 .product_like {
-    color: #f88c65;
     margin-left: 5px;
 }
 
@@ -133,18 +154,17 @@
     justify-content: left;
     flex-wrap: wrap;
     width: 100%;
-    font-size: 14px;
+    height: 20px;
+    line-height: 20px;
+    font-size: 12px;
+    text-align: center;
+    color: #fff;
 }
 
 .product_tag {
     display: block;
     padding: 0px 8px;
-    height: 20px;
     border-radius: 10px;
-    margin-left: 5px;
-    color: #fff;
-    font-size: 12px;
-    text-align: center;
 }
 
 .sandbox {
@@ -155,6 +175,33 @@
     color: #f88c65;
 }
 
-.product_like button svg {
-    background-color: red;
+.product_price_wrap {
+    display: flex;
+    width: 100%;
+    height: 30px;
+    justify-content: left;
+    align-items: center;
+    font-size: 18px;
 }
+
+.product_price_rate,
+.product_price_sale,
+.product_price_cost {
+    margin-right: 5px;
+}
+
+
+.product_price_rate {
+    color: #f33;
+}
+
+.product_price_sale {
+    color: #434A49;
+}
+
+.product_price_cost {
+    color: #999;
+    font-size: 14px;
+    text-decoration:line-through;
+}
+

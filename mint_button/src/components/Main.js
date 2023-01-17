@@ -25,7 +25,7 @@ import PostCreate from './PostCreate';
 import PostUpdate from './PostUpdate';
 
 // store
-import StoreHome from './StoreHome';
+import Store from './Store';
 
 import '../css/Main.css';
 
@@ -83,7 +83,7 @@ function Main () {
         <Route path="/user_login" element={ <UserLogin/> } />
         <Route path="/user_join" element={ <UserJoin/> } />
         {/* 스토어 */}
-        <Route path="/store_home" element={ <StoreHome/> } />
+        <Route path="/store" element={ <Store/> } />
         {/* 타이틀 */}
         {/* 커뮤니티 */}
         <Route path="/community_home" element={ <CommunityHome/> } />

@@ -39,6 +39,9 @@ address,em {
 
 input,button {
   padding: 0;
+  border: none;
+  outline: none;
+  display: block;
 }
 
 ul {
@@ -47,9 +50,9 @@ ul {
 }
 
 button {
-  display: block;
   appearance: none;
   cursor: pointer;
+  background: none;
 }
 
 table,tr,th,td {
@@ -60,4 +63,8 @@ table,tr,th,td {
 
 textarea {
   resize: none;
+}
+
+i {
+  font-style: normal;
 }

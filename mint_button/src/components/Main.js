@@ -25,8 +25,7 @@ import PostCreate from './PostCreate';
 import PostUpdate from './PostUpdate';
 
 // store
-import Store from './Store';
-import StoreDetail from './pages/StoreDetail';
+import Store from './StoreHome';
 
 import '../css/Main.css';
 
@@ -84,10 +83,7 @@ function Main () {
         <Route path="/user_login" element={ <UserLogin/> } />
         <Route path="/user_join" element={ <UserJoin/> } />
         {/* 스토어 */}
-        <Route path="/store" element={ <Store/> }>
-        
-        </Route>
-        <Route path="/store/detail" element={ <StoreDetail/> }/>
+        <Route path="/store" element={ <Store/> } />
         {/* <Route path="/store/detail" element={ <StoreDetail/> } /> */}
         {/* 타이틀 */}
         {/* 커뮤니티 */}

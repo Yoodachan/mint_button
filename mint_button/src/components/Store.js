@@ -3,6 +3,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Route,Routes,Link,useNavigate,Outlet } from "react-router-dom"
 import { faHeart,faStar,faComment } from "@fortawesome/free-solid-svg-icons";
 
+import StoreHome from './StoreHome';
+
 import Product from './Product';
 import Detail from './pages/StoreDetail';
 // import StoreDetail from './StoreDetail';
@@ -18,12 +20,9 @@ import '../css/StoreHome.css';
 import StoreDetail from './pages/StoreDetail';
 
 function Store () {
-    let [title,setTitle] = useState(TitleData);
     return (
         <section className="store_content">
             <StoreHome/>
-
-            <Outlet />
         </section>
     )
 }

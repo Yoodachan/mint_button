@@ -1,7 +1,3 @@
-
-import { Route,Routes,Link } from "react-router-dom"
-
-
 import Home from './Home';
 
 //main
@@ -76,24 +72,7 @@ function Main () {
   return (
     
     <main id="main">
-      <Routes>
-        {/* 메인 */}
-        <Route path="/" element={ <Home/> } />
-        {/* 유저 */}
-        <Route path="/user_login" element={ <UserLogin/> } />
-        <Route path="/user_join" element={ <UserJoin/> } />
-        {/* 스토어 */}
-        <Route path="/store" element={ <Store/> } />
-        {/* <Route path="/store/detail" element={ <StoreDetail/> } /> */}
-        {/* 타이틀 */}
-        {/* 커뮤니티 */}
-        <Route path="/community_home" element={ <CommunityHome/> } />
-        <Route path="/community_list" element={ <CommunityList/> } />
-        <Route path="/todo_list" element={ <TodoList/> } />
-        <Route path="/post_list" element={ <PostList/> } />
-        <Route path="/post_create" element={ <PostCreate/> } />
-        <Route path="/post_update" element={ <PostUpdate/> } />
-      </Routes>
+
     </main>
   
   )

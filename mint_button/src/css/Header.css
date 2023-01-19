@@ -8,10 +8,10 @@ button:focus {
 }
 
 header a:hover {
-  background: #79C9C1;
+  background-color: #79C9C1;
 }
 header a:active {
-  background: #5A9690;
+  background-color: #5A9690;
 }
 
 header {

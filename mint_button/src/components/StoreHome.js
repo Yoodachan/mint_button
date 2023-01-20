@@ -19,8 +19,6 @@ function StoreHome () {
     let [title,setTitle] = useState(TitleData);
     return (
         <>
-        <div className='store_banner_wrap'>
-        </div>
         <div className='new_product_wrap'>
             <strong className='title_text'>✨<span className='new_title_color'>신규</span> 타이틀</strong>
             <div className="product_list">

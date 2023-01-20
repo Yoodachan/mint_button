@@ -47,65 +47,234 @@
     background-color: #5A9690;
 }
 
-.game_tag_wrap {
+.game_tag_select {
     display: flex;
     justify-content: left;
     align-items: center;
     width: 100%;
     height: 40px;
+    margin: 30px 0px;
 }
 
-.game_tag_wrap li {
-    padding: 5px 15px;
+.game_tag_filter {
     text-align: center;
     border-radius: 5px;
     margin-right: 8px;
-    background-color: #9ee9e1;
-    color: #fff;
 }
 
-.game_tag_wrap li button {
-    color: #fff;
+.game_tag_filter button {
+    padding: 5px 15px;
     font-size: 16px;
+    color: inherit;
 }
 
-.game_tag_wrap li button svg {
+.game_tag_filter button svg {
     width: 16px;
     height: 16px;
     margin-left: 8px;
     margin-bottom: 3px;
 }
 
-.game_filter_select {
+.filter_icon {
+    background-color: #fff;
+    padding: 5px 15px;
+    color:#9ee9e1;
+}
+
+.filter_on {
+    background-color: #9ee9e1;
+    color: #fff;
+}
+
+.filter_off {
+    background-color: #ddd;
+    color: #666;
+}
+
+.game_filter_wrap {
     display: flex;
-    justify-content: left;
     height: 65px;
     background-color: #f2f2f2;
-    padding: 15px 100px 15px 10px;
-    margin: 30px 0px;
+    padding: 15px 10px 15px 10px;
     border-top: 1px solid #999;
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
+    justify-content: space-between;
+}
+
+.game_filter_select {
+    display: flex;
+    justify-content: left;
 }
 
 .game_filter_select li {
     display: block;
-    padding: 5px 10px;
+    padding: 0px 10px;
     margin-right: 8px;
     background-color: #666;
     border-radius: 10px;
-    
 }
 
-.game_filter_select li button {
-    height: 25px;
+.game_filter_wrap button {
+    height: 35px;
     color: #fff;
 }
 
-.game_filter_select li button span {
+.game_filter_wrap span {
     height: 100%;
 }
 
-.game_filter_select li button svg {
+.game_filter_wrap svg {
     margin-left: 8px;
+}
+
+.game_filter_delete {
+    display: block;
+    padding: 5px 10px;
+    height: 35px;
+    margin-right: 8px;
+    background-color: #666;
+    border-radius: 10px;
+    color: #fff;
+}
+
+.game_list_wrap {
+    display: flex;
+    justify-content: left;
+    margin: 60px 0px;
+}
+
+.game_item_box {
+    width: 22%;
+    height: 320px;
+    border-radius: 10px;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    margin-right: calc(12% /3)
+}
+.last {
+    margin-right: 0px;
+}
+
+.game_item_img {
+    display: block;
+    width: 100%;
+    height: 150px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.game_item_text_wrap {
+    width: 100%;
+    height: 170px;
+    padding: 10px;
+}
+
+.game_title_name {
+    display: block;
+    width: 100%;
+    height: 30px;
+    line-height: 20px;
+    text-align: left;
+    font-size: 16px;
+    color:#434A49;
+    padding-bottom: 10px;
+}
+
+.game_title_date {
+    display: block;
+    width: 100%;
+    height: 30px;
+    line-height: 20px;
+    text-align: left;
+    font-size: 12px;
+    color: #777;
+    padding-bottom: 10px;
+}
+
+.game_title_info_wrap {
+    display: flex;
+    justify-content: left;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 30px;
+    padding-bottom: 10px;
+}
+
+.game_title_info_wrap p {
+    display: flex;
+    height: 20px;
+    justify-content: left;
+    width: calc(100% /3);
+}
+
+.game_title_info_wrap p>span {
+    display: block;
+    width: 30px;
+    height: 20px;
+    line-height: 20px;
+    margin-left: 5px;
+}
+
+.game_title_info_wrap p>svg {
+    display: block;
+    width: 20px;
+    height: 20px;
+}
+
+.game_score {
+    color: #ff923a;
+}
+
+.game_score {
+    color: #ff923a;
+}
+
+.game_like {
+    color: #f33;
+}
+
+.game_review {
+    color: #5A9690;
+}
+
+.game_tag_wrap {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: left;
+    align-items: center;
+    width: 100%;
+    height: 60px;
+}
+
+.game_tag {
+    font-size: 11px;
+    height: 25px;
+    padding: 3px 8px;
+    color: #fff;
+    border-radius: 5px;
+    margin: 0px 5px 5px 0px;
+}
+
+.sandbox {
+    background-color: orange;
+}
+.RPG {
+    background-color:tomato;
+}
+.advencher {
+    background-color: teal;
+}
+
+.game_list_pager {
+    width: 100%;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    border: 1px solid red;
+}
+
+.game_list_pager li {
+    margin: 0px 5px;
 }

@@ -7,7 +7,7 @@ function Product (props) {
     let navigate = useNavigate();
     return (
         // <Link onClick={ () => { navigate("detail"); console.log("ddd")} } className="product" >
-        <Link to="/detail" className="product" >
+        <Link to="/store/detail" className="product" >
             <div className="product_cate cate_hot"> 인기 </div>
 
             <img className="product_img" src="https://kroms.org/wp-content/uploads/2020/03/Animal-Crossing-New-Horizons.jpg" />

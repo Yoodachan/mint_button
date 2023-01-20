@@ -14,7 +14,7 @@ function StoreDetail (props) {
             <div className="detail_text_wrap">
 
                 <strong className="detail_title_wrap">
-                    <span className="detail_title_text"> ddd </span>
+                    <span className="detail_title_text"> { props.title.t_name } </span>
                     <button className="detail_url_link">
                         < FontAwesomeIcon icon={ faShareFromSquare } />
                     </button>

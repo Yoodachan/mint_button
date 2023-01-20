@@ -37,9 +37,9 @@ function Header () {
             </h1>
 
             <ul id="nav_menu">
-              <li className="menu_item active"> <Link to="/game"> 타이틀 </Link> </li>
+              <li className="menu_item active"> <Link to="/game/home"> 타이틀 </Link> </li>
               <li className="menu_item"> <Link to="/community_home"> 커뮤니티 </Link> </li>
-              <li className="menu_item"> <Link to="/store"> 스토어 </Link> </li>
+              <li className="menu_item"> <Link to="/store/home"> 스토어 </Link> </li>
               <li className="menu_item"> <Link to="/user_join"> 문의하기 </Link> </li>
             </ul>
 
@@ -53,7 +53,6 @@ function Header () {
               </li>
 
               <li id='menu_user'>
-
                 <button className="user_btn" type="button" onClick={ () => { setUserMenu(!UserMenu) } } >
                   <FontAwesomeIcon icon={ faUser }/> 
                 </button> 

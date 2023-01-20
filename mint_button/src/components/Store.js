@@ -9,6 +9,7 @@ import Product from './Product';
 import Detail from './pages/StoreDetail';
 // import StoreDetail from './StoreDetail';
 import "firebase/firestore"; 
+import TitleData from '../data/TitleData';
 
 import '../css/StoreHome.css';
 
@@ -17,12 +18,11 @@ import '../css/StoreHome.css';
 // 다수 사용 중괄호 일치 시켜야 함
 // import { a,b } from '../data/ProductData';
 
-import StoreDetail from './pages/StoreDetail';
-
 function Store () {
+    let [title,setTitle] = useState(TitleData);
     return (
         <section className="store_content">
-            <StoreHome/>
+            <Outlet/>
         </section>
     )
 }

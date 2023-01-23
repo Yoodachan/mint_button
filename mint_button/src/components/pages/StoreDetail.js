@@ -3,10 +3,11 @@ import { useState } from 'react';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faShareFromSquare,faStar,faHeart,faComment,faSortDown,faPlus,faEllipsisVertical } from "@fortawesome/free-solid-svg-icons";
 
-import TitleData from '../../data/TitleData';
 import "../../css/Detail.css"
+import { useParams } from 'react-router-dom';
 
 function StoreDetail (props) {
+    let {id} = useParams();
     return (
         <section className="detail_content">
         <div className="detail_top">
@@ -14,7 +15,7 @@ function StoreDetail (props) {
             <div className="detail_text_wrap">
 
                 <strong className="detail_title_wrap">
-                    <span className="detail_title_text"> { props.title.t_name } </span>
+                    <span className="detail_title_text"> { props.title[id].t_name } </span>
                     <button className="detail_url_link">
                         < FontAwesomeIcon icon={ faShareFromSquare } />
                     </button>

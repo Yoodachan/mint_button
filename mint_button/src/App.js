@@ -17,6 +17,7 @@ import TitleData from './data/TitleData';
 
 function App() {
   let [title,setTitle] = useState(TitleData);
+  let navigate = useNavigate();
   
   // let test = '날짜';
   return (
@@ -24,18 +25,18 @@ function App() {
     <div className="App">
       
       <Header/>
-      
       <Routes>
         <Route path="/" element={ <Home/> } />
+        <Route path="*" element={ <div>404</div> } />
 
         <Route path="/game" element={ <Game/> }>
           <Route path="home" element={ <GameHome/>} />
           <Route path="upload" element={ <GameUpload/>} />
         </Route>
 
-        <Route path="/store" element={ <Store/> } >
-          <Route path="home" element={ <StoreHome/> } />
-          <Route path="detail" element={ <Detail title={ title }/> } /> 
+        <Route path="/store" element={ <Store title={ title }/> } >
+          <Route path="home" element={ <StoreHome title={ title } /> } />
+          <Route path='detail/:id' element={ <Detail title={ title } /> } /> 
         </Route>
                
       </Routes>

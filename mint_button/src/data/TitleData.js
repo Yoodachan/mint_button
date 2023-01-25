@@ -18,10 +18,10 @@ let TitleData = [
         t_score : 3.1,
         t_like : 5,
         t_review : 10,
-        t_cate : "#샌드박스",
         t_player : "multi",
         t_img : "dsadsad",
-        t_tag : "none"
+        t_date_release : 20200320,
+        t_tag : "#샌드박스",
     },
     {
         t_id : 1,
@@ -32,10 +32,10 @@ let TitleData = [
         t_score : 3.1,
         t_like : 5,
         t_review : 10,
-        t_cate : "#샌드박스",
         t_player : "multi",
         t_img : "dsadsad",
-        t_tag : "none"
+        t_date_release : 20210326,
+        t_tag : "#샌드박스",
     },
     {
         t_id : 2,
@@ -46,10 +46,10 @@ let TitleData = [
         t_score : 3.1,
         t_like : 5,
         t_review : 10,
-        t_cate : "#샌드박스",
         t_player : "multi",
         t_img : "dsadsad",
-        t_tag : "none"
+        t_date_release : 20191115,
+        t_tag : "#샌드박스",
     },
     {
         t_id : 3,
@@ -60,10 +60,11 @@ let TitleData = [
         t_score : 3.1,
         t_like : 5,
         t_review : 10,
-        t_cate : "#샌드박스",
         t_player : "multi",
         t_img : "dsadsad",
-        t_tag : "none"
+        t_tag : "none",
+        t_date_release : 20171201,
+        t_tag : "#샌드박스",
     },
     {
         t_id : 4,
@@ -74,10 +75,11 @@ let TitleData = [
         t_score : 3.1,
         t_like : 5,
         t_review : 10,
-        t_cate : "#샌드박스",
         t_player : "multi",
         t_img : "dsadsad",
-        t_tag : "none"
+        t_tag : "none",
+        t_date_release : 20221021,
+        t_tag : "#샌드박스",
     },
     {
         t_id : 5,
@@ -88,10 +90,11 @@ let TitleData = [
         t_score : 3.1,
         t_like : 5,
         t_review : 10,
-        t_cate : "#샌드박스",
         t_player : "multi",
         t_img : "dsadsad",
-        t_tag : "none"
+        t_tag : "none",
+        t_date_release : 20220909,
+        t_cate : "#샌드박스",
     },
     {
         t_id : 6,
@@ -102,10 +105,11 @@ let TitleData = [
         t_score : 3.1,
         t_like : 5,
         t_review : 10,
-        t_cate : "#샌드박스",
         t_player : "multi",
         t_img : "dsadsad",
-        t_tag : "none"
+        t_tag : "none",
+        t_date_release : 20180201,
+        t_cate : "#샌드박스",
     },
 ]
 export default TitleData;

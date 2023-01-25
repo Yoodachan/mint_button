@@ -236,9 +236,7 @@ function StoreDetail (props) {
 
         <div className="detail_comment_wrap">
             <ul className="detail_comment_cate">
-                <li><button type="button"> 전체 리뷰 (20) </button></li>
-                <li><button type="button"> 구매자 리뷰 (10) </button></li>
-                <li><button type="button"> 커뮤니티 리뷰 (10) </button></li>
+                <li><button type="button"> 리뷰 (20) </button></li>
             </ul>
             <ul className="detail_comment_sort">
                 <li><button type="button"> 최신순 </button></li>

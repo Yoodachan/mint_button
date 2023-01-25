@@ -3,16 +3,28 @@ import { faPlus,faLink } from "@fortawesome/free-solid-svg-icons";
 import { faHeart } from "@fortawesome/free-regular-svg-icons";
 
 import { useState } from 'react';
+import styled from 'styled-components';
 
-import '../css/PostCreate.css';
+let  = styled.ul
+`
+width: 1200px;
+margin: 100px auto;
+color: red;
+
+`;
+
 
 function PostUpdate() {
-    let [ title_name, title_change ] = useState('제목');
     return (
-        <section id="main_content">
-            <div className='post_header'>
-            <ul className='post_title_box'>
-                
+        <>
+            <ul className='image_wrap'>
+                상품 이미지
+                상품 아이디
+                상품 이름
+                상품 태그
+                상품 출시일
+
+
                 <li className='post_thumbnaill_wrap'>
                 <button type="button">
                     <FontAwesomeIcon icon={ faPlus } />
@@ -38,7 +50,6 @@ function PostUpdate() {
                 </li>
 
             </ul>
-            </div>
 
             <div className='post_body'>
             <div className='post_content_box'>
@@ -69,7 +80,7 @@ function PostUpdate() {
                 목록 보기
                 </button>
             </div>
-        </section>
+        </>
     )
 }
 

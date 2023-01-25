@@ -1,9 +1,11 @@
-import '../css/Game.css';
-
+import { useState } from 'react';
+import GameItem from './GameItem';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFilter,faSortDown,faXmark,faHeart,faStar,faComment } from "@fortawesome/free-solid-svg-icons";
+import TitleData from '../data/TitleData';
 
-function Game () {
+function GameHome () {
+    let [title,setTitle] = useState(TitleData);
     return (
         <>
         
@@ -77,141 +79,15 @@ function Game () {
             </div>
             {/* <div className="game_result_wrap">총 10개</div> */}
             <div className="game_list_wrap">
-                <div className="game_item_box">
-                    <img className="game_item_img" src="https://store.nintendo.co.kr/media/wysiwyg/kirby.png" />
-                    <div className="game_item_text_wrap">
-                        <strong className="game_title_name"> 별의 커비 디스커버리 </strong>
-                        <span className="game_title_date"> 2022.12.10 </span>
-                        <div className="game_title_info_wrap">
-                            <p className="game_info_wrap game_score">
-                                <FontAwesomeIcon icon={ faStar } />
-                                <span> 4.1 </span>
-                            </p>
+                {
+                    title.map( (q,i) => { 
+                        return (
+                            <GameItem title={ title[i] } key={i} />
+                        )
+                    } )
+                }
 
-                            <p className="game_info_wrap game_like">
-                                <FontAwesomeIcon icon={ faHeart } />
-                                <span> 10 </span>
-                            </p>
-                            <p className="game_info_wrap game_review">
-                                <FontAwesomeIcon icon={ faComment }  />
-                                <span> 10 </span>
-                            </p>
-                        </div>
-                        <div className="game_tag_wrap">
-                            <span className="game_tag sandbox">
-                                #샌드박스
-                            </span>
-                            <span className="game_tag RPG">
-                                #로컬멀티
-                            </span>
-                            <span className="game_tag advencher">
-                                #어드벤처
-                            </span>
-                        </div>
-                    </div>
-                </div>
 
-                <div className="game_item_box">
-                    <img className="game_item_img" src="https://store.nintendo.co.kr/media/wysiwyg/kirby.png" />
-                    <div className="game_item_text_wrap">
-                        <strong className="game_title_name"> 별의 커비 디스커버리 </strong>
-                        <span className="game_title_date"> 2022.12.10 </span>
-                        <div className="game_title_info_wrap">
-                            <p className="game_info_wrap game_score">
-                                <FontAwesomeIcon icon={ faStar } />
-                                <span> 4.1 </span>
-                            </p>
-
-                            <p className="game_info_wrap game_like">
-                                <FontAwesomeIcon icon={ faHeart } />
-                                <span> 10 </span>
-                            </p>
-                            <p className="game_info_wrap game_review">
-                                <FontAwesomeIcon icon={ faComment }  />
-                                <span> 10 </span>
-                            </p>
-                        </div>
-                        <div className="game_tag_wrap">
-                            <span className="game_tag sandbox">
-                                #샌드박스
-                            </span>
-                            <span className="game_tag RPG">
-                                #로컬멀티
-                            </span>
-                            <span className="game_tag advencher">
-                                #어드벤처
-                            </span>
-                        </div>
-                    </div>
-                </div>
-
-                <div className="game_item_box">
-                    <img className="game_item_img" src="https://store.nintendo.co.kr/media/wysiwyg/kirby.png" />
-                    <div className="game_item_text_wrap">
-                        <strong className="game_title_name"> 별의 커비 디스커버리 </strong>
-                        <span className="game_title_date"> 2022.12.10 </span>
-                        <div className="game_title_info_wrap">
-                            <p className="game_info_wrap game_score">
-                                <FontAwesomeIcon icon={ faStar } />
-                                <span> 4.1 </span>
-                            </p>
-
-                            <p className="game_info_wrap game_like">
-                                <FontAwesomeIcon icon={ faHeart } />
-                                <span> 10 </span>
-                            </p>
-                            <p className="game_info_wrap game_review">
-                                <FontAwesomeIcon icon={ faComment }  />
-                                <span> 10 </span>
-                            </p>
-                        </div>
-                        <div className="game_tag_wrap">
-                            <span className="game_tag sandbox">
-                                #샌드박스
-                            </span>
-                            <span className="game_tag RPG">
-                                #로컬멀티
-                            </span>
-                            <span className="game_tag advencher">
-                                #어드벤처
-                            </span>
-                        </div>
-                    </div>
-                </div>
-
-                <div className="game_item_box last">
-                    <img className="game_item_img" src="https://store.nintendo.co.kr/media/wysiwyg/kirby.png" />
-                    <div className="game_item_text_wrap">
-                        <strong className="game_title_name"> 별의 커비 디스커버리 </strong>
-                        <span className="game_title_date"> 2022.12.10 </span>
-                        <div className="game_title_info_wrap">
-                            <p className="game_info_wrap game_score">
-                                <FontAwesomeIcon icon={ faStar } />
-                                <span> 4.1 </span>
-                            </p>
-
-                            <p className="game_info_wrap game_like">
-                                <FontAwesomeIcon icon={ faHeart } />
-                                <span> 10 </span>
-                            </p>
-                            <p className="game_info_wrap game_review">
-                                <FontAwesomeIcon icon={ faComment }  />
-                                <span> 10 </span>
-                            </p>
-                        </div>
-                        <div className="game_tag_wrap">
-                            <span className="game_tag sandbox">
-                                #샌드박스
-                            </span>
-                            <span className="game_tag RPG">
-                                #로컬멀티
-                            </span>
-                            <span className="game_tag advencher">
-                                #어드벤처
-                            </span>
-                        </div>
-                    </div>
-                </div>
             </div>
             <ul className="game_list_pager">
                <li><button type="button">맨 앞으로</button></li>
@@ -226,4 +102,4 @@ function Game () {
     )
 }
 
-export default Game;
+export default GameHome;

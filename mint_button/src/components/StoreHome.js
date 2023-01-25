@@ -1,20 +1,8 @@
 import { useState } from 'react';
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Route,Routes,Link,useNavigate,Outlet } from "react-router-dom"
-import { faHeart,faStar,faComment } from "@fortawesome/free-solid-svg-icons";
-
-import Product from './Product';
-import Detail from './pages/StoreDetail';
-// import StoreDetail from './StoreDetail';
+import StoreItem from './StoreItem';
 import "firebase/firestore"; 
 
-// 하나만 사용
-// import ProductData from '../data/ProductData';
-// 다수 사용 중괄호 일치 시켜야 함
-// import { a,b } from '../data/ProductData';
-
 import TitleData from '../data/TitleData';
-
 function StoreHome () {
     let [title,setTitle] = useState(TitleData);
     return (
@@ -25,11 +13,10 @@ function StoreHome () {
                 {
                     title.map( (q,i) => {
                             return (
-                                < Product title={ title[i] } key={i}  />
+                                < StoreItem title={ title[i] } key={i}  />
                             )
                     })
                 }
-
                 <div className="product product_last">
                     <div className="product_cate cate_new"> 신규 </div>
                     <span className="product_img"></span>
@@ -53,20 +40,18 @@ function StoreHome () {
                                 장르
                                 <span className="product_tag sandbox">#샌드박스</span>
                             </span>
-
                         </div>
                     </div>
                 </div>
-
             </div>
         </div>
         <div className='hot_product_wrap'>
             <strong className='title_text'>🔥<span className='hot_title_color'>인기</span> 타이틀</strong>
             <div className="product_list">
 
-                < Product title={title[0]} i={0}  />
-                < Product title={title[1]} i={1}  />
-                < Product title={title[2]} i={2}  />
+                < StoreItem title={title[0]} i={0}  />
+                < StoreItem title={title[1]} i={1}  />
+                < StoreItem title={title[2]} i={2}  />
 
                 <div className="product product_last">
                 </div>

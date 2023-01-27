@@ -1,7 +1,9 @@
 import { Router,Route,Routes,Link,useNavigate,Outlet } from "react-router-dom"
+import ResetStyles from './components/style/Reset';
 import { useState } from 'react';
 
 import Header from './components/Header';
+
 import Main from './components/Main';
 
 import Game from './components/Game';
@@ -14,9 +16,8 @@ import StoreHome from './components/StoreHome';
 import StoreDetail from './components/pages/StoreDetail';
 
 import Footer from './components/Footer';
-import TitleData from './data/TitleData';
 
-import ResetStyles from './components/style/Reset';
+import TitleData from './data/TitleData';
 
 
 function App() {

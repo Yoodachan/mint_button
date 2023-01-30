@@ -1,12 +1,10 @@
-import '../css/Game.css';
+import base from '../css/Base.module.css';
 
-import { Route,Routes,Link,useNavigate,Outlet } from "react-router-dom";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faFilter,faSortDown,faXmark,faHeart,faStar,faComment } from "@fortawesome/free-solid-svg-icons";
+import { Outlet } from "react-router-dom";
 
 function Game () {
     return (
-        <section className="game_content">
+        <section className={ base.content }>
             <Outlet/>
         </section>
     )

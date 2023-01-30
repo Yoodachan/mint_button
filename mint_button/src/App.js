@@ -10,6 +10,7 @@ import Game from './components/Game';
 import GameHome from './components/GameHome';
 import GameDetail from './components/pages/GameDetail';
 import GameUpload from './components/GameUpload';
+import GameSuccess from './components/GameSuccess';
 
 import Store from './components/Store';
 import StoreHome from './components/StoreHome';
@@ -18,6 +19,8 @@ import StoreDetail from './components/pages/StoreDetail';
 import Footer from './components/Footer';
 
 import TitleData from './data/TitleData';
+
+import  './css/App.css';
 
 
 function App() {
@@ -34,6 +37,7 @@ function App() {
                 <Route path="home" element={ <GameHome/>} />
                 <Route path='detail/:id' element={ <GameDetail title={ title } /> } /> 
                 <Route path="upload" element={ <GameUpload/>} />
+                <Route path="success" element={ <GameSuccess/>} />
               </Route>
               <Route path="/store" element={ <Store title={ title }/> } >
                 <Route path="home" element={ <StoreHome title={ title } /> } />

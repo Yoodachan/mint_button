@@ -65,6 +65,13 @@ i {
   font-style: normal;
 }
 
+h1:focus,
+li:focus,
+a:focus,
+button:focus {
+  outline: none;
+}
+
 `;
 
 

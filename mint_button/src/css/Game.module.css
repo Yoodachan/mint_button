@@ -41,7 +41,7 @@
     width: 22%;
     height: 320px;
     border-radius: 10px;
-    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
     margin-right: calc(12% /3);
     margin-bottom: 30px;
     transition-duration: .3s;
@@ -52,7 +52,7 @@
 
 }
 
-.item:active {
+.item:hover {
     scale: 95%;
 }
 
@@ -190,22 +190,6 @@
     top: 0px;
     left: 0px;
     cursor: pointer;
-}
-
-
-
-.g_input_wrap {
-    display: block;
-    width: 100%;
-    margin: 15px 0px;
-}
-
-.g_input { 
-    width: 100%;
-    height: 40px;
-    line-height: 20px;
-    padding: 10px 15px;
-    border-radius: 10px;
 }
 
 

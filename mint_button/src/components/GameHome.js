@@ -108,7 +108,6 @@ function GameHome () {
                     </ul>
             </div>
 
-
             {/* <div className="game_result_wrap">총 10개</div> */}
             <div className={game.list}>
                 {
@@ -118,9 +117,8 @@ function GameHome () {
                         )
                     } )
                 }
-
-
             </div>
+
             <ul className={base.pager_wrap}>
                <li><button type="button" className={ base.pager_normal }> <FontAwesomeIcon icon={ faAnglesLeft } /> </button></li>  
                <li><button type="button" className={ base.pager_normal }> <FontAwesomeIcon icon={ faAngleLeft } /> </button></li> 

@@ -4,6 +4,10 @@ import { useState } from 'react';
 
 import Header from './components/Header';
 
+import User from './components/User';
+import UserJoin from './components/UserJoin';
+import UserLogin from './components/UserLogin';
+
 import Main from './components/Main';
 
 import Game from './components/Game';
@@ -20,8 +24,7 @@ import Footer from './components/Footer';
 
 import TitleData from './data/TitleData';
 
-import  './css/App.css';
-
+import './css/App.css';
 
 function App() {
   let [title,setTitle] = useState(TitleData);
@@ -31,18 +34,28 @@ function App() {
         <ResetStyles/>
           <Header/>
             <Routes>
+              
               <Route path="/" element={ <Main/> } />
-              <Route path="*" element={ <div>404</div> } />
+
+              <Route path="/user" element={ <User/> }>
+                <Route path="login" element={ <UserLogin/> } />
+                <Route path="join" element={ <UserJoin/> } />
+              </Route>
+
               <Route path="/game" element={ <Game/> }>
                 <Route path="home" element={ <GameHome/>} />
                 <Route path='detail/:id' element={ <GameDetail title={ title } /> } /> 
                 <Route path="upload" element={ <GameUpload/>} />
                 <Route path="success" element={ <GameSuccess/>} />
               </Route>
+
               <Route path="/store" element={ <Store title={ title }/> } >
                 <Route path="home" element={ <StoreHome title={ title } /> } />
                 <Route path='detail/:id' element={ <StoreDetail title={ title } /> } /> 
               </Route>
+
+              <Route path="*" element={ <div>404</div> } />
+
             </Routes>
           <Footer/>
     </div>

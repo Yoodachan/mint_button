@@ -1,3 +1,21 @@
-.App {
-    background-color: #f0faf9; 
+/* 시그니처 컬러
+
+
+
+메인 #82d9d0
+
+밝음 #87E0D7
+
+어두움 #68ADA6
+
+#C9DFDD
+
+칙칙함 #AFD2CF
+
+다크 민트 #434A49
+
+*/
+
+body {
+    overflow-y: scroll;
 }

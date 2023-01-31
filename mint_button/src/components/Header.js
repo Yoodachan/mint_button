@@ -1,17 +1,19 @@
 import React from "react";
-import { NavLink,Link } from "react-router-dom";
-import { useState } from 'react';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { NavLink,Link } from "react-router-dom";
 import { faBars,faUser,faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
+import { useState } from 'react';
 import HeaderUser from './HeaderUser';
-import '../css/Header.css';
+
+import base from '../css/Base.module.css';
+import header from '../css/Header.module.css';
 
 // 콜백함수
 
 // // 1. 세개 넣어놨으니 콘솔 세번 찍힘
 // [1,2,3].map(function(){
 //   console.log(1);
-// })
+// 
 
 // // 2. 펑션 파라미터 콘솔찍으면 대괄호 속 내용물 다 찍힘
 // [1,2,3].map(function(a){
@@ -29,50 +31,44 @@ function Header () {
 
   return (
       <header>
+          <div className={ `${base.content} ${ header.content_style }` }>
 
-        <nav>
-          <div className="nav_content">
-            <h1 id="logo">
-                <Link to="/">LOGO</Link>
+            <h1 className={ header.logo }>
+                <Link to="/" className={ header.logo_content }>LOGO</Link>
             </h1>
 
-            <ul id="nav_menu">
-              <li className="menu_item"> <NavLink to="/game/home"> 타이틀 </NavLink> </li>
-              <li className="menu_item"> <NavLink to="/community_home"> 커뮤니티 </NavLink> </li>
-              <li className="menu_item"> <NavLink to="/store/home"> 스토어 </NavLink> </li>
-              <li className="menu_item"> <NavLink to="/user_join"> 문의하기 </NavLink> </li>
+            <ul className={ header.nav_menu }>
+              <li className={ header.menu_item }> <NavLink className={ header.menu_link } to="/game/home"> 타이틀 </NavLink> </li>
+              <li className={ header.menu_item }> <NavLink className={ header.menu_link } to="/community_home"> 커뮤니티 </NavLink> </li>
+              <li className={ header.menu_item }> <NavLink className={ header.menu_link } to="/store/home"> 스토어 </NavLink> </li>
+              <li className={ header.menu_item }> <NavLink className={ header.menu_link } to="/user_join"> 문의하기 </NavLink> </li>
             </ul>
 
 
-            <ul id="nav_right">
-              <li id="seach_bar"> 
-                <label htmlFor="seach">
+            <ul className={ header.content_right_wrap } >
+              <li className={` ${ header.seach_bar } ${ header.content_item } `}> 
+                <label htmlFor="search" className={ header.seach_wrap }>
                   <FontAwesomeIcon icon={faMagnifyingGlass} />
-                  <input type="text" name="seach" /> 
+                  <input type="text" name="search" className={ header.search } /> 
                 </label>
               </li>
 
-              <li id='menu_user'>
-                <button className="user_btn" type="button" onClick={ () => { setUserMenu(!UserMenu) } } >
+              <li className={ ` ${ header.content_item } ` }>
+                <button className={ header.user_btn } type="button" onClick={ () => { setUserMenu(!UserMenu) } } >
                   <FontAwesomeIcon icon={ faUser }/> 
                 </button> 
               </li>
 
-              <li id='hidden_menu'> 
-                <button className="hidden_btn" type="button">
+              <li className={  ` ${ header.content_item } ` }> 
+                <button className={ header.list_btn } type="button">
                   <FontAwesomeIcon icon={ faBars }/> 
                 </button> 
               </li>
 
             </ul>
-
+            { UserMenu == true ? <HeaderUser />  : null }
           </div>
-          {
-          UserMenu == true ? <HeaderUser />  : null
-          }
-        </nav>
     </header>
-    
   )
 }
 

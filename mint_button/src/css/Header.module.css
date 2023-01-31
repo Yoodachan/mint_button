@@ -1,43 +1,16 @@
 /* 헤더 및 네브 */
 
-h1:focus,
-li:focus,
-a:focus,
-button:focus {
-  outline: none;
-}
-
-header a:hover {
-  background-color: #79C9C1;
-}
-header a:active {
-  background-color: #5A9690;
-}
-
 header {
-  width: 100%;
   background-color: #82d9d0;
   box-shadow: rgba(33, 35, 38, 0.1) 0px 10px 10px -10px;
-}
-
-nav {
-  display: flex;
-  width: 1200px;
-  justify-content: space-between;
-  height: 80px;
   color: #fff;
-  margin: 0 auto;
-  position: relative;
 }
-nav .nav_content {
-  width: 100%;
-  line-height: 80px;
+.content_style {
   display: flex;
   justify-content: space-between;
-  height: 80px;
 }
 
-#logo {
+.logo {
   width: 100px;
   height: 80px;
   text-align: center;
@@ -47,14 +20,14 @@ nav .nav_content {
   padding: 15px 0px;
 }
 
-#logo a {
+.logo_content {
   width: 100px;
   height: 50px;
   line-height: 50px;
   border-radius: inherit;
 }
 
-#nav_menu {
+.nav_menu {
   display: flex;
   width: 500px;
   height: 80px;
@@ -62,7 +35,7 @@ nav .nav_content {
   text-align: center;
 }
 
-#nav_menu li {
+.menu_item {
   width: 80px;
   height: 80px;
   padding: 15px 0px;
@@ -70,14 +43,22 @@ nav .nav_content {
   border-radius: 10px;
 }
 
-#nav_menu li a {
+.menu_link {
   height: 50px;
   line-height: 50px;
   border-radius: 10px;
   transition-duration: .6s;
 }
 
-#nav_right {
+.menu_link:hover {
+  background-color: #79C9C1;
+}
+
+.menu_link:active {
+  scale: 95%;
+} 
+
+.content_right_wrap {
   width: 600px;
   font-size: 16px;
   display: flex;
@@ -88,49 +69,52 @@ nav .nav_content {
 }
 
 
-#nav_right li {
+.content_item {
   text-align: center;
   border-radius: 10px;
   height: 50px;
   margin-right: 15px;
 }
 
-#nav_right #seach_bar {
+.seach_bar{
   display: flex;
   justify-content: right;
   align-items: center;
   width: 300px;
 }
 
-#seach_bar label {
+.seach_wrap {
   display: flex;
-  justify-content: center;
+  justify-content: left;
   align-items: center;
-  width: 240px;
+  width: 200px;
   height: 50px;
   position: relative;
   transition-duration: .3s;
   border-radius: 10px;
 }
+.seach_wrap:hover {
+  width: 240px;
+}
 
-#seach_bar label svg {
+.seach_wrap svg {
   display: block;
   position: absolute;
   width: 20px;
   height: 20px;
   top: 15px;
-  left: 35px;
+  left: 15px;
   color:#79C9C1;
   z-index: 2;
 }
 
-#seach_bar input {
+.search {
   appearance: none;
-  width: 200px;
+  width: 100%;
   outline: none;
-  border: 2px solid #f2f2f2;
+  border: 2px solid #eee;
   border-radius: 10px;
-  height: 30px;
+  height: 35px;
   padding: 0px 10px;
   transition-duration: .3s;
   z-index: 1;
@@ -138,27 +122,13 @@ nav .nav_content {
   margin: 0 auto;
 }
 
-#seach_bar input:hover {
-  background: #f2f2f2;
-  border: 2px solid #f2f2f2;
+.search:active {
+  border: 2px solid #999;
 }
 
-#seach_bar input:focus {
-  background: #eee;
-  border: 2px solid #eee;
-}
 
-#seach_bar input:active {
-  background: #ddd;
-  border: 2px solid #ddd;
-}
-
-#menu_user:hover,
-#hidden_menu:hover {
-  background: #79C9C1;
-}
-
-#nav_right button {
+.user_btn,
+.list_btn {
   border: none;
   border-radius:inherit;
   background: none;
@@ -166,16 +136,49 @@ nav .nav_content {
   width: 60px;
   height: 50px;
   font-size: 25px;
+  color: #fff;
+  border-radius: 10px;
+  transition-duration: .3s;
 }
 
-#nav_right button:hover {
+.user_btn:hover,
+.list_btn:hover {
   background: #79C9C1;
 }
-#nav_right button:active {
-  background: #5A9690;
+.user_btn:active,
+.list_btn:active {
+  scale: 95%;
 }
 
-#nav_right button svg {
-  color: #fff;
-  /* color: #333; */
+
+
+.render_user {
+  position:absolute;
+  width: 100px;
+  top: 65px;
+  right: 90px;
+  padding: 10px;
+  text-align: center;
+  color: #333;
+  border-radius: 10px;
+  background: #fff;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  z-index: 10;
+}
+
+.render_item {
+  margin: 8px 0px;
+  padding: 0px 10px;
+  height: 30px;
+  line-height: 30px;
+  border-radius: 10px;
+  
+}
+
+.render_item:hover {
+  background: #f2f2f2;
+}
+
+.render_item:active {
+  background: #ddd;
 }

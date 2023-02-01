@@ -23,6 +23,7 @@
     border-radius: 10px;
     background-color: #fff;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    margin: 60px 0px;
 }
 
 .top_wrap {
@@ -98,7 +99,7 @@
     border-radius: 5px;
     font-size: 16px;
     text-align: center;
-    margin: 30px auto;
+    margin: 10px auto;
 }
 
 
@@ -173,7 +174,6 @@
     background-color: #eee;
     color: #999;
     transition-duration: .3s;
-    
 }
 
 .btn_style_second:hover {
@@ -185,6 +185,21 @@
 .btn_style_second:active {
     scale: 95%;
 }
+
+.btn_style_kakao {
+    background-color: #eee;
+    color: #999;
+    transition-duration: .3s;
+}
+
+
+
+
+
+
+
+
+
 
 .btn_right {
     width: 140px;

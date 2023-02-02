@@ -18,16 +18,30 @@ function UserLogin () {
 
             <button className={ `${base.btn_style_first} ${ base.btn_size_long }` } type="button"> 로그인 </button>
 
-            <Link className={`${user.link_text}`}>비밀번호를 잊어버리셨나요?</Link>
+            <div className={ user.line_wrap }>
+                <Link className={`${user.link_text}`}>비밀번호를 잊어버리셨나요?</Link>
+            </div>
 
-            <button className={ `${base.btn_style_first} ${ base.btn_size_long }` } type="button"> 카카오 로그인</button>
+            <div className={ user.line_wrap }>
+                <span className={ user.login_line } />
+                <p className={user.login_line_text}> SNS 로그인 </p>
+                <span className={ user.login_line } />
+            </div>
 
-            <button className={ `${base.btn_style_first} ${ base.btn_size_long }` } type="button"> 구글 로그인</button>
+            <div className={ user.line_wrap }>
+                <button className={ `${base.btn_circle} ${ base.btn_style_goggle }` } type="button">
+                    <img className={ base.ico_goggle }src='../image/sns_goggle.png' />
+                </button>
 
-            <span className={ user.join_link_wrap }>
+                <button className={ `${base.btn_circle} ${ base.btn_style_kakao }` } type="button">
+                    <img className={ base.ico_kakao }src='../image/sns_kakao.png' />
+                </button>
+            </div>
+
+            <div className={ user.line_wrap }>
                 계정이 없으신가요?
                 <Link className={`${user.link_text} ${user.login_join}`} to="/user/join">간편 회원가입</Link>
-            </span>
+            </div>
 
         </form>
     )

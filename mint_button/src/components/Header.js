@@ -31,10 +31,10 @@ function Header () {
 
   return (
       <header>
-          <div className={ `${base.content} ${ header.content_style }` }>
+          <div className={ `${ header.content_style }` }>
 
             <h1 className={ header.logo }>
-                <Link to="/" className={ header.logo_content }>LOGO</Link>
+                <Link to="/" className={ header.logo_content }>MTBT</Link>
             </h1>
 
             <ul className={ header.nav_menu }>

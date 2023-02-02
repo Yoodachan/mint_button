@@ -15,17 +15,11 @@ function GameUpload () {
     return (
         <>
             <div className={ base.top_wrap }>
-                    <strong className={ base.bar_title }> 🎮 <span className={ `${ base.color_light } ${ base.bar_title_text }` }> 타이틀 </span> 등록 </strong>  
+                    <strong className={ base.bar_title }> 🎮 <span className={ `${ base.color_light }` }> 타이틀 </span> 등록 </strong>  
             </div>
 
-           {/* 
-           게임 이름
-           게임 정보
-           게임 출시일
-           게임 태그
-            */}
-
             <form className={ base.content_middle }>
+
                 <label className={ `${game.g_img_wrap} ${base.style_set_first}` } htmlFor='g_img'>
                         <div className={ game.g_img_text }>
                             <FontAwesomeIcon icon={ faImage } />

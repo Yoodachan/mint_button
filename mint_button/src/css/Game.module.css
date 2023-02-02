@@ -1,35 +1,3 @@
-/* .tag_select_wrap {
-    display: flex;
-    justify-content: left;
-    align-items: center;
-    width: 100%;
-    height: 60px;
-    margin: 30px 0px;
-}
-
-.game_filter_wrap button {
-    height: 40px;
-    color: #fff;
-}
-
-.game_filter_wrap span {
-    height: 100%;
-}
-
-.game_filter_wrap svg {
-    margin-left: 8px;
-}
-
-.game_filter_delete {
-    display: block;
-    padding: 5px 10px;
-    height: 35px;
-    margin-right: 8px;
-    background-color: #666;
-    border-radius: 10px;
-    color: #fff;
-} */
-
 .list {
     display: flex;
     flex-wrap: wrap;
@@ -199,18 +167,5 @@
     width: 100%;
     height: 200px;
     border-radius: 10px;
+    margin: 30px auto;
 }
-
-.confirm_wrap {
-    margin-top: 30px;
-    border: 1px solid #eee;
-    padding: 10px 0px;
-    border-radius: 10px;
-    color: #434A49;
-}
-
-.text_confirm {
-    padding: 10px;
-}
-
-

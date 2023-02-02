@@ -5,7 +5,7 @@ import { Outlet } from "react-router-dom";
 
 function User () {
     return (
-        <section className={ `${user.content_user} ${user.position}` }>
+        <section className={ `${base.content} ` }>
             <Outlet/>
         </section>
     )

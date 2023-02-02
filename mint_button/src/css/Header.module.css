@@ -1,5 +1,4 @@
 /* 헤더 및 네브 */
-
 header {
   background-color: #82d9d0;
   box-shadow: rgba(33, 35, 38, 0.1) 0px 10px 10px -10px;
@@ -8,6 +7,9 @@ header {
 .content_style {
   display: flex;
   justify-content: space-between;
+  width: 1200px;
+  margin: 0px auto;
+  position: relative;
 }
 
 .logo {

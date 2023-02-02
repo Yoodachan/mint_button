@@ -18,7 +18,7 @@ function Footer () {
     
               <li className="footer_left">
                 <ul className="footer_logo_sns">
-                  <li className="footer_logo"><a href="./index.html"><strong className="footer_logo">MINT BUTTON</strong></a></li>
+                  <li className="footer_logo"><a href="./index.html"><strong className="footer_logo">MTBT</strong></a></li>
                   <li className="footer_icon">
                     <ul>
                       <li><a href="#"><i className="fa-brands fa-instagram"></i></a></li>

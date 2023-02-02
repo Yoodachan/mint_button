@@ -7,6 +7,8 @@ import { BrowserRouter } from "react-router-dom";
 import firebase from "firebase/app";
 import "firebase/firestore";
 
+// const test = "";
+
 const firebaseConfig = {
   apiKey: "AIzaSyAR_uXAPDCrX444c929PXwbFfy5_MVoppY",
   authDomain: "mint-button.firebaseapp.com",

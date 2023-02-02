@@ -1,6 +1,9 @@
+import react, { useState } from 'react';
+
 import { Router,Route,Routes,Link,useNavigate,Outlet } from "react-router-dom"
 import ResetStyles from './components/style/Reset';
-import { useState } from 'react';
+// import { auth } from "../Firebase";
+// import { createUserWithEmailAndPassword } from "firebase/auth";
 
 
 // 헤더 앤 푸터
@@ -36,6 +39,20 @@ import './css/App.css';
 
 function App() {
   let [title,setTitle] = useState(TitleData);
+
+  // const [regEmail,setRegEmail] = useState("");
+  // const [regPwd,setRegPwd] = useState("");
+
+  // const reg = async () => {
+  //     try {
+  //         const user = await createUserWithEmailAndPassword ( auth, regEmail, regPwd );
+  //         console.log (user);
+  //     }
+  //     catch (error) {
+  //         console.log (error.message)
+  //     }
+  // };
+
   // let test = '날짜';
   return (
     <div className="App">

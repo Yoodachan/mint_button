@@ -5,7 +5,7 @@ import { useState } from 'react';
 import base from '../css/Base.module.css';
 import user from '../css/User.module.css';
 
-import {db} from '..index';
+// import {db} from '..index';
 import "firebase/firestore"; 
 
 function UserJoin () {

@@ -2,8 +2,9 @@ import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { NavLink,Link } from "react-router-dom";
 import { faBars,faUser,faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
-import { useState } from 'react';
+import { useState,useEffect } from 'react';
 import HeaderUser from './HeaderUser';
+import { authService } from 'Mybase';
 
 import base from '../css/Base.module.css';
 import header from '../css/Header.module.css';
@@ -26,8 +27,8 @@ import header from '../css/Header.module.css';
 // })
 
 
-function Header () {
-  let [ UserMenu, setUserMenu ] = useState(false)
+function Header (props) {
+  let [ UserMenu, setUserMenu ] = useState(false);
 
   return (
       <header>
@@ -54,8 +55,11 @@ function Header () {
               </li>
 
               <li className={ ` ${ header.content_item } ` }>
-                <button className={ header.user_btn } type="button" onClick={ () => { setUserMenu(!UserMenu) } } >
-                  <FontAwesomeIcon icon={ faUser }/> 
+                <button className={ header.user_btn } type="button" onClick={ () => { 
+                  setUserMenu(!UserMenu);
+                   } } >
+                {/* <FontAwesomeIcon icon={ faUser }/> */}
+                  { props.isLoggedIn ? <FontAwesomeIcon icon={ faUser }/> : "ddd" }
                 </button> 
               </li>
 
@@ -66,10 +70,13 @@ function Header () {
               </li>
 
             </ul>
-            { UserMenu == true ? <HeaderUser />  : null }
+            { UserMenu == true ? <HeaderUser isLoggedInUser={props.isLoggedIn} />  : null }
           </div>
     </header>
   )
 }
+
+
+
 
 export default Header;

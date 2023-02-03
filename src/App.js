@@ -1,10 +1,8 @@
-import react, { useState } from 'react';
+import react, { useState,useEffect } from 'react';
 
 import { Router,Route,Routes,Link,useNavigate,Outlet } from "react-router-dom"
 import ResetStyles from './components/style/Reset';
-// import { auth } from "../Firebase";
-// import { createUserWithEmailAndPassword } from "firebase/auth";
-
+import { authService } from 'Mybase';
 
 // 헤더 앤 푸터
 import Header from './components/Header';
@@ -38,37 +36,45 @@ import TitleData from './data/TitleData';
 import './css/App.css';
 
 function App() {
-  let [title,setTitle] = useState(TitleData);
-
-  // const [regEmail,setRegEmail] = useState("");
-  // const [regPwd,setRegPwd] = useState("");
-
-  // const reg = async () => {
-  //     try {
-  //         const user = await createUserWithEmailAndPassword ( auth, regEmail, regPwd );
-  //         console.log (user);
-  //     }
-  //     catch (error) {
-  //         console.log (error.message)
-  //     }
-  // };
+  const [title,setTitle] = useState(TitleData);
+  // const [init,setInit] = useState(false);
+  // const [isLoggedIn,setIsLoggedIn] = useState(authService.currentUser);
+  const [isLoggedIn,setIsLoggedIn] = useState(false);
+  useEffect( ()=>{
+    authService.onAuthStateChanged((user) => {
+      if (user) {
+        console.log ("if",user)
+        setIsLoggedIn(true);
+      }
+      else {
+        console.log ("else", user )
+        setIsLoggedIn(false);
+      }
+      // setInit(true);
+      // console.log (user)
+    });
+  },[]);
+  // setInterval( ()=> {
+  //   console.log(authService.currentUser);
+  // },1500);
 
   // let test = '날짜';
   return (
     <div className="App">
         <ResetStyles/>
-          <Header/>
+            <Header isLoggedIn={isLoggedIn}/>
             <Routes>
+
               
               <Route path="/" element={ <Main/> } />
 
               <Route path="/user" element={ <User/> }>
-                <Route path="login" element={ <UserLogin/> } />
-                <Route path="join" element={ <UserJoin/> } />
+                {/* <Route path="login" element={ <UserLogin/> } /> */}
+                 <Route path="join" element={<UserJoin/>} /> 
                 <Route path="joinSuccess" element={ <UserJoinSuccess/>} />
                 <Route path="info" element={ <UserInfo/> } />
-                <Route path="upload" element={ <UserUpload/> } />
-                <Route path="uploadSuccess" element={ <UserUploadSuccess/> } />
+                {/* <Route path="upload" element={ <UserUpload/> } />
+                <Route path="uploadSuccess" element={ <UserUploadSuccess/> } /> */}
               </Route>
 
 
@@ -79,8 +85,8 @@ function App() {
                 <Route path="success" element={ <GameSuccess/>} />
               </Route>
 
-              <Route path="/store" element={ <Store title={ title }/> } >
-                <Route path="home" element={ <StoreHome title={ title } /> } />
+              <Route path="/store" element={ <Store /> } >
+                <Route path="home" element={ <StoreHome  /> } />
                 <Route path='detail/:id' element={ <StoreDetail title={ title } /> } /> 
               </Route>
 

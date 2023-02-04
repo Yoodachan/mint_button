@@ -1,0 +1,553 @@
+
+/* 컴포넌트 기본 레이아웃 */
+
+
+.content {
+    width: 1200px;
+    margin: 60px auto;
+    position: relative;
+    min-height: calc(100vh - 380px);
+    max-height: 100%;
+}
+
+.content_middle {
+    width: 600px;
+    margin: 60px auto; 
+    border-radius: 10px;
+    background-color: #fff;
+    padding: 60px;
+    box-shadow: rgb(0 0 0 / 10%) 0px 4px 12px;
+}
+
+.content_small {
+    width: 400px;
+    padding: 30px 15px;
+    margin: 0px auto;
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+
+.top_wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 60px;
+    color: #434A49;
+    padding: 10px 15px;
+    margin: 0px auto 30px;
+}
+
+.bar_wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 60px;
+    color: #434A49;
+    padding: 10px 15px;
+}
+
+.bar_small_wrap {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    width: 100%;
+    min-height: 40px;
+    color: #434A49;
+    padding: 5px 15px;
+    border-radius: 10px;
+}
+
+.filter_icon {
+    height: 60px;
+    padding: 20px 15px 20px 0px;
+    color:#9ee9e1;
+}
+
+.filter_small_icon {
+    height: 30px;
+    padding: 7px 15px 10px 0px;
+    color:#9ee9e1;
+    font-size: 13px;
+}
+
+.bar_title {
+    display: flex;
+    height: 40px;
+    line-height: 40px;
+    font-size: 28px;
+}
+
+.btn_size_small {
+    width: 100%;
+    height: 40px;
+    padding: 0px 15px;
+    line-height: 40px;
+    border-radius: 5px;
+    font-size: 16px;
+    text-align: center;
+    margin: 5px auto;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+
+.btn_size_long {
+    width: 100%;
+    height: 50px;
+    padding: 0px 15px;
+    line-height: 50px;
+    border-radius: 5px;
+    font-size: 16px;
+    text-align: center;
+    margin: 10px auto;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+
+
+.bar_item,
+.top_item {
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    margin-right: 8px;
+}
+
+.bar_small_item {
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    margin-right: 4px;
+}
+
+.bar_button,
+.top_button {
+    height: 40px;
+    padding: 5px 15px;
+    line-height: 30px;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.bar_small_button {
+    height: 30px;
+    padding: 0px 8px;
+    line-height: 30px;
+    border-radius: 5px;
+    font-size: 13px;
+}
+
+/* 인풋 스타일 */
+
+.input_wrap_normal {
+    display: block;
+    width: 100%;
+    margin: 15px 0px;
+}
+
+.input_normal { 
+    width: 100%;
+    height: 40px;
+    line-height: 20px;
+    padding: 0px 15px;
+    border-radius: 10px;
+    position: relative;
+}
+
+.input_normal::placeholder {
+    font-size: 14px;
+    color: #434A49;
+}
+
+.input_normal:focus::placeholder {
+    font-size: 8px;
+    position: absolute;
+    top: 0px;
+    transition-duration: .4s;
+}
+
+
+/* 버튼 & 아이콘 스타일 */
+
+
+.btn_style_first {
+    background-color: #9ee9e1;
+    color: #fff;
+    transition-duration: .3s;
+}
+
+
+.btn_style_first:hover {
+    background-color: #79C9C1;
+}
+
+.btn_style_first:active {
+    scale: 95%;
+}
+
+.btn_style_second {
+    background-color: #eee;
+    color: #999;
+    transition-duration: .3s;
+
+}
+
+.btn_style_second:hover {
+    background-color: #ddd;
+
+}
+
+
+.btn_style_second:active {
+    scale: 95%;
+}
+
+.btn_style_kakao {
+    background-color: #fee500;
+    color: #191600;
+    transition-duration: .3s;
+}
+
+.btn_style_kakao:hover {
+    background-color: #ebd300;
+}
+
+.btn_style_kakao:active {
+    scale: 95%;
+}
+
+.ico_kakao {
+    width: 24px;
+    height: 24px;
+    margin: 5px auto 0px;
+}
+
+.btn_style_goggle {
+    background-color: #eee;
+    color: #434A49;
+    transition-duration: .3s;
+}
+
+.btn_style_goggle:hover {
+    background-color: #ddd;
+}
+
+.btn_style_goggle:active {
+    scale: 95%;
+}
+
+.ico_goggle {
+    width: 24px;
+    height: 24px;
+    margin: 5px auto 0px;
+}
+
+
+.btn_right {
+    width: 140px;
+}
+
+.icon_layout_left {
+    margin-left: 8px;
+}
+
+.icon_layout_right {
+    margin-right: 8px;
+}
+
+.icon_layout_left_bottom {
+    margin-left: 8px;
+    padding-bottom: 3px;
+}
+
+
+.btn_wrap {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+    min-height: 60px;
+    font-size: 22px;
+    color: #434A49;
+    padding: 10px 0px;
+}
+
+.btn_small_wrap {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+    min-height: 40px;
+    font-size: 16px;
+    color: #434A49;
+    padding: 5px 0px;
+}
+
+.btn_circle {
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    margin: 0px 5px;
+
+}
+
+.btn_item {
+    margin-right: 10px;
+}
+
+.btn_small_item {
+    margin-right: 5px;
+    margin-bottom: 5px;
+}
+
+
+
+/* 색상 관련 */
+
+
+
+.color_light {
+    color: #82d9d0;
+}
+
+
+
+.color_score {
+    color: #ff923a;
+}
+
+.color_like {
+    color: #f33;
+}
+
+.color_review {
+    color: #5A9690;
+}
+
+
+.color_sandbox {
+    background-color: orange;
+    color: #fff;
+}
+.color_rpg {
+    background-color:tomato;
+    color: #fff;
+}
+.color_advencher {
+    background-color: teal;
+    color: #fff;
+}
+
+.color_solo {
+    background-color: cornflowerblue;
+    color: #fff;
+}
+.color_duo {
+    background-color: lightslategray;
+    color: #fff;
+}
+.color_squad {
+    background-color: slateblue;
+    color: #fff;
+}
+
+.color_multi {
+    background-color: olivedrab;
+    color: #fff;
+}
+
+/* 클릭 효과 */
+
+.style_set_first {
+    background-color: #f2f2f2;
+    transition-duration: .3s;
+}
+
+.style_set_first:hover {
+    background-color: #ddd;
+}
+
+.style_set_first:active {
+    scale: 95%;
+}
+
+.style_set_border {
+    border: 1px solid #eee;
+    transition-duration: .3s;
+}
+
+.style_set_border:hover {
+    border: 1px solid #ddd;
+}
+
+.style_set_border:active {
+    scale: 95%;
+}
+
+/* 게시판 관련 */
+
+.sort_cnt {
+    font-size: 16px;
+}
+
+.sort_menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sort_menu button {
+    color: #434A49;
+}
+
+.sort_divider {
+    color: #ddd;
+}
+
+/* 정보 작성 완료 페이지 */
+
+.title_text_wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 60px;
+    /* border-radius: 10px; */
+    margin: 0 auto;
+    /* border: 1px solid #eee; */
+    /* background-color: #f0faf9; */
+    background-color: #fff;
+}
+
+.title_text {
+    color: #434A49;
+    font-size: 20px;
+}
+
+.confirm_wrap {
+    display: block;
+    border: 1px solid #eee;
+    border-radius: 10px;
+    color: #434A49;
+    /* background-color: #f0faf9; */
+    background-color: #fff;
+    margin-bottom: 30px;
+}
+
+.text_confirm_title {
+    display: block;
+    width: 100%;
+    font-size: 16px;
+    text-align: left;
+    padding: 10px;
+    margin: 0 auto;
+
+}
+
+.text_confirm {
+    display: block;
+    padding: 10px;
+    font-size: 14px;
+}
+
+
+
+
+
+
+/* 페이저 관련 */
+
+.pager_wrap {
+    display: flex;
+    width: 100%;
+    height: 60px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: 0 auto 60px;
+    padding: 10px 0px;
+    border-radius: 10px;
+}
+
+.pager_wrap li {
+    width: 40px;
+    height: 40px;
+    margin: 0px 8px;
+}
+
+.pager_normal {
+    width: 40px;
+    height: 40px;
+    padding: 10px;
+    line-height: 0px;
+    font-size: 13px;
+    position: relative;
+    text-align: center;
+    color: #82d9d0;
+    background-color: #f0faf9;
+    border-radius: 50%;
+    margin: 0 auto;
+}
+
+.pager_normal:hover {
+    background-color: #ddd;
+    color: #f2f2f2;
+}
+
+.pager_active {
+    background-color: #82d9d0;
+    color: #fff;
+}
+
+.pager_normal svg {
+    display: block;
+    width: 20px;
+    height: 20px;
+}
+
+
+/* 프로필 관련  */
+
+
+.profille_wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background-color: #f0faf9;
+    border: 1px solid #eee;
+    margin: 30px auto;
+    position: relative;
+}
+
+.user_ico {
+    display: block;
+    width: 60px;
+    height: 60px;
+    color: #434A49;
+}
+
+.photo_wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    background-color: #fff;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.photo_ico {
+    display: block;
+    width: 16px;
+    height: 16px;
+    color: #434A49;
+}

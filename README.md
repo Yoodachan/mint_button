@@ -1,3 +1,1 @@
-# mint_button
-
-hi
+리드미인거시와요

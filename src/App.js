@@ -2,7 +2,7 @@ import react, { useState,useEffect } from 'react';
 
 import { Router,Route,Routes,Link,useNavigate,Outlet } from "react-router-dom"
 import ResetStyles from './components/style/Reset';
-import { authService } from 'Mybase';
+import { authService,firebaseInstance,firestore } from 'Mybase';
 
 // 헤더 앤 푸터
 import Header from './components/Header';
@@ -23,7 +23,7 @@ import UserJoinSuccess from './components/UserJoinSuccess';
 //게임 CRUD
 import Game from './components/Game';
 import GameHome from './components/GameHome';
-import GameDetail from './components/pages/GameDetail';
+import GameView from './components/pages/GameView';
 import GameUpload from './components/GameUpload';
 import GameSuccess from './components/GameUploadSuccess';
 
@@ -40,20 +40,21 @@ function App() {
   // const [init,setInit] = useState(false);
   // const [isLoggedIn,setIsLoggedIn] = useState(authService.currentUser);
   const [isLoggedIn,setIsLoggedIn] = useState(false);
+
   useEffect( ()=>{
     authService.onAuthStateChanged((user) => {
       if (user) {
-        console.log ("if",user)
         setIsLoggedIn(true);
+        console.log ("로그인"+user);
       }
       else {
-        console.log ("else", user )
         setIsLoggedIn(false);
+        console.log ("로그아웃"+user);
       }
-      // setInit(true);
-      // console.log (user)
     });
   },[]);
+
+
   // setInterval( ()=> {
   //   console.log(authService.currentUser);
   // },1500);
@@ -62,14 +63,14 @@ function App() {
   return (
     <div className="App">
         <ResetStyles/>
-            <Header isLoggedIn={isLoggedIn}/>
+            <Header isLoggedInHeader={isLoggedIn}/>
             <Routes>
 
               
               <Route path="/" element={ <Main/> } />
 
               <Route path="/user" element={ <User/> }>
-                {/* <Route path="login" element={ <UserLogin/> } /> */}
+                <Route path="login" element={ <UserLogin/> } />
                  <Route path="join" element={<UserJoin/>} /> 
                 <Route path="joinSuccess" element={ <UserJoinSuccess/>} />
                 <Route path="info" element={ <UserInfo/> } />
@@ -79,10 +80,10 @@ function App() {
 
 
               <Route path="/game" element={ <Game/> }>
-                <Route path="home" element={ <GameHome/>} />
-                <Route path='detail/:id' element={ <GameDetail title={ title } /> } /> 
-                <Route path="upload" element={ <GameUpload/>} />
-                <Route path="success" element={ <GameSuccess/>} />
+                <Route path="home" element={ <GameHome/> } isLoggedInGameHome={isLoggedIn} />
+                <Route path='view/:id' element={ <GameView title={ title } /> } /> 
+                {isLoggedIn ? <Route path="upload" element={<GameUpload/>} isLoggedIn={isLoggedIn} /> : <Route path="upload" element={ <div>404</div> } /> }
+                <Route path="success" element={ <GameSuccess/>} isLoggedIn={isLoggedIn} />
               </Route>
 
               <Route path="/store" element={ <Store /> } >

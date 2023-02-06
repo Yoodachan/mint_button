@@ -25,7 +25,6 @@ function StoreItem (props) {
                         /5.0
                     </span>
 
-
                     <span className="product_like_wrap">
                         <FontAwesomeIcon icon={ faHeart } />
                         <span className="product_like">

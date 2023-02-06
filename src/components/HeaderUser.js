@@ -1,14 +1,19 @@
+import { authService } from "Mybase";
 import React from "react";
 import { useState } from 'react';
-import { Link } from "react-router-dom";
+import { Link,useNavigate } from "react-router-dom";
 
 import base from '../css/Base.module.css';
 import header from '../css/Header.module.css';
 
 function HeaderUser (props) {
+    const movePage = useNavigate();
     const [menuItem,setMenuItem] = useState("");
-
-// props.isLoggedInUser
+    const UserLogOut = () => {
+      authService.signOut();
+      movePage('/')
+    } ;
+    
   
     return (
         
@@ -17,11 +22,14 @@ function HeaderUser (props) {
   
         <li className={ header.render_item } >
          {props.isLoggedInUser == true ? <Link to="user/info"> 회원정보 </Link> : <Link to="user/join"> 회원가입 </Link> }
-          {/* { menuItem == "회원정보" ? <Link to="user/info"> 회원정보 </Link> : <Link to="user/join"> 회원가입 </Link> } */}
         </li>
   
         <li className={ header.render_item } >
-        {props.isLoggedInUser == true ? <Link to="user/info"> 로그아웃 </Link> : <Link to="user/login"> 로그인 </Link> }
+        { props.isLoggedInUser == true 
+        ? <button type="button" onClick={ UserLogOut }> 로그아웃 </button> 
+        : <Link to="user/login"> 로그인 </Link> 
+        }
+
         </li>
   
     </ul>

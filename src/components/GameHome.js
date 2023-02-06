@@ -1,26 +1,22 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import { useState } from 'react';
-import GameItem from './GameItem';
+import React,{useState,useEffect} from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faFilter, faSortDown, faXmark, faAngleLeft, faAnglesLeft, faAngleRight, faAnglesRight } from "@fortawesome/free-solid-svg-icons";
+import { faFilter, faSortDown, faXmark, faAngleLeft, faAnglesLeft, faAngleRight, faAnglesRight, faUser } from "@fortawesome/free-solid-svg-icons";
+import { Link } from "react-router-dom";
+import GameItem from './GameItem';
 import TitleData from '../data/TitleData';
-
 
 import base from '../css/Base.module.css';
 import game from '../css/Game.module.css';
 
 
-function GameHome () {
+function GameHome (props) {
     let [title,setTitle] = useState(TitleData);
     return (
         <>
-        
             <div className={ base.top_wrap }>
-                    <strong className={ base.bar_title }> 😜 <span className={ `${ base.color_light } ${ base.bar_title_text }` }> 타이틀 </span> 목록 </strong> 
-                    <Link to="../upload" className={ `${base.btn_style_first} ${ base.btn_right } ${ base.btn_size_small }` }> 등록하기 </Link> 
+                     <strong className={ base.bar_title }> 😜 <span className={ `${ base.color_light } ${ base.bar_title_text }` }> 타이틀 </span> 목록 </strong> 
+                     <Link to="../upload" className={ `${base.btn_style_first} ${ base.btn_right } ${ base.btn_size_small }` }> 등록하기 </Link>
             </div>
-
             <div className={ base.bar_wrap }>
                     <div className={ base.filter_icon }>
                             <FontAwesomeIcon icon={ faFilter } />

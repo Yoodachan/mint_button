@@ -1,10 +1,22 @@
 import React from "react";
-import { Link } from "react-router-dom";
-
+import { Link,useNavigate } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faGooglePlusG } from "@fortawesome/free-brands-svg-icons";
 import base from '../css/Base.module.css';
 import user from '../css/User.module.css';
+import { authService, firebaseInstance } from "Mybase";
 
 function UserLogin () {
+    const movePage = useNavigate();
+    const snsLogin = async (event) => {
+        const {target:{name}} = event;
+        let provider;
+        if (name === "google") {
+            provider = new firebaseInstance.auth.GoogleAuthProvider();
+        }
+        const data = await authService.signInWithPopup(provider);
+        movePage('/')
+    };
     return(
         <form className={base.content_small}>
             <h2 className={user.title_text}> 로그인 </h2>
@@ -28,7 +40,7 @@ function UserLogin () {
                 <span className={ user.login_line } />
             </div>
 
-            <div className={ user.line_wrap }>
+            {/* <div className={ user.line_wrap }>
                 <button className={ `${base.btn_circle} ${ base.btn_style_goggle }` } type="button">
                     <img className={ base.ico_goggle }src='../image/sns_goggle.png' />
                 </button>
@@ -36,7 +48,14 @@ function UserLogin () {
                 <button className={ `${base.btn_circle} ${ base.btn_style_kakao }` } type="button">
                     <img className={ base.ico_kakao }src='../image/sns_kakao.png' />
                 </button>
-            </div>
+            </div> */}
+
+            <button className={ `${base.btn_style_goggle} ${ base.btn_size_long }` } name="google" type="button" onClick={ snsLogin }> 
+                <div className={ base.ico_wrap}>
+                    <FontAwesomeIcon icon={ faGooglePlusG } className={ base.ico_goggle }/>
+                </div>
+            <span className={ base.sns_text }>구글 로그인 </span>
+            </button>
 
             <div className={ user.line_wrap }>
                 계정이 없으신가요?

@@ -1,8 +1,7 @@
-import React from "react";
+import React,{useState,useEffect} from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faBars,faUser,faMagnifyingGlass,faCircleUser } from "@fortawesome/free-solid-svg-icons";
 import { NavLink,Link } from "react-router-dom";
-import { faBars,faUser,faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
-import { useState,useEffect } from 'react';
 import HeaderUser from './HeaderUser';
 import { authService } from 'Mybase';
 
@@ -28,23 +27,19 @@ import header from '../css/Header.module.css';
 
 
 function Header (props) {
-  let [ UserMenu, setUserMenu ] = useState(false);
-
+  let [UserMenu, setUserMenu] = useState(false);
   return (
       <header>
           <div className={ `${ header.content_style }` }>
-
             <h1 className={ header.logo }>
                 <Link to="/" className={ header.logo_content }>MTBT</Link>
             </h1>
-
             <ul className={ header.nav_menu }>
               <li className={ header.menu_item }> <NavLink className={ header.menu_link } to="/game/home"> 타이틀 </NavLink> </li>
               <li className={ header.menu_item }> <NavLink className={ header.menu_link } to="/community_home"> 커뮤니티 </NavLink> </li>
               <li className={ header.menu_item }> <NavLink className={ header.menu_link } to="/store/home"> 스토어 </NavLink> </li>
               <li className={ header.menu_item }> <NavLink className={ header.menu_link } to="/user_join"> 문의하기 </NavLink> </li>
             </ul>
-
 
             <ul className={ header.content_right_wrap } >
               <li className={` ${ header.seach_bar } ${ header.content_item } `}> 
@@ -59,7 +54,7 @@ function Header (props) {
                   setUserMenu(!UserMenu);
                    } } >
                 {/* <FontAwesomeIcon icon={ faUser }/> */}
-                  { props.isLoggedIn ? <FontAwesomeIcon icon={ faUser }/> : "ddd" }
+                  { props.isLoggedInHeader ? <FontAwesomeIcon icon={ faCircleUser } /> : <FontAwesomeIcon icon={ faUser }/> }
                 </button> 
               </li>
 
@@ -70,7 +65,7 @@ function Header (props) {
               </li>
 
             </ul>
-            { UserMenu == true ? <HeaderUser isLoggedInUser={props.isLoggedIn} />  : null }
+            { UserMenu == true ? <HeaderUser isLoggedInUser={props.isLoggedInHeader} />  : null }
           </div>
     </header>
   )

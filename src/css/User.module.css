@@ -10,18 +10,6 @@
     text-align: center;
 }
 
-.kakao_btn {
-    margin-top: 20px;
-    background: #fee500;
-    color: #181600;
-}
-.kakao_btn:hover {
-    background: #F0DF48;
-}
-.kakao_btn:active {
-    background: #EDD500;
-}
-
 .line_wrap {
     display: flex;
     align-items: center;

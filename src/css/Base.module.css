@@ -88,20 +88,19 @@
     border-radius: 5px;
     font-size: 16px;
     text-align: center;
-    margin: 5px auto;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
 }
 
 .btn_size_long {
     width: 100%;
     height: 50px;
-    padding: 0px 15px;
+    padding: 0px 50px;
     line-height: 50px;
     border-radius: 5px;
     font-size: 16px;
     text-align: center;
-    margin: 10px auto;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    position: relative;
 }
 
 
@@ -135,6 +134,18 @@
     line-height: 30px;
     border-radius: 5px;
     font-size: 13px;
+}
+
+.cate_wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 60px;
+    border-radius: 5px;
+    text-align: center;
+    background-color: #fff;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 
 /* 인풋 스타일 */
@@ -223,25 +234,43 @@
 }
 
 .btn_style_goggle {
-    background-color: #eee;
-    color: #434A49;
+    background-color: #db4937;
+    color: #fff;
     transition-duration: .3s;
 }
 
 .btn_style_goggle:hover {
-    background-color: #ddd;
+    background-color: #dc3523;
 }
 
 .btn_style_goggle:active {
     scale: 95%;
 }
 
-.ico_goggle {
-    width: 24px;
-    height: 24px;
-    margin: 5px auto 0px;
+
+.ico_wrap {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 50px;
+    height: 50px;
+    border-right: 1px solid #eee;
+    background-color: #dc3523;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
 }
 
+.ico_goggle {
+    display: block;
+    width: 24px;
+    height: 24px;
+    margin: 13px auto;
+}
+
+.sns_text {
+    font-size: 16px;
+    text-align: center;
+}
 
 .btn_right {
     width: 140px;
@@ -249,6 +278,10 @@
 
 .icon_layout_left {
     margin-left: 8px;
+}
+
+.icon_layout_left_long {
+    margin-left: 30px;
 }
 
 .icon_layout_right {
@@ -304,15 +337,11 @@
 
 
 
-/* 색상 관련 */
-
-
+/* 폰트 및 색상 관련 */
 
 .color_light {
     color: #82d9d0;
 }
-
-
 
 .color_score {
     color: #ff923a;

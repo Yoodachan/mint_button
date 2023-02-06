@@ -96,13 +96,10 @@ function StoreDetail (props) {
                         <button className="detail_like_btn" type="button">
                             <FontAwesomeIcon icon={ faHeart } />
                             <span className="detail_like_conut"> 1천+ </span>
-
                         </button>
-
                         <button className="detail_basket_btn" type="button">
                             장바구니 담기
                         </button>
-                        
                     </div>
 
 

@@ -5,12 +5,22 @@ import { Link } from "react-router-dom";
 import GameItem from './GameItem';
 import TitleData from '../data/TitleData';
 
+import { storeService } from 'Mybase';
 import base from '../css/Base.module.css';
 import game from '../css/Game.module.css';
 
 
 function GameHome (props) {
     let [title,setTitle] = useState(TitleData);
+    const getDb = async() => {
+        const db = await storeService.collection("user").get();
+        db.forEach(document => console.log(document.data()))
+    }
+
+    useEffect(() => {
+        getDb();
+    },[]);
+    
     return (
         <>
             <div className={ base.top_wrap }>

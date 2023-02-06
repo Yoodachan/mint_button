@@ -10,7 +10,8 @@ import base from '../css/Base.module.css';
 import game from '../css/Game.module.css';
 
 import { storeService } from 'Mybase';
-import {collection, doc, getDocs,addDoc} from 'firebase/firestore';
+// import {collection, doc, getDocs,addDoc} from 'firebase/firestore';
+import { async } from "q";
 
 // const userCollectionRef = collection(db,"user");
 
@@ -55,10 +56,9 @@ function GameUpload (props) {
             setGinfo(value);
         }
     };
-
-    const onSubmit = ( event ) => { 
-        event.preventDefault();
-            storeService.collection("user").add({
+    const onSubmit = async ( event ) => { 
+            event.preventDefault();
+            await storeService.collection("user").add({
                 // g_id: addDoc(),
                 g_date: new_data,
                 g_img: Gimg,

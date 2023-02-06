@@ -2,9 +2,9 @@ import { useState } from 'react';
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faShareFromSquare,faStar,faHeart,faComment,faSortDown,faPlus,faEllipsisVertical,faXmark } from "@fortawesome/free-solid-svg-icons";
-import { Swiper, SwiperSlide } from 'swiper/react';
+// import { Swiper, SwiperSlide } from 'swiper/react';
 
-import 'swiper/css';
+// import 'swiper/css';
 import "../../css/Detail.css"
 import base from '../../css/Base.module.css';
 import game from '../../css/Game.module.css';

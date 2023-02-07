@@ -68,7 +68,7 @@ import game from '../css/Game.module.css';
 
 function GameItem (props) {
     return (
-            <Link to={'/game/view/'+props.Games.g_num} className={ game.item } title={ props.Games.g_name }>
+            <Link to={'/game/view/'+props.Games.g_num}className={ game.item } title={ props.Games.g_name }>
                 <img className={ game.item_img } src="https://store.nintendo.co.kr/media/wysiwyg/kirby.png" />
                 <div className={ game.item_text_wrap }>
                     <strong className={ game.item_name }> { props.Games.g_name } </strong>

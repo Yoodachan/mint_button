@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Link } from "react-router-dom";
+import { Link,useParams} from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faShareFromSquare,faStar,faHeart,faComment,faSortDown,faPlus,faEllipsisVertical,faXmark } from "@fortawesome/free-solid-svg-icons";
 // import { Swiper, SwiperSlide } from 'swiper/react';
@@ -8,11 +8,13 @@ import { faShareFromSquare,faStar,faHeart,faComment,faSortDown,faPlus,faEllipsis
 import "../../css/Detail.css"
 import base from '../../css/Base.module.css';
 import game from '../../css/Game.module.css';
-import { useParams } from 'react-router-dom';
 
 function GameView (props) {
-    const id = useParams();
-    
+    const {idx} = useParams();
+    // const idx = 0;
+    // const idx = test.id;
+    // console.log (props.title[id].t_name);
+    // console.log (props.Games[id].g_name)
     
     return (
         <>
@@ -20,7 +22,7 @@ function GameView (props) {
                 <div className={ game.view_intro_wrap }>
                     <iframe  className={ game.view_video }
                              src={`https://www.youtube.com/embed/`+`QZMaL6mp35Y`+`?autoplay=1&mute=1`} 
-                             title={ props.Games[id].g_name } 
+                             title={ props.Games[idx].g_name } 
                              allow="accelerometer;
                                     clipboard-write; encrypted-media; 
                                     gyroscope; picture-in-picture; web-share" 
@@ -29,12 +31,12 @@ function GameView (props) {
                 </div>
                 <div className={game.view_info_wrap}>
                     <strong className={game.view_title_text}>
-                        {props.Games[id].g_name}
+                        {props.Games[idx].g_name}
                     </strong>
 
                     <p className={game.view_date_text}>
                         <span className={game.view_bold_text}>발매일</span>
-                        {props.Games[id].g_release}
+                        {props.Games[idx].g_release}
                     </p>
 
                     <div className={game.view_icon_wrap}>
@@ -77,7 +79,7 @@ function GameView (props) {
                             <span className="detail_like_conut"> 1천+ </span>
                         </button>
 
-                        <Link to={'/store/detail/'+props.Games[id].g_id} className={`${base.btn_size_long} ${base.btn_style_first} `}>
+                        <Link to={'/store/detail/'+props.Games[idx].g_num} className={`${base.btn_size_long} ${base.btn_style_first} `}>
                             구매하러 가기
                         </Link>
 

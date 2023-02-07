@@ -11,8 +11,7 @@ import game from '../../css/Game.module.css';
 import { useParams } from 'react-router-dom';
 
 function GameView (props) {
-    let {id} = useParams();
-    console.log (id)
+    const id = useParams();
     
     return (
         <>

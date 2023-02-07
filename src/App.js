@@ -98,14 +98,14 @@ function App() {
               <Route path="/game" element={ <Game/> }>
                 <Route path="home" element={ <GameHome isLoggedIn={isLoggedIn} Games={ Games } /> } />
                 <Route path='view' element={ <GameView Games={ Games } /> } /> 
-                {/* <Route path='view/:id' element={ <GameView Games={ Games } /> } />  */}
+                <Route path='view/:idx' element={ <GameView Games={ Games } /> } /> 
                 {isLoggedIn ? <Route path="upload" element={<GameUpload userObj={userObj} isLoggedIn={isLoggedIn} />} /> : <Route path="upload" element={ <div>404</div> } /> }
                 <Route path="success" element={ <GameSuccess isLoggedIn={isLoggedIn} />} />
               </Route>
 
               <Route path="/store" element={ <Store /> } >
                 <Route path="home" element={ <StoreHome  /> } />
-                <Route path={`detail/:id`} element={ <StoreDetail Games={ Games } /> } /> 
+                <Route path={`detail/:idx`} element={ <StoreDetail Games={ Games } /> } /> 
               </Route>
 
               <Route path="*" element={ <div>404</div> } />

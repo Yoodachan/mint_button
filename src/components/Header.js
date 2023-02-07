@@ -54,7 +54,7 @@ function Header (props) {
                   setUserMenu(!UserMenu);
                    } } >
                 {/* <FontAwesomeIcon icon={ faUser }/> */}
-                  { props.isLoggedInHeader ? <FontAwesomeIcon icon={ faCircleUser } /> : <FontAwesomeIcon icon={ faUser }/> }
+                  { props.isLoggedIn ? <FontAwesomeIcon icon={ faCircleUser } /> : <FontAwesomeIcon icon={ faUser }/> }
                 </button> 
               </li>
 
@@ -65,7 +65,7 @@ function Header (props) {
               </li>
 
             </ul>
-            { UserMenu == true ? <HeaderUser isLoggedInUser={props.isLoggedInHeader} />  : null }
+            { UserMenu == true ? <HeaderUser isLoggedIn={props.isLoggedIn} />  : null }
           </div>
     </header>
   )

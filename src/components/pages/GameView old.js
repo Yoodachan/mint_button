@@ -11,8 +11,8 @@ import game from '../../css/Game.module.css';
 import { useParams } from 'react-router-dom';
 
 function GameView (props) {
-    const id = useParams();
-    
+    let {id} = useParams();
+    console.log (id)
     
     return (
         <>
@@ -20,7 +20,7 @@ function GameView (props) {
                 <div className={ game.view_intro_wrap }>
                     <iframe  className={ game.view_video }
                              src={`https://www.youtube.com/embed/`+`QZMaL6mp35Y`+`?autoplay=1&mute=1`} 
-                             title={ props.Games[id].g_name } 
+                             title={ props.title[id].t_name } 
                              allow="accelerometer;
                                     clipboard-write; encrypted-media; 
                                     gyroscope; picture-in-picture; web-share" 
@@ -29,12 +29,12 @@ function GameView (props) {
                 </div>
                 <div className={game.view_info_wrap}>
                     <strong className={game.view_title_text}>
-                        {props.Games[id].g_name}
+                        {props.title[id].t_name}
                     </strong>
 
                     <p className={game.view_date_text}>
                         <span className={game.view_bold_text}>발매일</span>
-                        {props.Games[id].g_release}
+                        {props.title[id].t_date_release}
                     </p>
 
                     <div className={game.view_icon_wrap}>
@@ -77,7 +77,7 @@ function GameView (props) {
                             <span className="detail_like_conut"> 1천+ </span>
                         </button>
 
-                        <Link to={'/store/detail/'+props.Games[id].g_id} className={`${base.btn_size_long} ${base.btn_style_first} `}>
+                        <Link to={'/store/detail/'+props.title[id].t_id} className={`${base.btn_size_long} ${base.btn_style_first} `}>
                             구매하러 가기
                         </Link>
 

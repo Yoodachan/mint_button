@@ -21,11 +21,11 @@ function HeaderUser (props) {
         {/* 회원가입/내정보 */}
   
         <li className={ header.render_item } >
-         {props.isLoggedInUser == true ? <Link to="user/info"> 회원정보 </Link> : <Link to="user/join"> 회원가입 </Link> }
+         {props.isLoggedIn == true ? <Link to="user/info"> 회원정보 </Link> : <Link to="user/join"> 회원가입 </Link> }
         </li>
   
         <li className={ header.render_item } >
-        { props.isLoggedInUser == true 
+        { props.isLoggedIn == true 
         ? <button type="button" onClick={ UserLogOut }> 로그아웃 </button> 
         : <Link to="user/login"> 로그인 </Link> 
         }

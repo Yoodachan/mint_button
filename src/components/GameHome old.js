@@ -8,85 +8,24 @@ import TitleData from '../data/TitleData';
 import { storeService } from 'Mybase';
 import base from '../css/Base.module.css';
 import game from '../css/Game.module.css';
-import { doc } from "firebase/firestore";
 
 
 function GameHome (props) {
     let [title,setTitle] = useState(TitleData);
+    const getDb = async() => {
+        const db = await storeService.collection("user").get();
+        db.forEach(document => console.log(document.data()))
+    }
 
-    // const [Gimg,setGimg] = useState([]);
-    // const [Gyoutube,setGyoutube] = useState([]);
-    // const [Gname,setGname] = useState([]);
-    // const [Ginfo,setGinfo] = useState([]);
-    // const [Grelease,setGrelease] = useState([]);
-    // setGname(document.data().g_id);
-    // setGyoutube(document.data().g_youtube);
-    // setGimg(document.data().g_img);
-    // setGinfo(document.data().g_info);
-    // setGrelease(document.data().g_release);
-    // setGinfo(document.data().g_info);
-    // console.log (document.data().g_id)
-    // const userObject = {
-    //     ...document.data(),
-    //     id : document.id,
-    // };
-    // setGname( (prev) => [userObject, ...prev]);
-    // console.log(user);
-    // const dbData = storeService.collection("user").get().then((결과)=>{
-    //     결과.forEach((doc)=> {
-    //         console.log(doc.data().g_id)
-    //     })
-    // const dbData = storeService.collection("user").get().then((결과)=>{
-    //     결과.forEach((doc)=> {
-    //         console.log(doc.data().g_id)
-    //         console.log(doc.id)
-    //     })
-    // })
-
-
-    // const 쿼리스트링 = new URLSearchParams(window.location.search)
-    // storeService.collection('user').doc().get().then((result)=>{
-    //   console.log(result.Id)
-    //   console.log(result.Id)
-    // }) 
-
-    // 보류
-    // const getDb = async() => {
-    //     const db = await storeService.collection("user").get();
-    //     db.forEach( (document) => {
-    //         const userObject = {
-    //             ...document.data(),
-    //             id : document.id,
-    //         };
-    //         setGtest( ( prev ) =>  [userObject, ...prev]);
-    //     });
-    // };
-    // useEffect(() => {
-    //     getDb();
-    // },[]);
-
-    // const [Games,setGames] = useState([]);
-
-
-    // useEffect(() => {
-    //     storeService.collection("user").onSnapshot( (snapshot) => {
-    //        const useArray = snapshot.docs.map( (doc) => ({ id : doc.id, ...doc.data(), }));
-    //        setGames(useArray)
-    //     //    console.log (useArray);
-    //        });},[]);
-
+    useEffect(() => {
+        getDb();
+    },[]);
+    
     return (
         <>
             <div className={ base.top_wrap }>
-                    {/* <div>
-                        {Gtest.map( (Gtest) => <div key={Gtest.id}> <h4> {Gtest.g_name} </h4> </div>)}
-                    </div> */}             
                      <strong className={ base.bar_title }> 😜 <span className={ `${ base.color_light } ${ base.bar_title_text }` }> 타이틀 </span> 목록 </strong> 
-                    { 
-                    props.isLoggedIn == true 
-                    ? <Link to="../upload" className={ `${base.btn_style_first} ${ base.btn_right } ${ base.btn_size_small }` }> 등록하기 </Link> 
-                    : null 
-                    }
+                     <Link to="../upload" className={ `${base.btn_style_first} ${ base.btn_right } ${ base.btn_size_small }` }> 등록하기 </Link>
             </div>
             <div className={ base.bar_wrap }>
                     <div className={ base.filter_icon }>
@@ -178,9 +117,9 @@ function GameHome (props) {
             {/* <div className="game_result_wrap">총 10개</div> */}
             <div className={game.list}>
                 {
-                    props.Games.map( (q,i) => { 
+                    title.map( (q,i) => { 
                         return (
-                            <GameItem Games={ props.Games[i] } key={i} />
+                            <GameItem title={ title[i] } key={i} />
                         )
                     } )
                 }

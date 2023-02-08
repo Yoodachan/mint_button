@@ -176,7 +176,7 @@ function GameHome (props) {
             {/* <div className="game_result_wrap">총 10개</div> */}
             <div className={game.list}>
                 {
-                    props.Games.map( (q,i) => { 
+                   props.Games.map( (q,i) => { 
                         return (
                             <GameItem 
                             isLoggedIn={props.isLoggedIn} 

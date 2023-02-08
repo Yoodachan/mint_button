@@ -36,9 +36,9 @@ function Header (props) {
             </h1>
             <ul className={ header.nav_menu }>
               <li className={ header.menu_item }> <NavLink className={ header.menu_link } to="/game/home"> 타이틀 </NavLink> </li>
-              <li className={ header.menu_item }> <NavLink className={ header.menu_link } to="/community_home"> 커뮤니티 </NavLink> </li>
+              {/* <li className={ header.menu_item }> <NavLink className={ header.menu_link } to="/community_home"> 커뮤니티 </NavLink> </li> */}
               <li className={ header.menu_item }> <NavLink className={ header.menu_link } to="/store/home"> 스토어 </NavLink> </li>
-              <li className={ header.menu_item }> <NavLink className={ header.menu_link } to="/user_join"> 문의하기 </NavLink> </li>
+              {/* <li className={ header.menu_item }> <NavLink className={ header.menu_link } to="/user_join"> 문의하기 </NavLink> </li> */}
             </ul>
 
             <ul className={ header.content_right_wrap } >

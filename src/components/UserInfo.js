@@ -20,6 +20,8 @@ function UserInfo (props) {
 
    const movePage = useNavigate();
 
+     const [Games,setGames] = useState([]);
+
    // 날짜 등록
    let date = new Date();
    let dateMonth = ("0" + (date.getMonth() + 1)).slice(-2);

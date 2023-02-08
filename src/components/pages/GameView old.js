@@ -12,6 +12,8 @@ import { useParams } from 'react-router-dom';
 
 function GameView (props) {
     const id = useParams();
+
+    const 
     
     return (
         <>

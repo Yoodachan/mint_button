@@ -86,7 +86,7 @@ function App() {
                 <Route path="login" element={ <UserLogin/> } />
                 <Route path="join" element={<UserJoin/>} /> 
                 <Route path="joinSuccess" element={ <UserJoinSuccess/>} />
-                <Route path="info" element={ <UserInfo userObj={userObj} /> } />
+                { userObj && <Route path="info" element={ <UserInfo userObj={userObj} /> } /> }
                 {/* <Route path="upload" element={ <UserUpload/> } />
                 <Route path="uploadSuccess" element={ <UserUploadSuccess/> } /> */}
               </Route>
@@ -94,8 +94,7 @@ function App() {
 
               <Route path="/game" element={ <Game/> }>
                 <Route path="home" element={ <GameHome isLoggedIn={isLoggedIn} Games={ Games } userObj={userObj} /> } />
-                <Route path='view' element={ <GameView Games={ Games } /> } /> 
-                <Route path={`view/:idx`} element={ <GameView Games={ Games } /> } /> 
+                { Games && <Route path="view/:idx" element={ <GameView Games={ Games } /> } />} 
                 {isLoggedIn ? <Route path="upload" element={<GameUpload userObj={userObj} isLoggedIn={isLoggedIn} />} /> : <Route path="upload" element={ <div>404</div> } /> }
                 {isLoggedIn ? <Route path="update" element={<GameUpdate userObj={userObj} isLoggedIn={isLoggedIn} />} /> : <Route path="update" element={ <div>404</div> } /> }
                 <Route path="success" element={ <GameSuccess isLoggedIn={isLoggedIn} />} />

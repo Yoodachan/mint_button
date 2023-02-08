@@ -14,16 +14,11 @@ function GameView (props) {
     // const idx = test.id;
     // console.log (props.title[id].t_name);
     // console.log (props.Games[id].g_name)
-    useEffect(()=>{
-        
-    })
-    var {idx} = useParams();
 
-    var find = props.Games.find((x)=>{
-        
-    })
+    let {idx} = useParams();
 
-    console.log (props.Games[idx].g_youtube)
+    console.log (idx);
+    
     
     return (
         <>

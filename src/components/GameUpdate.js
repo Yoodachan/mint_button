@@ -1,15 +1,13 @@
 import React,{ useState,useEffect } from "react";
 import { Link,useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { v4 as uuidv4 } from "uuid";
 import { faSortDown,faImage,faFilter,faXmark } from "@fortawesome/free-solid-svg-icons";
-
 import base from '../css/Base.module.css';
 import game from '../css/Game.module.css';
 
-import { storageService, storeService } from 'Mybase';
+import { storeService } from 'Mybase';
 
-const GameUpload = (props) => {
+const GameUpdate = (props) => {
     const movePage = useNavigate();
     // useEffect (() => {
     //     const getLists = async () => {
@@ -22,13 +20,14 @@ const GameUpload = (props) => {
     // doc.id
 
     // const [Gid,setGid] = useState("");
+    const [Gimg,setGimg] = useState("");
     const [Gyoutube,setGyoutube] = useState("");
     const [Gname,setGname] = useState("");
     const [Ginfo,setGinfo] = useState("");
     const [Gnum,setGnum] = useState("");
     const [Grelease,setGrelease] = useState("");
+
     const [Gfile,setGfile] = useState("");
-    // console.log (Gfile)
 
     // const getDb = async() => {
     //     const db = await storeService.collection("user").get().then( (event) => {
@@ -51,31 +50,9 @@ const GameUpload = (props) => {
     let dateDate = ("0" + date.getDate()).slice(-2);
     const new_data = date.getFullYear() + "-" + dateMonth + "-" + dateDate;
 
-    const onFileChange = (event) => {
-        const {
-            target: {files},
-        } = event;
-        const theFile = files[0];
-        // console.log(theFile);
-        const reader = new FileReader();
-        reader.onloadend = (finishedEvent) => {
-            // console.log(finishedEvent);
-            const {
-                currentTarget: {result},
-            } = finishedEvent;
-            setGfile(result)
-        }
-        reader.readAsDataURL(theFile);
-        setGfile()
-    };
-
-
 
     const onSubmit = async ( event ) => { 
         event.preventDefault();
-        const fileRef = storageService.ref().child(`${props.userObj.uid}/${uuidv4()}`)
-        const respons = await fileRef.putString(Gfile , "data_url");
-        const fileRefUrl = await respons.ref.getDownloadURL()
         const userDoc = storeService.collection("games").doc();
         // add론 doc 못가져와서 set 사용
         await userDoc.set({
@@ -89,7 +66,7 @@ const GameUpload = (props) => {
             // {작성일}
             g_date: new_data,
             // {이미지 url}
-            g_img: fileRefUrl,
+            g_img: Gimg,
             // {타이틀명}
             g_name: Gname,
             // {게임 정보}
@@ -111,6 +88,9 @@ const GameUpload = (props) => {
         if (name === "g_num") {
             setGnum(value);
         }
+        if (name === "g_img") {
+            setGimg(value);
+        }
         if (name === "g_youtube") {
             setGyoutube(value);
         }
@@ -124,6 +104,25 @@ const GameUpload = (props) => {
             setGinfo(value);
         }
     };
+
+    const onFileChange = (event) => {
+        const {
+            target: {files},
+        } = event;
+        const theFile = files[0];
+        // console.log(theFile);
+        const reader = new FileReader();
+        reader.onloadend = (finishedEvent) => {
+            // console.log(finishedEvent);
+            const {
+                currentTarget: {result},
+            } = finishedEvent;
+            setGfile(result)
+        }
+        reader.readAsDataURL(theFile);
+        setGfile()
+
+    };
     
 
 
@@ -134,13 +133,10 @@ const GameUpload = (props) => {
             <div className={ base.top_wrap }>
                     <strong className={ base.bar_title }> 🎮 <span className={ `${ base.color_light }` }> 타이틀 </span> 등록 </strong>  
             </div>
-            {/* <div>
-                        {user.map( (user) => ( <div key={user.id}> <h4> {user.user} </h4> </div> ) )}
-            </div> */}
 
             <form className={ base.content_middle } onSubmit={onSubmit}>
 
-                <label className={ `${base.img_content} ${base.style_set_first}` } htmlFor='g_img'>
+                <label className={ `${game.g_img_wrap} ${base.style_set_first}` } htmlFor='g_img'>
                     { Gfile == "" 
                       ?  <div className={ game.g_img_text }>
                             <FontAwesomeIcon icon={ faImage } />
@@ -151,10 +147,6 @@ const GameUpload = (props) => {
                     }
                         <input className={ game.g_img_btn } name='g_img' type="file" accept="image/*" onChange={onFileChange} />
                 </label>
-
-                {/* <label className={ `${game.g_img_wrap} ${ base.input_wrap_normal }` } htmlFor='g_img'>
-                    <input className={ ` ${game.g_img} ${ base.input_normal } ${ base.style_set_border } ` } name="g_img" type="text" placeholder="이미지 url" onChange={onChange} />
-                </label> */}
 
                 <label className={ `${game.g_num_wrap} ${ base.input_wrap_normal }` } htmlFor='g_num'>
                     <input className={ ` ${game.g_num} ${ base.input_normal } ${ base.style_set_border } ` } name="g_num" type="text" placeholder="타이틀 넘버" onChange={onChange} />
@@ -254,4 +246,4 @@ const GameUpload = (props) => {
     )
 }
 
-export default GameUpload;
+export default GameUpdate;

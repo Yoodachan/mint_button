@@ -1,7 +1,7 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Link,useParams} from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faShareFromSquare,faStar,faHeart,faComment,faSortDown,faPlus,faEllipsisVertical,faXmark } from "@fortawesome/free-solid-svg-icons";
+import { faShareFromSquare,faStar,faHeart,faComment,faSortDown,faPlus,faEllipsisVertical,faXmark,faEllipsis } from "@fortawesome/free-solid-svg-icons";
 // import { Swiper, SwiperSlide } from 'swiper/react';
 
 // import 'swiper/css';
@@ -10,18 +10,27 @@ import base from '../../css/Base.module.css';
 import game from '../../css/Game.module.css';
 
 function GameView (props) {
-    const {idx} = useParams();
     // const idx = 0;
     // const idx = test.id;
     // console.log (props.title[id].t_name);
     // console.log (props.Games[id].g_name)
+    useEffect(()=>{
+        
+    })
+    var {idx} = useParams();
+
+    var find = props.Games.find((x)=>{
+        
+    })
+
+    console.log (props.Games[idx].g_youtube)
     
     return (
         <>
             <div className={ game.view_top }>
                 <div className={ game.view_intro_wrap }>
                     <iframe  className={ game.view_video }
-                             src={`https://www.youtube.com/embed/`+`QZMaL6mp35Y`+`?autoplay=1&mute=1`} 
+                             src={`https://www.youtube.com/embed/`+`${props.Games[idx].g_youtube}`+`?autoplay=1&mute=1`} 
                              title={ props.Games[idx].g_name } 
                              allow="accelerometer;
                                     clipboard-write; encrypted-media; 

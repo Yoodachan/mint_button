@@ -5,10 +5,8 @@ import { Link } from "react-router-dom";
 import GameItem from './GameItem';
 import TitleData from '../data/TitleData';
 
-import { storeService } from 'Mybase';
 import base from '../css/Base.module.css';
 import game from '../css/Game.module.css';
-import { doc } from "firebase/firestore";
 
 
 function GameHome (props) {
@@ -74,8 +72,8 @@ function GameHome (props) {
     //        setGames(useArray)
     //     //    console.log (useArray);
     //        });},[]);
-
     return (
+        
         <>
             <div className={ base.top_wrap }>
                     {/* <div>
@@ -180,7 +178,12 @@ function GameHome (props) {
                 {
                     props.Games.map( (q,i) => { 
                         return (
-                            <GameItem Games={ props.Games[i] } key={i} />
+                            <GameItem 
+                            isLoggedIn={props.isLoggedIn} 
+                            Games={ props.Games[i] } 
+                            userObj={ props.userObj }  
+                            // userOwner={ props.Games[i].g_post === props.userObj.uid }  
+                            key={i} />
                         )
                     } )
                 }

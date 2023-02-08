@@ -1,9 +1,68 @@
+.img_content {
+    display: flex;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    position:relative;
+    margin: 0 auto;
+    justify-content: center;
+    align-items: center;
+    color: #434A49;
+    border: 1px solid #eee;
+    background-color: #9ee9e1;
+    transition-duration: .3s;
+}
+.img_content:hover {
+    background-color: #87E0D7;
+}
+.img_content:active {
+    scale: 95%;
+}
 
+.profile_ico {
+    font-size: 60px;
+    color: #fff;
+}
+
+.plus_ico {
+    width: 30px;
+    height: 30px;
+    font-size: 16px;
+    position: absolute;
+    right: 25px;
+    bottom: 25px;
+    border: 2px solid #fff;
+    background-color: #fff;
+    border-radius: 50%;
+    color: #68ADA6;
+}
+
+
+
+.img_text_wrap {
+    margin: 0 auto;
+    text-align: center;
+}
+
+.img_text {
+    display: block;
+}
+.img_btn {
+    opacity: 0;
+    width: inherit;
+    height: inherit;
+    border-radius: inherit;
+    position:absolute;
+    top: 0px;
+    left: 0px;
+    cursor: pointer;
+}
 
 .title_text {
     display: block;
     width: 100%;
-    padding: 60px 0px;
+    padding: 10px 0px;
+    margin: 30px 0px;
     border-radius: 10px;
     font-size: 42px;
     color: #82d9d0;
@@ -55,4 +114,26 @@
 
 .login_join {
     margin-left: 10px;
+}
+
+.update_btn {
+    position: absolute;
+    width: 50px;
+    height: 30px;
+    top: 5px;
+    right: 10px;
+    z-index: 10;
+    border-radius: 10px;
+    background-color: #9ee9e1;
+    font-size: 14px;
+    text-align: center;
+    color:#fff;
+    transition-duration: .3s;
+}
+
+.update_btn:hover {
+    background-color: #87E0D7;
+}
+.update_btn:active {
+    scale: 95%;
 }

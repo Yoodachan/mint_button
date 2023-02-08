@@ -25,6 +25,7 @@ import Game from './components/Game';
 import GameHome from './components/GameHome';
 import GameView from './components/pages/GameView';
 import GameUpload from './components/GameUpload';
+import GameUpdate from './components/GameUpdate';
 import GameSuccess from './components/GameUploadSuccess';
 
 //상점 CRUD
@@ -38,9 +39,7 @@ import './css/App.css';
 function App() {
   const [title,setTitle] = useState(TitleData);
   const [init,setInit] = useState(false);
-
   const [isLoggedIn,setIsLoggedIn] = useState(false);
-
   const [userObj,setUserObj] = useState(null);
 
 
@@ -52,7 +51,7 @@ function App() {
       if (user) {
         setIsLoggedIn(true);
         setUserObj(user);
-        console.log ("로그인"+user);
+        console.log ("로그인"+user)
       }
       else {
         setIsLoggedIn(false);
@@ -61,15 +60,13 @@ function App() {
       //로딩창
       setInit(true);
     });
-      storeService.collection("user").onSnapshot( (snapshot) => {
+         storeService.collection("games").onSnapshot( (snapshot) => {
          const useArray = snapshot.docs.map( (doc) => ({ id : doc.id, ...doc.data(), }));
          setGames(useArray);
 
 
     });
-
   },[]);
-
 
   // setInterval( ()=> {
   //   console.log(authService.currentUser);
@@ -87,25 +84,26 @@ function App() {
 
               <Route path="/user" element={ <User/> }>
                 <Route path="login" element={ <UserLogin/> } />
-                 <Route path="join" element={<UserJoin/>} /> 
+                <Route path="join" element={<UserJoin/>} /> 
                 <Route path="joinSuccess" element={ <UserJoinSuccess/>} />
-                <Route path="info" element={ <UserInfo/> } />
+                <Route path="info" element={ <UserInfo userObj={userObj} /> } />
                 {/* <Route path="upload" element={ <UserUpload/> } />
                 <Route path="uploadSuccess" element={ <UserUploadSuccess/> } /> */}
               </Route>
 
 
               <Route path="/game" element={ <Game/> }>
-                <Route path="home" element={ <GameHome isLoggedIn={isLoggedIn} Games={ Games } /> } />
+                <Route path="home" element={ <GameHome isLoggedIn={isLoggedIn} Games={ Games } userObj={userObj} /> } />
                 <Route path='view' element={ <GameView Games={ Games } /> } /> 
-                <Route path='view/:idx' element={ <GameView Games={ Games } /> } /> 
+                <Route path={`view/:idx`} element={ <GameView Games={ Games } /> } /> 
                 {isLoggedIn ? <Route path="upload" element={<GameUpload userObj={userObj} isLoggedIn={isLoggedIn} />} /> : <Route path="upload" element={ <div>404</div> } /> }
+                {isLoggedIn ? <Route path="update" element={<GameUpdate userObj={userObj} isLoggedIn={isLoggedIn} />} /> : <Route path="update" element={ <div>404</div> } /> }
                 <Route path="success" element={ <GameSuccess isLoggedIn={isLoggedIn} />} />
               </Route>
 
               <Route path="/store" element={ <Store /> } >
                 <Route path="home" element={ <StoreHome  /> } />
-                <Route path={`detail/:idx`} element={ <StoreDetail Games={ Games } /> } /> 
+                <Route path={`detail/:idx`} element={ <StoreDetail Games={ Games } title={ title } /> } /> 
               </Route>
 
               <Route path="*" element={ <div>404</div> } />

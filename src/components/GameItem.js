@@ -1,7 +1,7 @@
-import React from "react";
+import React, {useState} from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Link } from "react-router-dom"
-import { faHeart,faStar,faComment } from "@fortawesome/free-solid-svg-icons";
+import { Link,useNavigate } from "react-router-dom"
+import { faHeart,faStar,faComment,faEllipsis } from "@fortawesome/free-solid-svg-icons";
 // import moment from 'moment';
 
 import { storeService } from 'Mybase';
@@ -67,11 +67,28 @@ import game from '../css/Game.module.css';
 // }
 
 function GameItem (props) {
+    const [ItemMenu, setItemMenu] = useState(false);
+    let navigate = useNavigate()
     return (
-            <Link to={'/game/view/'+props.Games.g_num}className={ game.item } title={ props.Games.g_name }>
-                <img className={ game.item_img } src="https://store.nintendo.co.kr/media/wysiwyg/kirby.png" />
+            <div className={game.item_wrap}>
+            
+            {/* { 
+            props.userOwner &&
+            <>
+            <button type="button" onClick={()=>{ 
+                setItemMenu(!ItemMenu);
+            }} className={ game.more_btn }>
+                <FontAwesomeIcon icon={faEllipsis} />
+            </button>
+            </>
+            } */}
+            <button type="button" onClick={()=>{ navigate('/game/view/'+props.Games.g_num) }} className={ game.item } title={ props.Games.g_name }> 
+            {/* <Link to={'/game/view/'+props.Games.g_num} className={ game.item } title={ props.Games.g_name }> */}
+                <img className={ game.item_img } src={ props.Games.g_img } />
                 <div className={ game.item_text_wrap }>
-                    <strong className={ game.item_name }> { props.Games.g_name } </strong>
+                    <strong className={ game.item_name }>
+                        { props.Games.g_name } 
+                    </strong>
                     <span className={ game.item_date }> { props.Games.g_release } </span>
                     <div className={ game.info_wrap }>
                         <p className={ base.color_score }>
@@ -108,9 +125,27 @@ function GameItem (props) {
                         </span>
                     </div>
                 </div>
-            </Link>
+            </button>
+            { ItemMenu == true ? <GameItemMunu isLoggedIn={props.isLoggedIn}/>  : null }
+            </div>
+    )
+}
 
-
+function GameItemMunu (props) {
+    return(
+        <ul className={game.menu_list}>
+            <li className={ game.menu_item } >
+            { props.isLoggedIn == true 
+            && <Link to="user/info"> 수정 </Link> 
+            }
+            </li>
+    
+            <li className={ game.menu_item } >
+            { props.isLoggedIn == true 
+            && <div> 삭제 </div> 
+            }
+            </li>
+        </ul>
     )
 }
 

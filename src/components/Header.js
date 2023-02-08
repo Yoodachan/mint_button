@@ -27,9 +27,9 @@ import header from '../css/Header.module.css';
 
 
 function Header (props) {
-  let [UserMenu, setUserMenu] = useState(false);
+  const [UserMenu, setUserMenu] = useState(false);
   return (
-      <header>
+    <header>
           <div className={ `${ header.content_style }` }>
             <h1 className={ header.logo }>
                 <Link to="/" className={ header.logo_content }>MTBT</Link>
@@ -53,12 +53,11 @@ function Header (props) {
                 <button className={ header.user_btn } type="button" onClick={ () => { 
                   setUserMenu(!UserMenu);
                    } } >
-                {/* <FontAwesomeIcon icon={ faUser }/> */}
                   { props.isLoggedIn ? <FontAwesomeIcon icon={ faCircleUser } /> : <FontAwesomeIcon icon={ faUser }/> }
                 </button> 
               </li>
 
-              <li className={  ` ${ header.content_item } ` }> 
+              <li className={`${ header.content_item }`}> 
                 <button className={ header.list_btn } type="button">
                   <FontAwesomeIcon icon={ faBars }/> 
                 </button> 

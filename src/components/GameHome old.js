@@ -13,7 +13,7 @@ import game from '../css/Game.module.css';
 function GameHome (props) {
     let [title,setTitle] = useState(TitleData);
     const getDb = async() => {
-        const db = await storeService.collection("user").get();
+        const db = await storeService.collection("games").get();
         db.forEach(document => console.log(document.data()))
     }
 

@@ -14,11 +14,10 @@ function GameView (props) {
     // const idx = test.id;
     // console.log (props.title[id].t_name);
     // console.log (props.Games[id].g_name)
-
     let {idx} = useParams();
+    const [Text,setText] = useState([]);
 
-    console.log (idx);
-    
+
     
     return (
         <>

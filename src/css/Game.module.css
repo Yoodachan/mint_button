@@ -51,8 +51,8 @@
     color:#434A49;
     padding: 0px 00px 6px 0px;
     overflow: hidden; 
-    white-space: nowrap;
     text-overflow: ellipsis;
+    white-space: nowrap;
     word-break:break-all;
     position: relative;
 }
@@ -182,7 +182,12 @@
 
 .view_title_text {
     display: block;
-    width: 100%;
+    /* width: 100%; */
+    width: 550px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    word-break:break-all;
     height: 50px;
     line-height: 50px;
     text-align: left;

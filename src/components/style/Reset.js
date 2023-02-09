@@ -12,14 +12,12 @@ body,h1,h2,h3,h4,h5,p,div,ul,li,dl,dt,dd{
   padding: 0;
 }
 
-h1,h2,h3,h4,h5,h6 {
+h1,h2,h3,h4,h5,h6,strong {
   display: block;
+  font-family: 'Galmuri11', serif;
 }
-h1,h4,h5,dt,strong,body,i,em,p,div,ul,li,dl,dt,dd,input,button,textarea {
-  font-family: 'Noto Sans KR',sans-serif;
-}
-h2,h3 {
-    font-family: 'Hahmlet', serif;
+dt,body,i,em,p,div,ul,li,dl,dt,dd,input,button,textarea {
+  font-family: 'Galmuri7', serif;
 }
 ul,li {
     list-style:none

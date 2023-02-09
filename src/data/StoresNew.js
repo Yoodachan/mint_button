@@ -66,4 +66,4 @@ let StoresNew = [
         s_cate : "#샌드박스",
     },
 ]
-export default Stores;
+export default StoresNew;

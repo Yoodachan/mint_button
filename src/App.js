@@ -35,6 +35,7 @@ import StoreHome from './components/StoreHome';
 import StoreView from './components/pages/StoreView';
 
 import StoresData from './data/Stores';
+import StoresDataNew from './data/StoresNew';
 
 import './css/App.css';
 
@@ -49,7 +50,7 @@ function App() {
   const [Games,setGames] = useState([]);
   // const [Stores,setStores] = useState([]);
   const [Stores,setStores] = useState(StoresData);
-  const [StoresNew,setStoresNew] = useState(StoresNewData);
+  const [StoresNew,setStoresNew] = useState(StoresDataNew);
   useEffect( ()=>{
     authService.onAuthStateChanged((user) => {
       if (user) {

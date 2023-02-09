@@ -1,64 +1,59 @@
-import { useState } from 'react';
+import React,{useState,useEffect} from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faFilter, faSortDown, faXmark, faAngleLeft, faAnglesLeft, faAngleRight, faAnglesRight, faUser,faHeart,faStar,faComment } from "@fortawesome/free-solid-svg-icons";
+import { Link } from "react-router-dom";
 import StoreItem from './StoreItem';
-import "firebase/firestore"; 
 
-import TitleData from '../data/TitleData';
-function StoreHome () {
-    let [title,setTitle] = useState(TitleData);
+import base from '../css/Base.module.css';
+import store from '../css/Store.module.css';
+
+function StoreHome (props) {
     return (
         <>
-        <div className='new_product_wrap'>
-            
-            <strong className='title_text'>✨<span className='new_title_color'>신규</span> 타이틀</strong>
-            <div className="product_list">
-                {
-                    title.map( (q,i) => {
-                            return (
-                                < StoreItem title={ title[i] } key={i}  />
-                            )
-                    })
+            <div className={ base.top_wrap }>       
+                <strong className={ base.bar_title }> 
+                    <i className={base.bar_ico}>🧸</i> 
+                    <span className={ `${ base.color_light } ${ base.bar_title_text }` }> 상품 </span>
+                    목록 (30)
+                </strong>
+                { 
+                    props.isLoggedIn == true 
+                    ? <Link to="../upload" className={ `${base.btn_style_first} ${ base.btn_right } ${ base.btn_size_small }` }> 등록하기 </Link> 
+                    : null 
                 }
-                <div className="product product_last">
-                    <div className="product_cate cate_new"> 신규 </div>
-                    <span className="product_img"></span>
-                    <div className="product_info_wrap">
-                        <strong className="product_name">동물의 숲</strong>
-
-                        <div className="product_text_box">
-
-                            <span className="product_score_wrap">
-                                평점
-                                <span className="product_score">5.0</span>
-                                /10.0
-                            </span>
-
-                            <span className="product_review_wrap">
-                                리뷰
-                                <span className="product_review">10</span>
-                            </span>
-
-                            <span className="product_tag_wrap">
-                                장르
-                                <span className="product_tag sandbox">#샌드박스</span>
-                            </span>
-                        </div>
-                    </div>
-                </div>
             </div>
-        </div>
-        <div className='hot_product_wrap'>
-            <strong className='title_text'>🔥<span className='hot_title_color'>인기</span> 타이틀</strong>
-            <div className="product_list">
-
-                < StoreItem title={title[0]} i={0}  />
-                < StoreItem title={title[1]} i={1}  />
-                < StoreItem title={title[2]} i={2}  />
-
-                <div className="product product_last">
-                </div>
-
+            <div className={ base.top_wrap }>       
+                <strong className={ base.bar_title }>
+                    <i className={base.bar_ico}>✨</i> 
+                    <span className={ `${ base.color_light } ${ base.bar_title_text }` }> 신규 </span>
+                    타이틀 
+                </strong>
             </div>
-        </div>
+            <div className={ store.list }>
+            {
+                   props.Stores.map( (q,i) => { 
+                        return (
+                            <StoreItem Stores={ props.Stores[i] } key={i} />
+                        )
+                    } )
+            }
+            </div>
+            <div className={ base.top_wrap }>       
+                <strong className={ base.bar_title }>
+                    <i className={base.bar_ico}>🔥</i>
+                    <span className={ `${ base.color_light } ${ base.bar_title_text }` }> 인기 </span>
+                    타이틀 
+                </strong>
+            </div>
+            <div className={ store.list }>
+            {
+                   props.Stores.map( (q,i) => { 
+                        return (
+                            <StoreItem Stores={ props.Stores[i] } key={i} />
+                        )
+                    } )
+            }
+            </div>
         </>
     )
 }

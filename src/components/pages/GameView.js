@@ -1,18 +1,17 @@
-import { useEffect, useState } from 'react';
+import react , { useEffect, useState } from 'react';
 import { Link,useParams} from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faShareFromSquare,faStar,faHeart,faComment,faSortDown,faPlus,faEllipsisVertical,faXmark,faEllipsis } from "@fortawesome/free-solid-svg-icons";
 // import { Swiper, SwiperSlide } from 'swiper/react';
 
 // import 'swiper/css';
-import "../../css/Detail.css"
 import base from '../../css/Base.module.css';
 import game from '../../css/Game.module.css';
 
 function GameView (props) {
     // const idx = 0;
     // const idx = test.id;
-    // console.log (props.title[id].t_name);
+    // console.log (props.Stores[id].t_name);
     // console.log (props.Games[id].g_name)
     let {idx} = useParams();
     const [Text,setText] = useState([]);
@@ -90,10 +89,10 @@ function GameView (props) {
                 </div>
             </div>
 
-            <ul className={base.cate_wrap}>
+            {/* <ul className={base.cate_wrap}>
                 <li><button type="button">상세정보</button></li>
                 <li><button type="button">리뷰(10)</button></li>
-            </ul>
+            </ul> */}
         </>
     )
 }

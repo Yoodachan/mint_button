@@ -49,19 +49,118 @@
     top: 25px;
 }
 
-/* .banner_text {
-    display: block;
-    height: 80px;
-    line-height: 80px;
-    text-align: center;
-    color: #fff;
+.middle_content {
+    display: flex;
+    justify-content: space-between;
+    width: 100%; 
+    margin: 0 auto;
 }
 
-.banner_imoji {
+.content_wrap {
+    display: flex;
+    padding: 20px 10px;
+    width: 48%;
+    flex-wrap: wrap;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+.content_title_wrap {
+    display: flex;
+    justify-content: left;
+    width: 100%;
+    text-align: left;
+    font-size: 24px;
+    color:#434A49;
+    height: 40px;
+    line-height: 40px;
+}
+
+.content_title_text {
+    margin-left: 10px;
+}
+
+.content_more_btn {
+    width: 40px;
+    color: #999;
+    font-size: 16px;
+    margin-left: 10px;
+    border-radius: 50%;
+    transition-duration: .3s;
+}
+
+.content_more_btn:hover {
+    background-color: #ddd;
+}
+.content_more_btn:active {
+    scale:95%;
+}
+
+
+.conetnet_list {
     display: block;
+    width: 100%;
+}
+
+.item_wrap {
+    display: flex;
+    width: 100%;
     height: 80px;
-    line-height: 70px;
-    font-size: 60px;
-    margin-left: 30px;
-    border: 1px solid red;
-} */
+    justify-content: left;
+    border-radius: 10px;
+    padding: 10px 0px;
+    transition-duration: .3s;
+    margin-top: 10px;
+}
+.item_wrap:hover {
+    background-color: #eee;
+}
+.item_wrap:active {
+    background-color: #ddd;
+}
+
+.item_img {
+    display: block;
+    width: 20%;
+    height: 100%;
+    border-radius: 10px;
+    margin-left: 10px;
+}
+
+.item_rank {
+    display: block;
+    width: 10%;
+    font-size: 18px;
+    text-align: center;
+    height: 100%;
+    line-height: 60px;
+    font-weight: bold;
+    color:#434A49;
+    border-radius: 10px;
+}
+.item_text_wrap {
+    display: flex;
+    justify-content: left;
+    flex-wrap: wrap;
+    width: 70%;
+    height: 100%;
+    border-radius: 10px;
+}
+.item_title {
+    display: block;
+    width: 100%;
+    font-size: 18px;
+    color:#434A49;
+    text-align: left;
+}
+.item_ico_wrap {
+    display: flex;
+    justify-content: left;
+    font-size: 14px;
+}
+
+.item_ico {
+    display: block;
+    width: 80px;
+    line-height: 26px;
+    margin-right: 10px;
+}

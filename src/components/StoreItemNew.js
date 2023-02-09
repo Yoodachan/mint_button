@@ -7,11 +7,11 @@ import { faHeart,faStar,faComment } from "@fortawesome/free-solid-svg-icons";
 import base from '../css/Base.module.css';
 import store from '../css/Store.module.css';
 
-function StoreItem (props) {
+function StoreItemNew (props) {
     // let navigate = useNavigate();
     return (
         // <Link onClick={ () => { navigate('/detail')} } className="product" >
-        <Link to={'/store/view/'+props.Stores.s_id} className={store.product} >
+        <Link to={'/store/view/'+props.StoresNew.s_id} className={store.product} >
         <div className={`${store.product_cate} ${store.cate_hot}`}> 인기 </div>
 
         <img className={store.product_img} src="https://kroms.org/wp-content/uploads/2020/03/Animal-Crossing-New-Horizons.jpg" />
@@ -24,7 +24,7 @@ function StoreItem (props) {
                 <span className={store.product_score_wrap}>
                     <FontAwesomeIcon icon={ faStar } />
                     <span className={store.product_score}>
-                        { props.Stores.s_score }
+                        { props.StoresNew.s_score }
                     </span>
                     /5.0
                 </span>
@@ -32,29 +32,29 @@ function StoreItem (props) {
                 <span className={store.product_like_wrap}>
                     <FontAwesomeIcon icon={ faHeart } />
                     <span className={store.product_like}>
-                        { props.Stores.s_like }
+                        { props.StoresNew.s_like }
                     </span>
                 </span>
 
                 <span className={store.product_review_wrap}>
                     <FontAwesomeIcon icon={ faComment } />
                     <span className={store.product_review}>
-                         { props.Stores.s_review }  
+                         { props.StoresNew.s_review }  
                     </span>
                 </span>
 
                 <span className={store.product_tag_wrap}>
                     <span className={`${store.product_tag} ${store.sandbox}`}>
-                         { props.Stores.s_cate } 
+                         { props.StoresNew.s_cate } 
                     </span>
                 </span>
 
             </div>
 
             <div className={store.product_price_wrap}>
-                <span className={store.product_price_rate}>{ props.Stores.s_price_rate }%</span>
-                <strong className={store.product_price_sale}>{ props.Stores.s_price_sale }원</strong>
-                <span className={store.product_price_cost}>{ props.Stores.s_price_cost }원</span>
+                <span className={store.product_price_rate}>{ props.StoresNew.s_price_rate }%</span>
+                <strong className={store.product_price_sale}>{ props.StoresNew.s_price_sale }원</strong>
+                <span className={store.product_price_cost}>{ props.StoresNew.s_price_cost }원</span>
             </div>
         </div>
         </Link>
@@ -64,4 +64,4 @@ function StoreItem (props) {
 }
 
 
-export default StoreItem;
+export default StoreItemNew;

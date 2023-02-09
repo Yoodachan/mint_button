@@ -89,6 +89,16 @@
     font-size: 28px;
 }
 
+.bar_ico {
+    width: 40px;
+    height: 40px;
+    text-align: center;
+}
+
+.bar_title_text {
+    margin: 0px 5px;
+}
+
 .btn_size_small {
     width: 100%;
     height: 40px;
@@ -589,4 +599,49 @@
     width: 16px;
     height: 16px;
     color: #434A49;
+}
+
+
+/* 이미지 등록 */
+
+
+/* 이미지 업로드 */
+
+
+.img_text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 300px;
+    height: 100%;
+    margin: 0 auto;
+    border-radius: 10px;
+}
+
+.img_text svg {
+    width: 20px;
+    height: 20px;
+    color: #666;
+}
+
+.img_text span {
+    display: block;
+    width: 200px;
+    height: 50px;
+    line-height: 50px;
+    font-size: 24px;
+    color: #666;
+    text-align: center;
+    margin-left: 10px;
+}
+
+.img_btn {
+    opacity: 0;
+    width: inherit;
+    height: inherit;
+    border-radius: inherit;
+    position:absolute;
+    top: 0px;
+    left: 0px;
+    cursor: pointer;
 }

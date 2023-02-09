@@ -81,7 +81,7 @@ const GameUpload = (props) => {
         await userDoc.set({
             // displayName
             // photoURL
-            g_num: Gnum,
+            g_num: props.Games.length,
             // {DB명}
             g_id: userDoc.id,
             // {작성자 uid}
@@ -134,31 +134,24 @@ const GameUpload = (props) => {
             <div className={ base.top_wrap }>
                     <strong className={ base.bar_title }> 🎮 <span className={ `${ base.color_light }` }> 타이틀 </span> 등록 </strong>  
             </div>
-            {/* <div>
-                        {user.map( (user) => ( <div key={user.id}> <h4> {user.user} </h4> </div> ) )}
-            </div> */}
 
             <form className={ base.content_middle } onSubmit={onSubmit}>
 
                 <label className={ `${base.img_content} ${base.style_set_first}` } htmlFor='g_img'>
                     { Gfile == "" 
-                      ?  <div className={ game.g_img_text }>
+                      ?  <div className={ base.img_text }>
                             <FontAwesomeIcon icon={ faImage } />
                             <span>이미지 업로드</span>
                         </div>
 
-                      : <img src={Gfile} className={game.g_img_wrap}  />
+                      : <img src={Gfile} className={base.img_content}  />
                     }
-                        <input className={ game.g_img_btn } name='g_img' type="file" accept="image/*" onChange={onFileChange} />
+                        <input className={ base.img_btn } name='g_img' type="file" accept="image/*" onChange={onFileChange} />
                 </label>
 
-                {/* <label className={ `${game.g_img_wrap} ${ base.input_wrap_normal }` } htmlFor='g_img'>
-                    <input className={ ` ${game.g_img} ${ base.input_normal } ${ base.style_set_border } ` } name="g_img" type="text" placeholder="이미지 url" onChange={onChange} />
+                {/* <label className={ `${game.g_num_wrap} ${ base.input_wrap_normal }` } htmlFor='g_num'>
+                    <input className={ ` ${game.g_num} ${ base.input_normal } ${ base.style_set_border } ` } name="g_num" type="number" placeholder="타이틀 넘버" onChange={onChange} value={props.Games && props.Games.length} />
                 </label> */}
-
-                <label className={ `${game.g_num_wrap} ${ base.input_wrap_normal }` } htmlFor='g_num'>
-                    <input className={ ` ${game.g_num} ${ base.input_normal } ${ base.style_set_border } ` } name="g_num" type="text" placeholder="타이틀 넘버" onChange={onChange} />
-                </label>
 
                 <label className={ `${game.g_name_wrap} ${ base.input_wrap_normal }` } htmlFor='g_name'>
                     <input className={ ` ${game.g_name} ${ base.input_normal } ${ base.style_set_border } ` } name="g_name" type="text" placeholder="타이틀 제목" onChange={onChange} />

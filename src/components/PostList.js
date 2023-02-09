@@ -103,7 +103,7 @@ function PostList () {
 function Modal(props,i){
     return (
       <div className="modal">
-        <h4>{ props.글제목[props.title] }</h4>
+        <h4>{ props.글제목[props.Stores] }</h4>
         <p>날짜</p>
         <p>상세내용</p>
         <button onClick={()=>{

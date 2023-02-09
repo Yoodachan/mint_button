@@ -1,26 +1,13 @@
-import { useState } from 'react';
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Route,Routes,Link,useNavigate,Outlet } from "react-router-dom"
-import { faHeart,faStar,faComment } from "@fortawesome/free-solid-svg-icons";
-import StoreHome from './StoreHome';
-import Product from './StoreItem';
-import Detail from './pages/StoreDetail';
-// import StoreDetail from './StoreDetail';
-import "firebase/firestore"; 
-import TitleData from '../data/TitleData';
-import '../css/StoreHome.css';
+import base from '../css/Base.module.css';
 
-// 하나만 사용
-// import ProductData from '../data/ProductData';
-// 다수 사용 중괄호 일치 시켜야 함
-// import { a,b } from '../data/ProductData';
+import { Outlet } from "react-router-dom";
 
-function Store () {
-    let [title,setTitle] = useState(TitleData);
+function Store() {
     return (
-        <section className="store_content">
+        <section className={ base.content }>
             <Outlet/>
         </section>
     )
 }
+
 export default Store;

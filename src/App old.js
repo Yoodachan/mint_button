@@ -30,8 +30,8 @@ import GameSuccess from './components/GameUploadSuccess';
 //상점 CRUD
 import Store from './components/Store';
 import StoreHome from './components/StoreHome';
-import StoreDetail from './components/pages/StoreDetail';
-import TitleData from './data/TitleData';
+import StoreDetail from './components/pages/StoreView';
+import TitleData from './data/Stores';
 
 import './css/App.css';
 

@@ -3,14 +3,11 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFilter, faSortDown, faXmark, faAngleLeft, faAnglesLeft, faAngleRight, faAnglesRight, faUser } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 import GameItem from './GameItem';
-import TitleData from '../data/TitleData';
 
 import base from '../css/Base.module.css';
 import game from '../css/Game.module.css';
 
-
 function GameHome (props) {
-    let [title,setTitle] = useState(TitleData);
 
     // const [Gimg,setGimg] = useState([]);
     // const [Gyoutube,setGyoutube] = useState([]);
@@ -79,7 +76,7 @@ function GameHome (props) {
                     {/* <div>
                         {Gtest.map( (Gtest) => <div key={Gtest.id}> <h4> {Gtest.g_name} </h4> </div>)}
                     </div> */}             
-                     <strong className={ base.bar_title }> 😜 <span className={ `${ base.color_light } ${ base.bar_title_text }` }> 타이틀 </span> 목록 </strong> 
+                     <strong className={ base.bar_title }> 😜 <span className={ `${ base.color_light } ${ base.bar_title_text }` }> 게임 </span> 목록 ({props.Games.length}) </strong> 
                     { 
                     props.isLoggedIn == true 
                     ? <Link to="../upload" className={ `${base.btn_style_first} ${ base.btn_right } ${ base.btn_size_small }` }> 등록하기 </Link> 
@@ -115,7 +112,7 @@ function GameHome (props) {
                     </ul>
             </div>
 
-            <div className={ base.bar_wrap }>
+            {/* <div className={ base.bar_wrap }>
                 <ul className={ base.btn_wrap }>
                     <li className={ `${ base.btn_item }` }>
                         <button type="button" className={ `${ base.btn_style_first } ${ base.bar_button }` }>
@@ -155,28 +152,30 @@ function GameHome (props) {
                     <span>모두 지우기</span>
                     <FontAwesomeIcon icon={ faXmark } className={ base.icon_layout_left } />
                 </button>
-            </div>
+            </div> */}
 
-            <div className={ base.bar_wrap }>
-                    <span className={base.sort_cnt}> 검색결과: 0 개</span>
+            {
+                /* <div className={ base.bar_wrap }>
+                    <span className={base.sort_cnt}> 총 게시물: {props.Games.length} 개</span>
 
                     <ul className={base.sort_menu}>
                         <li className={base.sort_cost}>
                              <button type="button"> 최신순 </button>
-                        </li>
+                        </li> 
 
                         <li className={base.sort_divider}>|</li>
 
                         <li className={base.sort_amount}>
                             <button type="button"> 20개씩 보기</button>
-                        </li>
+                        </li> 
                     </ul>
-            </div>
-
-            {/* <div className="game_result_wrap">총 10개</div> */}
+                </div> 
+                
+                */
+            }        
             <div className={game.list}>
                 {
-                   props.Games.map( (q,i) => { 
+                   props.Games.map( (title,i,body) => { 
                         return (
                             <GameItem 
                             isLoggedIn={props.isLoggedIn} 

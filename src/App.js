@@ -1,6 +1,6 @@
-import react, { useState,useEffect } from 'react';
+import React, { useState,useEffect } from 'react';
 
-import { Router,Route,Routes,Link,useNavigate,Outlet } from "react-router-dom"
+import { Route,Routes,Link,useNavigate } from "react-router-dom";
 import ResetStyles from './components/style/Reset';
 import { authService,storeService,firestore } from 'Mybase';
 
@@ -14,8 +14,8 @@ import Main from './components/Main';
 //회원 가입 및 로그인 CRUD
 import User from './components/User';
 import UserInfo from './components/UserInfo';
-import UserUpload from './components/UserUpload';
-import UserUploadSuccess from './components/UserUploadSuccess';
+// import UserUpload from './components/UserUpload';
+// import UserUploadSuccess from './components/UserUploadSuccess';
 import UserLogin from './components/UserLogin';
 import UserJoin from './components/UserJoin';
 import UserJoinSuccess from './components/UserJoinSuccess';
@@ -30,14 +30,15 @@ import GameSuccess from './components/GameUploadSuccess';
 
 //상점 CRUD
 import Store from './components/Store';
+import StoreUpload from './components/StoreUpload';
 import StoreHome from './components/StoreHome';
-import StoreDetail from './components/pages/StoreDetail';
-import TitleData from './data/TitleData';
+import StoreView from './components/pages/StoreView';
+
+import StoresData from './data/Stores';
 
 import './css/App.css';
 
 function App() {
-  const [title,setTitle] = useState(TitleData);
   const [init,setInit] = useState(false);
   const [isLoggedIn,setIsLoggedIn] = useState(false);
   const [userObj,setUserObj] = useState(null);
@@ -46,6 +47,9 @@ function App() {
 
   // 게임 타이틀 보관
   const [Games,setGames] = useState([]);
+  // const [Stores,setStores] = useState([]);
+  const [Stores,setStores] = useState(StoresData);
+  const [StoresNew,setStoresNew] = useState(StoresNewData);
   useEffect( ()=>{
     authService.onAuthStateChanged((user) => {
       if (user) {
@@ -60,12 +64,14 @@ function App() {
       //로딩창
       setInit(true);
     });
-         storeService.collection("games").onSnapshot( (snapshot) => {
+         storeService.collection("games").orderBy("g_num","desc").onSnapshot( (snapshot) => {
          const useArray = snapshot.docs.map( (doc) => ({ id : doc.id, ...doc.data(), }));
          setGames(useArray);
-
-
     });
+    //      storeService.collection("stores").orderBy("s_num","desc").onSnapshot( (snapshot) => {
+    //      const storeArray = snapshot.docs.map( (doc) => ({ id : doc.id, ...doc.data(), }));
+    //      setStores(storeArray);
+    // });
   },[]);
 
   // setInterval( ()=> {
@@ -92,17 +98,18 @@ function App() {
               </Route>
 
 
-              <Route path="/game" element={ <Game/> }>
+              <Route path="/game" element={ <Game Games={ Games } /> }>
                 <Route path="home" element={ <GameHome isLoggedIn={isLoggedIn} Games={ Games } userObj={userObj} /> } />
-                { Games && <Route path="view/:idx" element={ <GameView Games={ Games } /> } />} 
-                {isLoggedIn ? <Route path="upload" element={<GameUpload userObj={userObj} isLoggedIn={isLoggedIn} />} /> : <Route path="upload" element={ <div>404</div> } /> }
-                {isLoggedIn ? <Route path="update" element={<GameUpdate userObj={userObj} isLoggedIn={isLoggedIn} />} /> : <Route path="update" element={ <div>404</div> } /> }
+                {Games == ![] ? <Route path="view/:idx" element={ <div>로딩중</div> } /> : <Route path="view/:idx" element={ <GameView Games={ Games } /> } /> }
+                {isLoggedIn ? <Route path="upload" element={<GameUpload userObj={userObj} isLoggedIn={isLoggedIn} Games={ Games }/>} /> : <Route path="upload" element={ <div>404</div> } /> }
+                {isLoggedIn ? <Route path="update" element={<GameUpdate userObj={userObj} isLoggedIn={isLoggedIn} Games={ Games } />} /> : <Route path="update" element={ <div>404</div> } /> }
                 <Route path="success" element={ <GameSuccess isLoggedIn={isLoggedIn} />} />
               </Route>
-
+              
               <Route path="/store" element={ <Store /> } >
-                <Route path="home" element={ <StoreHome  /> } />
-                <Route path={`detail/:idx`} element={ <StoreDetail Games={ Games } title={ title } /> } /> 
+                <Route path="home" element={ <StoreHome Stores={Stores} StoresNew={StoresNew} /> } />
+                {isLoggedIn ? <Route path="upload" element={<StoreUpload userObj={userObj}  Store={ Store }/>} /> : <Route path="upload" element={ <div>404</div> } /> }
+                <Route path={`view/:idx`} element={ <StoreView Stores={Stores} StoresNew={StoresNew}  /> } /> 
               </Route>
 
               <Route path="*" element={ <div>404</div> } />

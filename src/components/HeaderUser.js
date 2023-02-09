@@ -11,7 +11,11 @@ function HeaderUser (props) {
     const UserLogOut = () => {
       authService.signOut();
       movePage('/')
+      setOffMenu(!offMenu);
     } ;
+
+    const offMenu = useState(props.userMenu); 
+    const setOffMenu = useState(props.setUserMenu); 
     
   
     return (
@@ -21,15 +25,15 @@ function HeaderUser (props) {
   
         <li className={ header.render_item } >
          { props.isLoggedIn == true 
-         ? <Link to="user/info"> 회원정보 </Link> 
-         : <Link to="user/join"> 회원가입 </Link> 
+         ? <Link to="user/info" onClick={ ()=>{setOffMenu(!offMenu)} } > 회원정보 </Link> 
+         : <Link to="user/join" onClick={ ()=>{setOffMenu(!offMenu)} } > 회원가입 </Link> 
          }
         </li>
   
         <li className={ header.render_item } >
         { props.isLoggedIn == true 
-        ? <button type="button" onClick={ UserLogOut }> 로그아웃 </button> 
-        : <Link to="user/login"> 로그인 </Link> 
+        ? <button type="button" onClick={UserLogOut}> 로그아웃 </button> 
+        : <Link to="user/login" onClick={ ()=>{setOffMenu(!offMenu)} } > 로그인 </Link> 
         }
         </li>
   

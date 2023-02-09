@@ -27,7 +27,7 @@ import header from '../css/Header.module.css';
 
 
 function Header (props) {
-  const [UserMenu, setUserMenu] = useState(false);
+  const [userMenu, setUserMenu] = useState(false);
   return (
     <header>
           <div className={ `${ header.content_style }` }>
@@ -50,9 +50,7 @@ function Header (props) {
               </li>
 
               <li className={ ` ${ header.content_item } ` }>
-                <button className={ header.user_btn } type="button" onClick={ () => { 
-                  setUserMenu(!UserMenu);
-                   } } >
+                <button className={ header.user_btn } type="button" onClick={ () => {  setUserMenu(!userMenu);  } } >
                   { props.isLoggedIn ? <FontAwesomeIcon icon={ faCircleUser } /> : <FontAwesomeIcon icon={ faUser }/> }
                 </button> 
               </li>
@@ -64,7 +62,7 @@ function Header (props) {
               </li>
 
             </ul>
-            { UserMenu == true ? <HeaderUser isLoggedIn={props.isLoggedIn} />  : null }
+            { userMenu == true ? <HeaderUser isLoggedIn={props.isLoggedIn} userMenu={props.userMenu} setUserMenu={props.setUserMenu} />  : null }
           </div>
     </header>
   )

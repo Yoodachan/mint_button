@@ -8,6 +8,7 @@ import { faShareFromSquare,faStar,faHeart,faComment,faSortDown,faPlus,faEllipsis
 import base from '../../css/Base.module.css';
 import game from '../../css/Game.module.css';
 
+
 function GameView (props) {
     // const idx = 0;
     // const idx = test.id;

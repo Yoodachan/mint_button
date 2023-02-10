@@ -19,7 +19,7 @@ let Stores = [
         s_like : 5,
         s_review : 10,
         s_player : "multi",
-        s_img : "../image/store005.jpg",
+        s_img : "./image/store005.jpg",
         s_date_release : 20200320,
         s_cate : "#샌드박스",
         s_mark : "cate_hot",

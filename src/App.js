@@ -65,7 +65,7 @@ function App() {
       //로딩창
       setInit(true);
     });
-         storeService.collection("games").orderBy("g_num","desc").onSnapshot( (snapshot) => {
+         storeService.collection("games").orderBy("g_num","asc").onSnapshot( (snapshot) => {
          const useArray = snapshot.docs.map( (doc) => ({ id : doc.id, ...doc.data(), }));
          setGames(useArray);
     });

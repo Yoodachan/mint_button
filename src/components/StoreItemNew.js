@@ -12,12 +12,12 @@ function StoreItemNew (props) {
     return (
         // <Link onClick={ () => { navigate('/detail')} } className="product" >
         <Link to={'/store/view/'+props.StoresNew.s_id} className={store.product} >
-        <div className={`${store.product_cate} ${store.cate_hot}`}> 인기 </div>
+        <div className={`${store.product_cate} ${store.cate_new}`}> 신규 </div>
 
-        <img className={store.product_img} src="https://kroms.org/wp-content/uploads/2020/03/Animal-Crossing-New-Horizons.jpg" />
+        <img className={store.product_img} src={props.StoresNew.s_img}/>
 
         <div className={store.product_info_wrap}>
-            <strong className={store.product_name}> { props.Stores.s_name } </strong>
+            <strong className={store.product_name}> { props.StoresNew.s_name } </strong>
 
             <div className={store.product_text_box}>
 

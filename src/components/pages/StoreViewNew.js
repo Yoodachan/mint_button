@@ -3,8 +3,9 @@ import { useParams } from 'react-router-dom';
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faShareFromSquare,faStar,faHeart,faComment,faSortDown,faPlus,faEllipsisVertical } from "@fortawesome/free-solid-svg-icons";
+import "../../css/Store.module.css";
 
-function StoreView (props) {
+function StoreViewNew (props) {
     let {idx} = useParams();
     return (
         <section className="detail_content">
@@ -456,4 +457,4 @@ function StoreView (props) {
     )
 }
 
-export default StoreView;
+export default StoreViewNew;

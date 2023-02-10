@@ -3,6 +3,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFilter, faSortDown, faXmark, faAngleLeft, faAnglesLeft, faAngleRight, faAnglesRight, faUser,faHeart,faStar,faComment } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 import StoreItem from './StoreItem';
+import StoreItemNew from './StoreItemNew';
+
 
 import base from '../css/Base.module.css';
 import store from '../css/Store.module.css';
@@ -31,9 +33,9 @@ function StoreHome (props) {
             </div>
             <div className={ store.list }>
             {
-                   props.Stores.map( (q,i) => { 
+                   props.StoresNew.map( (q,i) => { 
                         return (
-                            <StoreItem Stores={ props.Stores[i] } key={i} />
+                            <StoreItemNew StoresNew={ props.StoresNew[i] } key={i} />
                         )
                     } )
             }
@@ -41,7 +43,7 @@ function StoreHome (props) {
             <div className={ base.top_wrap }>       
                 <strong className={ base.bar_title }>
                     <i className={base.bar_ico}>🔥</i>
-                    <span className={ `${ base.color_light } ${ base.bar_title_text }` }> 인기 </span>
+                    <span className={ `${ base.color_best } ${ base.bar_title_text }` }> 인기 </span>
                     타이틀 
                 </strong>
             </div>

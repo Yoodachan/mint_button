@@ -25,7 +25,7 @@ function UserLogin () {
             </label>
 
             <label className={ `${user.u_pwd_wrap} ${ base.input_wrap_normal }` } htmlFor='u_pwd'>
-                <input className={ `${user.u_pwd} ${ base.input_normal } ${ base.style_set_border }` } name="u_pwd" type="text" placeholder="비밀번호" />
+                <input className={ `${user.u_pwd} ${ base.input_normal } ${ base.style_set_border }` } name="u_pwd" type="password" placeholder="비밀번호" />
             </label>
 
             <button className={ `${base.btn_style_first} ${ base.btn_size_long }` } type="button"> 로그인 </button>

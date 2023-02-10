@@ -76,9 +76,9 @@ function GameView (props) {
                         </span>
                     </div>
                     <div className={ game.view_btn_wrap }>
-                        <button className="detail_like_btn" type="button">
+                        <button className={game.like_btn} type="button">
                             <FontAwesomeIcon icon={ faHeart } />
-                            <span className="detail_like_conut"> 1천+ </span>
+                            <span className={game.like_conut}> 1천+ </span>
                         </button>
 
                         <Link to={'/store/detail/'+props.Games[idx].g_num} className={`${base.btn_size_long} ${base.btn_style_first} `}>

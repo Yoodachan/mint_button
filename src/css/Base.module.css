@@ -46,6 +46,7 @@
     color: #434A49;
     padding: 10px 15px;
     margin: 0px auto 30px;
+    border-radius: 10px;
 }
 
 .bar_wrap {
@@ -358,6 +359,10 @@
 
 
 /* 폰트 및 색상 관련 */
+
+.color_best {
+    color: #f88c65;
+}
 
 .color_light {
     color: #82d9d0;

@@ -14,7 +14,7 @@ body,h1,h2,h3,h4,h5,p,div,ul,li,dl,dt,dd{
 
 h1,h2,h3,h4,h5,h6,strong {
   display: block;
-  font-family: 'Galmuri11', serif;
+  font-family: 'Galmuri9', serif;
 }
 dt,body,i,em,p,div,ul,li,dl,dt,dd,input,button,textarea {
   font-family: 'Galmuri7', serif;

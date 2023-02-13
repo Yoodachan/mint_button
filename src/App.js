@@ -45,7 +45,7 @@ function App() {
   const [userObj,setUserObj] = useState(null);
 
 
-
+  
   // 게임 타이틀 보관
   const [Games,setGames] = useState([]);
   // const [Stores,setStores] = useState([]);
@@ -56,11 +56,11 @@ function App() {
       if (user) {
         setIsLoggedIn(true);
         setUserObj(user);
-        console.log ("로그인"+user)
+        console.log (user.email)
+        console.log (user.uid)
       }
       else {
         setIsLoggedIn(false);
-        console.log ("로그아웃"+user);
       }
       //로딩창
       setInit(true);
@@ -91,7 +91,7 @@ function App() {
 
               <Route path="/user" element={ <User/> }>
                 <Route path="login" element={ <UserLogin/> } />
-                <Route path="join" element={<UserJoin/>} /> 
+                <Route path="join" element={<UserJoin userObj={userObj} /> } />
                 <Route path="joinSuccess" element={ <UserJoinSuccess/>} />
                 { userObj && <Route path="info" element={ <UserInfo userObj={userObj} /> } /> }
                 {/* <Route path="upload" element={ <UserUpload/> } />

@@ -72,17 +72,15 @@ function GameHome (props) {
     return (
         
         <>
-            <div className={ base.top_wrap }>
-                    {/* <div>
-                        {Gtest.map( (Gtest) => <div key={Gtest.id}> <h4> {Gtest.g_name} </h4> </div>)}
-                    </div> */}             
-                     <strong className={ base.bar_title }> 😜 <span className={ `${ base.color_light } ${ base.bar_title_text }` }> 게임 </span> 목록 ({props.Games.length}) </strong> 
+            <div className={ base.top_wrap }>     
+                     <strong className={ base.bar_title }>😜<span className={ `${ base.color_light } ${ base.bar_title_text }` }> 게임 </span> 목록 ({ props.Games.length }) </strong> 
                     { 
                     props.isLoggedIn == true 
                     ? <Link to="../upload" className={ `${base.btn_style_first} ${ base.btn_right } ${ base.btn_size_small }` }> 등록하기 </Link> 
                     : null 
                     }
             </div>
+            
             <div className={ base.bar_wrap }>
                     <div className={ base.filter_icon }>
                             <FontAwesomeIcon icon={ faFilter } />

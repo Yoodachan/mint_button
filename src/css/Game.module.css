@@ -49,15 +49,16 @@
     text-align: left;
     font-size: 16px;
     color:#434A49;
-    padding: 0px 00px 6px 0px;
+    padding: 0px 30px 6px 0px;
     overflow: hidden; 
     text-overflow: ellipsis;
     white-space: nowrap;
     word-break:break-all;
     position: relative;
+    font-weight: bold;
 }
 
-.more_btn {
+.item_option_btn {
     position: absolute;
     right: 10px;
     top: 160px;
@@ -70,11 +71,11 @@
     font-size: 16px;
 }
 
-.more_btn:hover {
+.item_option_btn:hover {
     background-color: #eee;
 }
 
-.more_btn:active {
+.item_option_btn:active {
     background-color: #ddd;
 }
 
@@ -245,32 +246,32 @@
 
 /* 아이템 메뉴 */
 .menu_list {
-    width: 120px;
-    height: 70px;
     border-radius: 10px;
     background-color: #fff;
     position: absolute;
     top: 190px;
     right: 10px;
     color:#434A49;
-    text-align: center;
-    padding: 5px 0px;
     font-size: 14px;
     box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
 }
-
-.menu_item {
-    width: 80%;
+.menu_btn {
+    margin: 5px 15px;
+    padding: 5px 15px;
     border-radius: 5px;
-    height: 20px;
-    line-height: 20px;
-    margin: 5px auto;
+    text-align: center;
 }
 
-.menu_item:hover {
+.menu_btn:hover {
     background-color: #eee;
 }
 
+.option_ico {
+    width: 15px;
+    height: 15px;
+    text-align: center;
+    margin-bottom: 5px;
+}
 
 .like_btn {
     width: 50px;

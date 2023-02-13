@@ -4,9 +4,9 @@ import base from '../css/Base.module.css';
 import user from '../css/User.module.css';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUserLarge } from "@fortawesome/free-solid-svg-icons";
-import { authService } from '../Mybase';
+import { authService,storeService } from '../Mybase';
 
-function UserJoin () {
+function UserJoin (props) {
     // 유저 정보 저장
     const [Mail, setMail] = useState("");
     const [Pwd, setPwd] = useState("");
@@ -28,7 +28,6 @@ function UserJoin () {
         const { target: { name, value }} = event;
         if (name === "u_mail") {
             setMail(value);
-            console.log (value)
         } 
         if (name === "u_pwd") {
             setPwd(value);
@@ -47,10 +46,16 @@ function UserJoin () {
             if ( Account ) {
                 data = await authService.createUserWithEmailAndPassword(
                     Mail,Pwd
-                ).then(() => {
+                ).then((result) => {
                     authService.currentUser.updateProfile({
                         displayName : Name
-                    })
+                    });
+                    storeService.collection("users").doc().set({
+                        u_id: result.user.uid,
+                        u_name: Name,
+                        u_mail: Mail,
+                        u_pwd: Pwd
+                    });
                 }).then(()=>{
                     movePage('/user/joinSuccess')
                     })

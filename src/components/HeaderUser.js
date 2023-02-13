@@ -7,15 +7,17 @@ import base from '../css/Base.module.css';
 import header from '../css/Header.module.css';
 
 function HeaderUser (props) {
+  const offMenu = useState(props.userMenu); 
+  const setOffMenu = useState(props.setUserMenu); 
+  
     const movePage = useNavigate();
     const UserLogOut = () => {
-      authService.signOut();
-      movePage('/')
-      setOffMenu(!offMenu);
+      authService.signOut().then(()=>{
+        setOffMenu(!offMenu);
+        movePage('/')
+      });
     } ;
 
-    const offMenu = useState(props.userMenu); 
-    const setOffMenu = useState(props.setUserMenu); 
     
   
     return (

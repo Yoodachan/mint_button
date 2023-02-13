@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState,useEffect } from "react";
 import { Link,useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGooglePlusG } from "@fortawesome/free-brands-svg-icons";
@@ -9,26 +9,56 @@ import { authService, firebaseInstance } from "Mybase";
 function UserLogin () {
     const movePage = useNavigate();
     const snsLogin = async (event) => {
+        event.preventDefault(); 
         const {target:{name}} = event;
-        let provider;
-        if (name === "google") {
-            provider = new firebaseInstance.auth.GoogleAuthProvider();
+        try {
+            let provider;
+            if (name === "google") {
+                provider = new firebaseInstance.auth.GoogleAuthProvider();
+            }
+            
+            const data = await authService.signInWithPopup(provider);
         }
-        const data = await authService.signInWithPopup(provider);
-        movePage('/')
+        catch ( Error ) {
+            console.log ("에러띠")
+            console.log (Error)
+        }
     };
+    const [Mail, setMail] = useState("");
+    const [Pwd, setPwd] = useState("");
+    const onChange = (event)=>{
+        console.log (event)
+        const { target: { name, value }} = event;
+        if (name == "u_mail") {
+            setMail(value);
+            console.log (Mail);
+        }
+        if (name == "u_pwd") {
+            setPwd(value);
+            console.log(Pwd)
+        }
+    }
+    const onSubmit = (event) => {
+        event.preventDefault(); 
+        authService.signInWithEmailAndPassword(
+            Mail,Pwd
+        ).then(()=>{
+            movePage('/')
+
+        })
+    }
     return(
-        <form className={base.content_small}>
+        <form className={base.content_small} onSubmit={onSubmit}>
             <h2 className={user.title_text}> 로그인 </h2>
             <label className={ `${user.u_id_wrap} ${ base.input_wrap_normal }` } htmlFor='u_id'>
-                <input className={ `${user.u_id} ${ base.input_normal } ${ base.style_set_border }` } name="u_id" type="text" placeholder="이메일" />
+                <input className={ `${user.u_id} ${ base.input_normal } ${ base.style_set_border }` } name="u_mail" type="text" placeholder="이메일" onChange={onChange} />
             </label>
 
             <label className={ `${user.u_pwd_wrap} ${ base.input_wrap_normal }` } htmlFor='u_pwd'>
-                <input className={ `${user.u_pwd} ${ base.input_normal } ${ base.style_set_border }` } name="u_pwd" type="password" placeholder="비밀번호" />
+                <input className={ `${user.u_pwd} ${ base.input_normal } ${ base.style_set_border }` } name="u_pwd" type="password" placeholder="비밀번호" onChange={onChange} />
             </label>
 
-            <button className={ `${base.btn_style_first} ${ base.btn_size_long }` } type="button"> 로그인 </button>
+            <button className={ `${base.btn_style_first} ${ base.btn_size_long }` } type="submit"> 로그인 </button>
 
             <div className={ user.line_wrap }>
                 <Link className={`${user.link_text}`}>비밀번호를 잊어버리셨나요?</Link>

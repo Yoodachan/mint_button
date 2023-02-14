@@ -24,7 +24,7 @@ const GameUpload = (props) => {
     // const [Gid,setGid] = useState("");
     const [Gyoutube,setGyoutube] = useState("");
     const [Gname,setGname] = useState("");
-    const [Ginfo,setGinfo] = useState("");
+    // const [Ginfo,setGinfo] = useState("");
     const [Gnum,setGnum] = useState("");
     const [Grelease,setGrelease] = useState("");
     const [Gfile,setGfile] = useState("");
@@ -63,10 +63,10 @@ const GameUpload = (props) => {
             const {
                 currentTarget: {result},
             } = finishedEvent;
-            setGfile(result)
+            setGfile(result);
         }
         reader.readAsDataURL(theFile);
-        setGfile()
+        setGfile();
     };
 
 
@@ -93,7 +93,7 @@ const GameUpload = (props) => {
             // {타이틀명}
             g_name: Gname,
             // {게임 정보}
-            g_info: Ginfo,
+            // g_info: Ginfo,
             // {출시일}
             g_release: Grelease,
             // {유튜브 url}
@@ -120,9 +120,9 @@ const GameUpload = (props) => {
         if (name === "g_release") {
             setGrelease(value);
         }
-        if (name === "g_info") {
-            setGinfo(value);
-        }
+        // if (name === "g_info") {
+        //     setGinfo(value);
+        // }
     };
     
 
@@ -132,7 +132,7 @@ const GameUpload = (props) => {
     return (
         <>
             <div className={ base.top_wrap }>
-                    <strong className={ base.bar_title }> 🎮 <span className={ `${ base.color_light }` }> 타이틀 </span> 등록 </strong>  
+                    <strong className={ base.bar_title }> 🎮 <span className={ `${ base.color_light } ${ base.bar_title_text }` }> 타이틀 </span> 등록 </strong>  
             </div>
 
             <form className={ base.content_middle } onSubmit={onSubmit}>
@@ -157,9 +157,9 @@ const GameUpload = (props) => {
                     <input className={ ` ${game.g_name} ${ base.input_normal } ${ base.style_set_border } ` } name="g_name" type="text" placeholder="타이틀 제목" onChange={onChange} />
                 </label>
 
-                <label className={ `${game.g_info_wrap} ${ base.input_wrap_normal }` } htmlFor='g_info'>
+                {/* <label className={ `${game.g_info_wrap} ${ base.input_wrap_normal }` } htmlFor='g_info'>
                     <input className={ ` ${game.g_info} ${ base.input_normal } ${ base.style_set_border } ` } name="g_info" type="text" placeholder="타이틀 설명" onChange={onChange} />
-                </label>
+                </label> */}
 
                 <label className={ `${game.g_date_wrap} ${ base.input_wrap_normal }` } htmlFor='g_release'>
                     <input className={ ` ${game.g_date} ${ base.input_normal } ${ base.style_set_border } ` } name="g_release" type="text" placeholder="타이틀 출시일" onChange={onChange} />

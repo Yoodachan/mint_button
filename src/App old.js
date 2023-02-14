@@ -25,7 +25,7 @@ import Game from './components/Game';
 import GameHome from './components/GameHome';
 import GameView from './components/pages/GameView';
 import GameUpload from './components/GameUpload';
-import GameSuccess from './components/GameUploadSuccess';
+import GameSuccess from './components/GameSuccess';
 
 //상점 CRUD
 import Store from './components/Store';

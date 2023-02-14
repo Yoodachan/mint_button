@@ -85,13 +85,13 @@
     font-size: 14px;
     width: 20%;
     height: 30px;
+    margin: 0px 2%;
     line-height: 30px;
-    margin: 0px 5px;
     text-align: center;
 }
 
 .login_line {
-    width: 40%;
+    width: 38%;
     height: 1px;
     background: #ddd;
 }

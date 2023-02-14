@@ -14,8 +14,8 @@ import Main from './components/Main';
 //회원 가입 및 로그인 CRUD
 import User from './components/User';
 import UserInfo from './components/UserInfo';
-// import UserUpload from './components/UserUpload';
-// import UserUploadSuccess from './components/UserUploadSuccess';
+import UserUpload from './components/UserUpload';
+import UserUploadSuccess from './components/UserUploadSuccess';
 import UserLogin from './components/UserLogin';
 import UserJoin from './components/UserJoin';
 import UserJoinSuccess from './components/UserJoinSuccess';
@@ -23,10 +23,10 @@ import UserJoinSuccess from './components/UserJoinSuccess';
 //게임 CRUD
 import Game from './components/Game';
 import GameHome from './components/GameHome';
-import GameView from './components/pages/GameView';
 import GameUpload from './components/GameUpload';
-import GameUpdate from './components/GameUpdate';
-import GameSuccess from './components/GameUploadSuccess';
+import GameSuccess from './components/GameSuccess';
+import GameView from './components/pages/GameView';
+import GameUpdate from './components/pages/GameUpdate';
 
 //상점 CRUD
 import Store from './components/Store';
@@ -94,17 +94,19 @@ function App() {
                 <Route path="join" element={<UserJoin userObj={userObj} /> } />
                 <Route path="joinSuccess" element={ <UserJoinSuccess/>} />
                 { userObj && <Route path="info" element={ <UserInfo userObj={userObj} /> } /> }
-                {/* <Route path="upload" element={ <UserUpload/> } />
-                <Route path="uploadSuccess" element={ <UserUploadSuccess/> } /> */}
+                <Route path="upload" element={ <UserUpload/> } />
+                <Route path="uploadSuccess" element={ <UserUploadSuccess/> } />
               </Route>
 
 
               <Route path="/game" element={ <Game Games={ Games } /> }>
+                 
                 <Route path="home" element={ <GameHome isLoggedIn={isLoggedIn} Games={ Games } userObj={userObj} /> } />
-                {Games == ![] ? <Route path="view/:idx" element={ <div>로딩중</div> } /> : <Route path="view/:idx" element={ <GameView Games={ Games } /> } /> }
-                {isLoggedIn ? <Route path="upload" element={<GameUpload userObj={userObj} isLoggedIn={isLoggedIn} Games={ Games }/>} /> : <Route path="upload" element={ <div>404</div> } /> }
-                {isLoggedIn ? <Route path="update" element={<GameUpdate userObj={userObj} isLoggedIn={isLoggedIn} Games={ Games } />} /> : <Route path="update" element={ <div>404</div> } /> }
                 <Route path="success" element={ <GameSuccess isLoggedIn={isLoggedIn} />} />
+                {isLoggedIn ? <Route path="upload" element={<GameUpload userObj={userObj} isLoggedIn={isLoggedIn} Games={ Games }/>} /> : <Route path="upload" element={ <div>404</div> } /> }
+                {Games == ![] ? <Route path="view/:idx" element={ <div>로딩중</div> } /> : <Route path="view/:idx" element={ <GameView Games={ Games } /> } /> }
+                {Games == ![] ? <Route path="update/:idx" element={ <div>로딩중</div> } /> : <Route path="update/:idx" element={<GameUpdate userObj={userObj} isLoggedIn={isLoggedIn} Games={ Games } />} /> }
+                
               </Route>
               
               <Route path="/store" element={ <Store /> } >

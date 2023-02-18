@@ -31,21 +31,7 @@ const GameUpdate = (props) => {
     const [Gfile,setGfile] = useState("");
     // console.log (Gfile)
 
-    // const getDb = async() => {
-    //     const db = await storeService.collection("user").get().then( (event) => {
-    //         event .forEach((doc)=>{
-    //             console.log (doc.data())
-    //         })
-    //     })
 
-    //     // db.forEach( (document) => {
-    //     //     const userObject = {
-    //     //         ...document.data(),
-    //     //         id : document.id,
-    //     //     };
-    //     //     setGname( (prev) => [userObject, ...prev]);
-    //     // });
-    // }
 
     let date = new Date();
     let dateMonth = ("0" + (date.getMonth() + 1)).slice(-2);
@@ -54,54 +40,59 @@ const GameUpdate = (props) => {
 
     const onFileChange = (event) => {
         const {
-          target: { files },
+            target: {files},
         } = event;
         const theFile = files[0];
+        // console.log(theFile);
         const reader = new FileReader();
         reader.onloadend = (finishedEvent) => {
-          const {
-            currentTarget: { result },
-          } = finishedEvent;
-          setGfile(result);
-        };
+            const {
+                currentTarget: {result},
+            } = finishedEvent;
+            setGfile(result);
+        }
         reader.readAsDataURL(theFile);
-      };
+        setGfile();
+    };
+
     
 
 
 
     const onSubmit = async ( event ) => { 
         event.preventDefault();
-        const fileRef = storageService.ref().child(`${props.userObj.uid}/${uuidv4()}`)
-        const respons = await fileRef.putString(Gfile , "data_url");
-        const fileRefUrl = await respons.ref.getDownloadURL()
-        const userDoc = storeService.collection("games").doc(props.Games[idx].g_id);
-        // add론 doc 못가져와서 set 사용
-        await userDoc.update({
-            // displayName
-            // photoURL
-            // g_num: props.Games.length,
-            // {DB명}
-            // g_id: userDoc.id,
-            // {작성자 uid}
-            // g_post: props.userObj.uid,
-            // {작성일}
-            // g_date: new_data,
-            g_update: new_data,
-            // {이미지 url}
-            g_img: fileRefUrl,
-            // {타이틀명}
-            g_name: Gname,
-            // {게임 정보}
-            // g_info: Ginfo,
-            // {출시일}
-            g_release: Grelease,
-            // {유튜브 url}
-            g_youtube: Gyoutube,
-            // g_score : 0,
-            // g_review : 0,
-            // g_like : 0,
-        });
+
+        if ( Gfile == "" ) {
+            const userDoc = storeService.collection("games").doc(props.Games[idx].g_id);
+            await userDoc.update({
+                g_update: new_data,
+                // {타이틀명}
+                g_name: Gname,
+                // {출시일}
+                g_release: Grelease,
+                // {유튜브 url}
+                g_youtube: Gyoutube,
+            });
+        }
+        else {
+            const fileRef = storageService.ref().child(`${props.userObj.uid}/${uuidv4()}`)
+            const respons = await fileRef.putString(Gfile , "data_url");
+            const fileRefUrl = await respons.ref.getDownloadURL()
+            const userDoc = storeService.collection("games").doc(props.Games[idx].g_id);
+
+            await userDoc.update({
+                g_update: new_data,
+                // {이미지 url}
+                g_img: fileRefUrl,
+                // {타이틀명}
+                g_name: Gname,
+                // {출시일}
+                g_release: Grelease,
+                // {유튜브 url}
+                g_youtube: Gyoutube,
+            });
+
+        }
 
     movePage('/game/home');
     };
@@ -147,7 +138,7 @@ const GameUpdate = (props) => {
                         </div>
 
                       : <img src={ 
-                        props.Games[idx].g_img 
+                        props.Games[idx].g_img && Gfile == "" 
                         ? props.Games[idx].g_img
                         : Gfile      
                         } 

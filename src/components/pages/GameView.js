@@ -16,6 +16,9 @@ function GameView (props) {
     // console.log (props.Games[id].g_name)
     let {idx} = useParams();
     const [Text,setText] = useState([]);
+    let findGame = props.Games.find(function(x){
+        return x.idx == idx
+    })
 
 
     

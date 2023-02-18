@@ -56,7 +56,6 @@ const GameUpload = (props) => {
             target: {files},
         } = event;
         const theFile = files[0];
-        // console.log(theFile);
         const reader = new FileReader();
         reader.onloadend = (finishedEvent) => {
             // console.log(finishedEvent);
@@ -73,35 +72,65 @@ const GameUpload = (props) => {
 
     const onSubmit = async ( event ) => { 
         event.preventDefault();
-        const fileRef = storageService.ref().child(`${props.userObj.uid}/${uuidv4()}`)
-        const respons = await fileRef.putString(Gfile , "data_url");
-        const fileRefUrl = await respons.ref.getDownloadURL()
-        const userDoc = storeService.collection("games").doc();
-        // add론 doc 못가져와서 set 사용
-        await userDoc.set({
-            // displayName
-            // photoURL
-            g_num: props.Games.length,
-            // {DB명}
-            g_id: userDoc.id,
-            // {작성자 uid}
-            g_post: props.userObj.uid,
-            // {작성일}
-            g_date: new_data,
-            // {이미지 url}
-            g_img: fileRefUrl,
-            // {타이틀명}
-            g_name: Gname,
-            // {게임 정보}
-            // g_info: Ginfo,
-            // {출시일}
-            g_release: Grelease,
-            // {유튜브 url}
-            g_youtube: Gyoutube,
-            g_score : 0,
-            g_review : 0,
-            g_like : 0,
-        });
+
+        if ( Gfile == "" ) {
+            const userDoc = storeService.collection("games").doc();
+            await userDoc.set({
+                // displayName
+                // photoURL
+                g_num: props.Games.length,
+                // {DB명}
+                g_id: userDoc.id,
+                // {작성자 uid}
+                g_post: props.userObj.uid,
+                // {작성일}
+                g_date: new_data,
+                // {이미지 url}
+                // {타이틀명}
+                g_name: Gname,
+                // {게임 정보}
+                // g_info: Ginfo,
+                // {출시일}
+                g_release: Grelease,
+                // {유튜브 url}
+                g_youtube: Gyoutube,
+                g_score : 0,
+                g_review : 0,
+                g_like : 0,
+            });
+        }
+        else {
+            const fileRef = storageService.ref().child(`${props.userObj.uid}/${uuidv4()}`)
+            const respons = await fileRef.putString(Gfile , "data_url");
+            const fileRefUrl = await respons.ref.getDownloadURL()
+            const userDoc = storeService.collection("games").doc();
+            // add론 doc 못가져와서 set 사용
+            await userDoc.set({
+                // displayName
+                // photoURL
+                g_num: props.Games.length,
+                // {DB명}
+                g_id: userDoc.id,
+                // {작성자 uid}
+                g_post: props.userObj.uid,
+                // {작성일}
+                g_date: new_data,
+                // {이미지 url}
+                g_img: fileRefUrl,
+                // {타이틀명}
+                g_name: Gname,
+                // {게임 정보}
+                // g_info: Ginfo,
+                // {출시일}
+                g_release: Grelease,
+                // {유튜브 url}
+                g_youtube: Gyoutube,
+                g_score : 0,
+                g_review : 0,
+                g_like : 0,
+            });
+        }
+    
 
     movePage('/game/home');
 

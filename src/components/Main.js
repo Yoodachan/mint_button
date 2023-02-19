@@ -32,7 +32,7 @@ function Main () {
                     <ul className={main.conetnet_list}>
 
                     <button type="button" className={main.item_wrap}>
-                            <img className={main.item_img} src='../image/game_001.jpg'/>
+                            <img className={main.item_img} src='mint_button/image/game_001.jpg'/>
                             <p className={main.item_rank}> 1 </p>
                             <div className={main.item_text_wrap}>
                                 <p className={main.item_title}> 스프래툰 3 </p>

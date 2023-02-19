@@ -17,7 +17,7 @@ function Main () {
                             <FontAwesomeIcon icon={ faCircleArrowRight } /> 
                         </button>
                     </p>
-                    <img src='../image/banner_img.png'/>
+                    <img src='mint_button/image/banner_img.png'/>
             </div>
 
             <div className={main.middle_content}>
@@ -54,7 +54,7 @@ function Main () {
                         </button>
 
                         <button type="button" className={main.item_wrap}>
-                            <img className={main.item_img} src='../image/game_002.jpg'/>
+                            <img className={main.item_img} src='/image/game_002.jpg'/>
                             <p className={main.item_rank}> 2 </p>
                             <div className={main.item_text_wrap}>
                                 <p className={main.item_title}>젤다의 전설 ~ 야생의 숨결 ~</p>

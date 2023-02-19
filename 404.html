@@ -1,13 +1,15 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
   <head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8">
     <title>Page Not Found</title>
   </head>
   <body>
     <script>
-      const redirectUrl = `${window.location.protocol}//${window.location.hostname}${window.location.port ? ':' + window.location.port : ''}/`;
-      window.location.replace(redirectUrl);
+      const segments = window.location.pathname.split('/')
+      const base = segments.slice(0, segments.length - 1).join('/') + '/'
+      const url = base + 'index.html'
+      window.location.replace(url)
     </script>
   </body>
 </html>

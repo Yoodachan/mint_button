@@ -244,6 +244,11 @@
     align-items: flex-end;
 }
 
+.view_score,
+.detail_review {
+    margin-left: 5px;
+}
+
 
 /* 아이템 메뉴 */
 .menu_list {

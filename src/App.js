@@ -84,7 +84,7 @@ function App() {
     <div className="App">
         <ResetStyles/>
             <Header isLoggedIn={isLoggedIn}/>
-            <Routes basename={process.env.PUBLIC_URL}>
+            <Routes>
 
               
               <Route path="/" element={ <Main/> } />

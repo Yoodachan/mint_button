@@ -49,7 +49,7 @@ function GameView (props) {
                         <span className={`${base.color_score}`}>
                                 <FontAwesomeIcon icon={ faStar } />
                                 <span className={game.view_score}>
-                                    4.5
+                                {props.Games[idx].g_score}
                                 </span>
                                 /5.0
                         </span>
@@ -57,7 +57,7 @@ function GameView (props) {
                         <span className={`${base.icon_layout_left_long} ${base.color_review}`}>
                             <FontAwesomeIcon icon={ faComment } />
                             <span className={game.detail_review}>
-                                15  
+                            {props.Games[idx].g_review}
                             </span>
                         </span>
                     </div>
@@ -82,7 +82,7 @@ function GameView (props) {
                     <div className={ game.view_btn_wrap }>
                         <button className={game.like_btn} type="button">
                             <FontAwesomeIcon icon={ faHeart } />
-                            <span className={game.like_conut}> 1천+ </span>
+                            <span className={game.like_conut}> {props.Games[idx].g_like} </span>
                         </button>
 
                         <Link to={'/store/detail/'+props.Games[idx].g_num} className={`${base.btn_size_long} ${base.btn_style_first} `}>

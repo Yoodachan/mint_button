@@ -54,7 +54,7 @@ function Main () {
                         </button>
 
                         <button type="button" className={main.item_wrap}>
-                            <img className={main.item_img} src='/image/game_002.jpg'/>
+                            <img className={main.item_img} src='mint_button/image/game_002.jpg'/>
                             <p className={main.item_rank}> 2 </p>
                             <div className={main.item_text_wrap}>
                                 <p className={main.item_title}>젤다의 전설 ~ 야생의 숨결 ~</p>
@@ -76,7 +76,7 @@ function Main () {
                         </button>
 
                         <button type="button" className={main.item_wrap}>
-                            <img className={main.item_img} src='../image/game_003.jpg'/>
+                            <img className={main.item_img} src='mint_button/image/game_003.jpg'/>
                             <p className={main.item_rank}> 3 </p>
                             <div className={main.item_text_wrap}>
                                 <p className={main.item_title}> 귀멸의 칼날 ~ 히노카미 혈풍담 ~ </p>
@@ -98,7 +98,7 @@ function Main () {
                         </button>
 
                         <button type="button" className={main.item_wrap}>
-                            <img className={main.item_img} src='../image/game_004.jpg'/>
+                            <img className={main.item_img} src='mint_button/image/game_004.jpg'/>
                             <p className={main.item_rank}> 4 </p>
                             <div className={main.item_text_wrap}>
                                 <p className={main.item_title}>슈퍼 스매시 브라더스 얼티밋</p>
@@ -120,7 +120,7 @@ function Main () {
                         </button>
 
                         <button type="button" className={main.item_wrap}>
-                            <img className={main.item_img} src='../image/game_005.jpg'/>
+                            <img className={main.item_img} src='mint_button/image/game_005.jpg'/>
                             <p className={main.item_rank}> 5 </p>
                             <div className={main.item_text_wrap}>
                                 <p className={main.item_title}>미토피아</p>
@@ -154,7 +154,7 @@ function Main () {
                     <div className={main.conetnet_list}>
 
                         <button type="button" className={main.item_wrap}>
-                            <img className={main.item_img} src='../image/store_001.jpg'/>
+                            <img className={main.item_img} src='mint_button/image/store_001.jpg'/>
                             <p className={main.item_rank}> 1 </p>
                             <div className={main.item_text_wrap}>
                                 <p className={main.item_title}> 모여봐요 동물의 숲 </p>
@@ -176,7 +176,7 @@ function Main () {
                         </button>
 
                         <button type="button" className={main.item_wrap}>
-                            <img className={main.item_img} src='../image/store_002.jpg'/>
+                            <img className={main.item_img} src='mint_button/image/store_002.jpg'/>
                             <p className={main.item_rank}> 2 </p>
                             <div className={main.item_text_wrap}>
                                 <p className={main.item_title}>몬스터헌터 라이즈</p>
@@ -198,7 +198,7 @@ function Main () {
                         </button>
 
                         <button type="button" className={main.item_wrap}>
-                            <img className={main.item_img} src='../image/store_003.jpg'/>
+                            <img className={main.item_img} src='mint_button/image/store_003.jpg'/>
                             <p className={main.item_rank}> 3 </p>
                             <div className={main.item_text_wrap}>
                                 <p className={main.item_title}> 포켓몬 레전드 아르세우스 </p>
@@ -220,7 +220,7 @@ function Main () {
                         </button>
 
                         <button type="button" className={main.item_wrap}>
-                            <img className={main.item_img} src='../image/store_004.jpg'/>
+                            <img className={main.item_img} src='mint_button/image/store_004.jpg'/>
                             <p className={main.item_rank}> 4 </p>
                             <div className={main.item_text_wrap}>
                                 <p className={main.item_title}>포켓몬스터 스칼렛・바이올렛</p>
@@ -242,7 +242,7 @@ function Main () {
                         </button>
 
                         <button type="button" className={main.item_wrap}>
-                            <img className={main.item_img} src='../image/store_005.jpg'/>
+                            <img className={main.item_img} src='mint_button/image/store_005.jpg'/>
                             <p className={main.item_rank}> 5 </p>
                             <div className={main.item_text_wrap}>
                                 <p className={main.item_title}>귀멸의 칼날 ~ 히노카미 혈풍담 ~</p>

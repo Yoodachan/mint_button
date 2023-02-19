@@ -125,7 +125,7 @@ function UserInfo (props) {
                        <input className={ `${user.u_mail} ${ base.input_normal } ${ base.style_set_border }` } name="u_mail" type="email" placeholder="이메일" onChange={onChange} value={Mail} />
                    </label>
 
-                   <input type="submit" to="../joinSuccess" value={Account ? "회원 가입" : "로그인"} className={`${base.btn_style_first} ${ base.btn_size_long }`} />                    
+                   <input type="submit" to="../joinSuccess" value="정보 수정" className={`${base.btn_style_first} ${ base.btn_size_long }`} />                    
                </form>
    )
 }

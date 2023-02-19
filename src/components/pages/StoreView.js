@@ -4,47 +4,50 @@ import { useParams } from 'react-router-dom';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faShareFromSquare,faStar,faHeart,faComment,faSortDown,faPlus,faEllipsisVertical } from "@fortawesome/free-solid-svg-icons";
 
+import base from '../../css/Base.module.css';
+import store from '../../css/Store.module.css';
+
 function StoreView (props) {
     let {idx} = useParams();
     return (
-        <section className="detail_content">
-        <div className="detail_top">
-            <img className="detail_thumbnail" src="https://product-image.kurly.com/product/image/dc721241-72a2-423a-b1cd-9b99bca553d7.jpg"/>
-            <div className="detail_text_wrap">
+        <section className={store.detail_content}>
+        <div className={store.detail_top}>
+            <img className={store.detail_thumbnail} src=""/>
+            <div className={store.detail_text_wrap}>
 
-                <strong className="detail_title_wrap">
-                    <span className="detail_title_text"> { props.Stores[idx].t_name } </span>
-                    <button className="detail_url_link">
+                <strong className={store.detail_title_wrap}>
+                    <span className={store.detail_title_text}> TEST </span>
+                    <button className={store.detail_url_link}>
                         < FontAwesomeIcon icon={ faShareFromSquare } />
                     </button>
                 </strong>
 
-                <div className="detail_icon_wrap">
-                    <span className="detail_score_wrap">
+                <div className={store.detail_icon_wrap}>
+                    <span className={store.detail_score_wrap}>
                             <FontAwesomeIcon icon={ faStar } />
-                            <span className="detail_score">
+                            <span className={store.detail_score}>
                                 4.5
                             </span>
                             /5.0
                     </span>
-                    <span className="detail_review_wrap">
+                    <span className={store.detail_review_wrap}>
                         <FontAwesomeIcon icon={ faComment } />
-                        <span className="detail_review">
+                        <span className={store.detail_review}>
                              15  
                         </span>
                     </span>
                 </div>
 
-                <div className="detail_price_wrap">
-                    <span className="detail_price_cost"> 48,000 원</span>
-                    <span className="detail_price_sale_wrap">
-                        <strong className="detail_price_rate"> 25%</strong>
-                        <strong className="detail_price_sale"> 46,000 원</strong>
+                <div className={store.detail_price_wrap}>
+                    <span className={store.detail_price_cost}> 48,000 원</span>
+                    <span className={store.detail_price_sale_wrap}>
+                        <strong className={store.detail_price_rate}> 25%</strong>
+                        <strong className={store.detail_price_sale}> 46,000 원</strong>
                     </span>
                 </div> 
 
-                <div className="detail_shipping_wrap">
-                    <dl className="detail_shipping_box shipping_cost">
+                <div className={store.detail_shipping_wrap}>
+                    <dl className={`${store.detail_shipping_box} ${store.shipping_cost}`}>
                         <dt> <span> 배송비 </span> </dt>
                         <dd>
                             <span> 기본 배송 비용 3000원 </span>
@@ -53,7 +56,7 @@ function StoreView (props) {
                         </dd>
                     </dl>
 
-                    <dl className="detail_shipping_box shipping_info">
+                    <dl className={`${store.detail_shipping_box} ${store.shipping_info}`}>
                         <dt> <span> 배송 예정 </span> </dt>
                         <dd>
                             <span> 1일 이내 출고 (주말 및 공휴일 제외) </span> 
@@ -61,41 +64,41 @@ function StoreView (props) {
                     </dl>
                 </div>
 
-                <div className="detail_select_wrap">
-                    <span className="detail_select_title"> 상품 선택 </span>
-                    <div className="detail_select_list">
+                <div className={store.detail_select_wrap}>
+                    <span className={store.detail_select_title}> 상품 선택 </span>
+                    <div className={store.detail_select_list}>
                         <input type="text"  disabled/>
                         <button type="button">
                             <FontAwesomeIcon icon={ faSortDown } />
                         </button>
                     </div>
 
-                    <div className="detail_select_item">
+                    <div className={store.detail_select_item}>
                         <input type="text" placeholder="본품" />
                     </div>
 
-                    <div className="detail_payment_wrap">
-                        <span className="detail_payment_name">
+                    <div className={store.detail_payment_wrap}>
+                        <span className={store.detail_payment_name}>
                             본품
                         </span>
-                        <div className="detail_count_wrap">
-                            <button className="detail_plus_btn" type="button">-</button>
-                            <input className="detail_count_value" type="number"  disabled/>
-                            <button className="detail_minus_btn" type="button">+</button>
+                        <div className={store.detail_count_wrap}>
+                            <button className={store.detail_plus_btn} type="button">-</button>
+                            <input className={store.detail_count_value} type="number"  disabled/>
+                            <button className={store.detail_minus_btn} type="button">+</button>
                         </div>
                     </div>
 
-                    <div className="detail_total_wrap">
+                    <div className={store.detail_total_wrap}>
                         <span> 총 상품 금액 </span>
                         <strong> 67,500 원</strong>
                     </div>
 
-                    <div className="detail_btn_wrap">
-                        <button className="detail_like_btn" type="button">
+                    <div className={store.detail_btn_wrap}>
+                        <button className={store.detail_like_btn} type="button">
                             <FontAwesomeIcon icon={ faHeart } />
-                            <span className="detail_like_conut"> 1천+ </span>
+                            <span className={store.detail_like_conut}> 1천+ </span>
                         </button>
-                        <button className="detail_basket_btn" type="button">
+                        <button className={store.detail_basket_btn} type="button">
                             장바구니 담기
                         </button>
                     </div>
@@ -108,19 +111,19 @@ function StoreView (props) {
             </div>
         </div>
 
-        <ul className="detail_cate_wrap">
+        <ul className={store.detail_cate_wrap}>
                 <li><button type="button">상품설명</button></li>
                 <li><button type="button">상세정보</button></li>
                 <li><button type="button">리뷰(10)</button></li>
                 <li><button type="button">문의(10)</button></li>
         </ul>
 
-        <div className="detail_middle">
-            <div className="detail_notice_wrap">
-                <div className="shipping_notice_wrap">
+        <div className={store.detail_middle}>
+            <div className={store.detail_notice_wrap}>
+                <div className={store.shipping_notice_wrap}>
                     <ul>
                         <li>
-                            <strong className="notice_title">배송 관련</strong>
+                            <strong className={store.notice_title}>배송 관련</strong>
                         </li>
 
                         <li>
@@ -170,10 +173,10 @@ function StoreView (props) {
                     </ul>
                 </div>
 
-                <div className="shipping_notice_wrap">
+                <div className={store.shipping_notice_wrap}>
                     <ul>
                         <li>
-                            <strong className="notice_title">교환 및 환불 관련</strong>
+                            <strong className={store.notice_title}>교환 및 환불 관련</strong>
                         </li>
                         <li>
                             <strong>
@@ -229,225 +232,170 @@ function StoreView (props) {
             </div>
         </div>
 
-        <div className="detail_comment_wrap">
-            <ul className="detail_comment_cate">
+        <div className={store.detail_comment_wrap}>
+            <ul className={store.detail_comment_cate}>
                 <li><button type="button"> 리뷰 (20) </button></li>
             </ul>
-            <ul className="detail_comment_sort">
+            <ul className={store.detail_comment_sort}>
                 <li><button type="button"> 최신순 </button></li>
                 <li><button type="button"> 인기순 </button></li>
             </ul>
         </div>
 
-        <div className="detail_bottom">
+        <div className={store.detail_bottom}>
+            <div className={store.detail_comment_list}>
 
-            <div className="detail_comment_list">
+                    <ul className={store.detail_comment_box}>
+                        <li className={store.comment_user_info}>
+                            <img className={store.comment_user_info_img} src="https://item.kakaocdn.net/do/4df35949efd9d681ba97979ce27c82cd8f324a0b9c48f77dbce3a43bd11ce785"/>
+                            <strong className={store.comment_user_info_name}> 김덕팔  </strong>
+                            <span className={store.comment_user_info_date}> 2023.01.19  </span>
 
-                    <ul className="detail_comment_box">
-                        <li className="comment_user_info">
-                            <img className="comment_user_info_img" src="https://item.kakaocdn.net/do/4df35949efd9d681ba97979ce27c82cd8f324a0b9c48f77dbce3a43bd11ce785"/>
-                            <strong className="comment_user_info_name"> 김덕팔  </strong>
-                            <span className="comment_user_info_date"> 2023.01.19  </span>
-
-                            <p className="comment_user_info_score"> ★★★★★ </p>
+                            <p className={store.comment_user_info_score}> ★★★★★ </p>
                         </li>
-                        <li className="comment_user_content">
-                            <div className="comment_user_title"> 옵션 : 본품 </div>
-                            <div className="comment_user_subject"> 너무너무 조아요 </div>
-                        </li>
-                    </ul>
-
-                    <ul className="detail_comment_box">
-                        <li className="comment_user_info">
-                            <img className="comment_user_info_img" src="https://item.kakaocdn.net/do/4df35949efd9d681ba97979ce27c82cd8f324a0b9c48f77dbce3a43bd11ce785"/>
-                            <strong className="comment_user_info_name"> 김덕팔  </strong>
-                            <span className="comment_user_info_date"> 2023.01.19  </span>
-
-                            <p className="comment_user_info_score"> ★★★★★ </p>
-                        </li>
-                        <li className="comment_user_content">
-                            <div className="comment_user_title"> 옵션 : 본품 </div>
-                            <div className="comment_user_subject"> 너무너무 조아요 </div>
+                        <li className={store.comment_user_content}>
+                            <div className={store.comment_user_title}> 옵션 : 본품 </div>
+                            <div className={store.comment_user_subject}> 너무너무 조아요 </div>
                         </li>
                     </ul>
 
-                    <ul className="detail_comment_box">
-                        <li className="comment_user_info">
-                            <img className="comment_user_info_img" src="https://item.kakaocdn.net/do/4df35949efd9d681ba97979ce27c82cd8f324a0b9c48f77dbce3a43bd11ce785"/>
-                            <strong className="comment_user_info_name"> 김덕팔  </strong>
-                            <span className="comment_user_info_date"> 2023.01.19  </span>
+                    <ul className={store.detail_comment_box}>
+                        <li className={store.comment_user_info}>
+                            <img className={store.comment_user_info_img} src="https://item.kakaocdn.net/do/4df35949efd9d681ba97979ce27c82cd8f324a0b9c48f77dbce3a43bd11ce785"/>
+                            <strong className={store.comment_user_info_name}> 김덕팔  </strong>
+                            <span className={store.comment_user_info_date}> 2023.01.19  </span>
 
-                            <p className="comment_user_info_score"> ★★★★★ </p>
+                            <p className={store.comment_user_info_score}> ★★★★★ </p>
                         </li>
-                        <li className="comment_user_content">
-                            <div className="comment_user_title"> 옵션 : 본품 </div>
-                            <div className="comment_user_subject"> 너무너무 조아요 </div>
-                        </li>
-                    </ul>
-
-                    <ul className="detail_comment_box">
-                        <li className="comment_user_info">
-                            <img className="comment_user_info_img" src="https://item.kakaocdn.net/do/4df35949efd9d681ba97979ce27c82cd8f324a0b9c48f77dbce3a43bd11ce785"/>
-                            <strong className="comment_user_info_name"> 김덕팔  </strong>
-                            <span className="comment_user_info_date"> 2023.01.19  </span>
-
-                            <p className="comment_user_info_score"> ★★★★★ </p>
-                        </li>
-                        <li className="comment_user_content">
-                            <div className="comment_user_title"> 옵션 : 본품 </div>
-                            <div className="comment_user_subject"> 너무너무 조아요 </div>
+                        <li className={store.comment_user_content}>
+                            <div className={store.comment_user_title}> 옵션 : 본품 </div>
+                            <div className={store.comment_user_subject}> 너무너무 조아요 </div>
                         </li>
                     </ul>
 
-                    <ul className="detail_comment_box">
-                        <li className="comment_user_info">
-                            <img className="comment_user_info_img" src="https://item.kakaocdn.net/do/4df35949efd9d681ba97979ce27c82cd8f324a0b9c48f77dbce3a43bd11ce785"/>
-                            <strong className="comment_user_info_name"> 김덕팔  </strong>
-                            <span className="comment_user_info_date"> 2023.01.19  </span>
+                    <ul className={store.detail_comment_box}>
+                        <li className={store.comment_user_info}>
+                            <img className={store.comment_user_info_img} src="https://item.kakaocdn.net/do/4df35949efd9d681ba97979ce27c82cd8f324a0b9c48f77dbce3a43bd11ce785"/>
+                            <strong className={store.comment_user_info_name}> 김덕팔  </strong>
+                            <span className={store.comment_user_info_date}> 2023.01.19  </span>
 
-                            <p className="comment_user_info_score"> ★★★★★ </p>
+                            <p className={store.comment_user_info_score}> ★★★★★ </p>
                         </li>
-                        <li className="comment_user_content">
-                            <div className="comment_user_title"> 옵션 : 본품 </div>
-                            <div className="comment_user_subject"> 너무너무 조아요 </div>
+                        <li className={store.comment_user_content}>
+                            <div className={store.comment_user_title}> 옵션 : 본품 </div>
+                            <div className={store.comment_user_subject}> 너무너무 조아요 </div>
+                        </li>
+                    </ul>
+
+                    <ul className={store.detail_comment_box}>
+                        <li className={store.comment_user_info}>
+                            <img className={store.comment_user_info_img} src="https://item.kakaocdn.net/do/4df35949efd9d681ba97979ce27c82cd8f324a0b9c48f77dbce3a43bd11ce785"/>
+                            <strong className={store.comment_user_info_name}> 김덕팔  </strong>
+                            <span className={store.comment_user_info_date}> 2023.01.19  </span>
+
+                            <p className={store.comment_user_info_score}> ★★★★★ </p>
+                        </li>
+                        <li className={store.comment_user_content}>
+                            <div className={store.comment_user_title}> 옵션 : 본품 </div>
+                            <div className={store.comment_user_subject}> 너무너무 조아요 </div>
+                        </li>
+                    </ul>
+
+                    <ul className={store.detail_comment_box}>
+                        <li className={store.comment_user_info}>
+                            <img className={store.comment_user_info_img} src="https://item.kakaocdn.net/do/4df35949efd9d681ba97979ce27c82cd8f324a0b9c48f77dbce3a43bd11ce785"/>
+                            <strong className={store.comment_user_info_name}> 김덕팔  </strong>
+                            <span className={store.comment_user_info_date}> 2023.01.19  </span>
+
+                            <p className={store.comment_user_info_score}> ★★★★★ </p>
+                        </li>
+                        <li className={store.comment_user_content}>
+                            <div className={store.comment_user_title}> 옵션 : 본품 </div>
+                            <div className={store.comment_user_subject}> 너무너무 조아요 </div>
                         </li>
                     </ul>
 
             </div>
 
-            <ul className="detail_comment_pager">
+            <ul className={store.detail_comment_pager}>
                 <li><button type="button"> 맨 처음으로 </button></li>
                 <li><button type="button"> 이전 </button></li>
-                <li><button className="now_page" type="button"> 1 </button></li>
+                <li><button className={store.now_page} type="button"> 1 </button></li>
                 <li><button type="button"> 2 </button></li>
                 <li><button type="button"> 다음 </button></li>
                 <li><button type="button"> 맨 끝으로 </button></li>
             </ul>
 
-            <div className="detail_qna_cate_wrap">
-                    <span className="detail_qna_cate_all"> 전체 문의 (10) </span>
+            <div className={store.detail_qna_cate_wrap}>
+                    <span className={store.detail_qna_cate_all}> 전체 문의 (10) </span>
             </div>
 
-            <div className="detail_qna_wrap">
-                    <div className="detail_qna_box">
-                        <div className="detail_qna_header"> 
-                            <span className="detail_qna_tag"> [상품문의] </span>
-                            <strong className="detail_qna_title"> 상품 언제 도착 하나요 ? </strong>
-                            <ul className="detail_qna_info">
-                                <li className="detail_qna_id">user***</li>
-                                <li className="detail_qna_date">2023.12.10</li>
-                                <li className="detail_qna_answer">답변 완료</li>
+            <div className={store.detail_qna_wrap}>
+                    <div className={store.detail_qna_box}>
+                        <div className={store.detail_qna_header}> 
+                            <span className={store.detail_qna_tag}> [상품문의] </span>
+                            <strong className={store.detail_qna_title}> 상품 언제 도착 하나요 ? </strong>
+                            <ul className={store.detail_qna_info}>
+                                <li className={store.detail_qna_id}>user***</li>
+                                <li className={store.detail_qna_date}>2023.12.10</li>
+                                <li className={store.detail_qna_answer}>답변 완료</li>
                             </ul>
                         </div>
 
-                        <div className="detail_qna_content">
-                            <div className="detail_qna_user_subjec">
+                        <div className={store.detail_qna_content}>
+                            <div className={store.detail_qna_user_subjec}>
                                 몇 일째 기다리는데도 안와요 
                                 몇 일째 기다리는데도 안와요 
                                 몇 일째 기다리는데도 안와요 
                                 몇 일째 기다리는데도 안와요 
                                 몇 일째 기다리는데도 안와요 
                             </div>
-                            <div className="detail_qna_admin_subjec">
-                                <strong className="detail_qna_answer_teg">답변</strong>
+                            <div className={store.detail_qna_admin_subjec}>
+                                <strong className={store.detail_qna_answer_teg}>답변</strong>
                                 그럴수 있죠
                             </div>
                         </div>
                         
                     </div>
 
-                    <div className="detail_qna_box">
-                        <div className="detail_qna_header"> 
-                            <span className="detail_qna_tag"> [상품문의] </span>
-                            <strong className="detail_qna_title"> 상품 언제 도착 하나요 ? </strong>
-                            <ul className="detail_qna_info">
-                                <li className="detail_qna_id">user***</li>
-                                <li className="detail_qna_date">2023.12.10</li>
-                                <li className="detail_qna_answer">답변 완료</li>
+                    <div className={store.detail_qna_box}>
+                        <div className={store.detail_qna_header}> 
+                            <span className={store.detail_qna_tag}> [상품문의] </span>
+                            <strong className={store.detail_qna_title}> 상품 언제 도착 하나요 ? </strong>
+                            <ul className={store.detail_qna_info}>
+                                <li className={store.detail_qna_id}>user***</li>
+                                <li className={store.detail_qna_date}>2023.12.10</li>
+                                <li className={store.detail_qna_answer}>답변 완료</li>
                             </ul>
                         </div>
 
-                        <div className="detail_qna_content">
-                            <div className="detail_qna_user_subjec">
+                        <div className={store.detail_qna_content}>
+                            <div className={store.detail_qna_user_subjec}>
                                 몇 일째 기다리는데도 안와요 
                                 몇 일째 기다리는데도 안와요 
                                 몇 일째 기다리는데도 안와요 
                                 몇 일째 기다리는데도 안와요 
                                 몇 일째 기다리는데도 안와요 
                             </div>
-                            <div className="detail_qna_admin_subjec">
-                                <strong className="detail_qna_answer_teg">답변</strong>
+                            <div className={store.detail_qna_admin_subjec}>
+                                <strong className={store.detail_qna_answer_teg}>답변</strong>
                                 그럴수 있죠
                             </div>
                         </div>
                         
                     </div>
+                <ul className={store.detail_comment_pager}>
+                    <li><button type="button"> 맨 처음으로 </button></li>
+                    <li><button type="button"> 이전 </button></li>
+                    <li><button className={store.now_page} type="button"> 1 </button></li>
+                    <li><button type="button"> 2 </button></li>
+                    <li><button type="button"> 다음 </button></li>
+                    <li><button type="button"> 맨 끝으로 </button></li>
+                </ul>
 
-                    <div className="detail_qna_box">
-                        <div className="detail_qna_header"> 
-                            <span className="detail_qna_tag"> [상품문의] </span>
-                            <strong className="detail_qna_title"> 상품 언제 도착 하나요 ? </strong>
-                            <ul className="detail_qna_info">
-                                <li className="detail_qna_id">user***</li>
-                                <li className="detail_qna_date">2023.12.10</li>
-                                <li className="detail_qna_answer">답변 완료</li>
-                            </ul>
-                        </div>
-
-                        <div className="detail_qna_content">
-                            <div className="detail_qna_user_subjec">
-                                몇 일째 기다리는데도 안와요 
-                                몇 일째 기다리는데도 안와요 
-                                몇 일째 기다리는데도 안와요 
-                                몇 일째 기다리는데도 안와요 
-                                몇 일째 기다리는데도 안와요 
-                            </div>
-                            <div className="detail_qna_admin_subjec">
-                                <strong className="detail_qna_answer_teg">답변</strong>
-                                그럴수 있죠
-                            </div>
-                        </div>
-                        
-                    </div>
-
-                    <div className="detail_qna_box">
-                        <div className="detail_qna_header"> 
-                            <span className="detail_qna_tag"> [상품문의] </span>
-                            <strong className="detail_qna_title"> 상품 언제 도착 하나요 ? </strong>
-                            <ul className="detail_qna_info">
-                                <li className="detail_qna_id">user***</li>
-                                <li className="detail_qna_date">2023.12.10</li>
-                                <li className="detail_qna_answer">답변 완료</li>
-                            </ul>
-                        </div>
-
-                        <div className="detail_qna_content">
-                            <div className="detail_qna_user_subjec">
-                                몇 일째 기다리는데도 안와요 
-                                몇 일째 기다리는데도 안와요 
-                                몇 일째 기다리는데도 안와요 
-                                몇 일째 기다리는데도 안와요 
-                                몇 일째 기다리는데도 안와요 
-                            </div>
-                            <div className="detail_qna_admin_subjec">
-                                <strong className="detail_qna_answer_teg">답변</strong>
-                                그럴수 있죠
-                            </div>
-                        </div>
-                        
-                    </div>
             </div>
-
-            <ul className="detail_comment_pager">
-                <li><button type="button"> 맨 처음으로 </button></li>
-                <li><button type="button"> 이전 </button></li>
-                <li><button className="now_page" type="button"> 1 </button></li>
-                <li><button type="button"> 2 </button></li>
-                <li><button type="button"> 다음 </button></li>
-                <li><button type="button"> 맨 끝으로 </button></li>
-            </ul>
-
         </div>
+        
 
 
 

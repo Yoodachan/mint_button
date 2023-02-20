@@ -1,6 +1,6 @@
 import React, { useState,useEffect } from 'react';
 
-import { HashRouter as Route,Routes,Link,useNavigate } from "react-router-dom";
+import { Route,Routes,Link,useNavigate } from "react-router-dom";
 import ResetStyles from './components/style/Reset';
 import { authService,storeService,firestore } from 'Mybase';
 
